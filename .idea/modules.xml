@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FlightFinderProject.iml" filepath="$PROJECT_DIR$/FlightFinderProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../NPS Utility/NPS Utility.iml" filepath="$PROJECT_DIR$/../NPS Utility/NPS Utility.iml" />
     </modules>
   </component>
 </project>
