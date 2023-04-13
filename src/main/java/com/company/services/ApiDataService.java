@@ -14,7 +14,7 @@ public class ApiDataService {
     public static String API_AUTH_URL = "https://test.api.amadeus.com/v1/security/oauth2/token";
     public static String API_CLIENT_ID = "segAQY78SxIY5wcNSDsj1ADuLQ2IvvgD";
     public static String API_CLIENT_SECRET = "SQTS5J8SBblkgvqG";
-    public static String API_ACCESS_TOKEN = "1D9k0xiAtpYgii6dTAEiVPJWb7PU";//Expires every 30 min
+    public static String API_ACCESS_TOKEN;//Expires every 30 min
     private RestTemplate restTemplate = new RestTemplate();
 
     public String getAuthorization() {
@@ -31,7 +31,7 @@ public class ApiDataService {
         return body;
     }
 
-    public String fetchAuthToken() {
+    public void fetchAuthToken() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         String auth = API_CLIENT_ID + ":" + API_CLIENT_SECRET;
@@ -42,7 +42,9 @@ public class ApiDataService {
         map.add("grant_type", "client_credentials");
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
         ResponseEntity<JsonNode> response = restTemplate.exchange(API_AUTH_URL, HttpMethod.POST, request, JsonNode.class);
-        return response.toString();
+        String data = response.toString();
+        data=data.substring(data.indexOf("access_token")+15,data.indexOf("access_token")+43);
+        API_ACCESS_TOKEN=data;
     }
 }
 
