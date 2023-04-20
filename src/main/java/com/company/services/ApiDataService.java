@@ -1,6 +1,7 @@
 package com.company.services;
 
 
+import com.company.model.JWT;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -34,17 +35,20 @@ public class ApiDataService {
     public void fetchAuthToken() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
         String auth = API_CLIENT_ID + ":" + API_CLIENT_SECRET;
         byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
         String authHeader = "Basic " + new String(encodedAuth);
         headers.set("Authorization", authHeader);
+
         MultiValueMap<String, String> map= new LinkedMultiValueMap<>();
         map.add("grant_type", "client_credentials");
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
-        ResponseEntity<JsonNode> response = restTemplate.exchange(API_AUTH_URL, HttpMethod.POST, request, JsonNode.class);
-        String data = response.toString();
-        data=data.substring(data.indexOf("access_token")+15,data.indexOf("access_token")+43);
-        API_ACCESS_TOKEN=data;
+
+
+        ResponseEntity<JWT> response = restTemplate.exchange(API_AUTH_URL, HttpMethod.POST, request, JWT.class);
+
+        API_ACCESS_TOKEN=response.getBody().getAccessToken();
     }
 }
 
