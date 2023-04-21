@@ -20,7 +20,7 @@ public class Application {
         for (Hotel hotel : hotels)
             System.out.println(hotel);
 
-    }s
+    }
 }
 /*
 
