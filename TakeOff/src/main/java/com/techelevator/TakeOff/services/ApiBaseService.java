@@ -2,14 +2,14 @@
 Added to App 4/21/23 by AS
 */
 
-package com.techelevator.TakeOff.services;
+package com.techelevator.takeoff.services;
 
-import com.techelevator.TakeOff.models.responses.JWT;
+import com.techelevator.takeoff.models.responses.JWT;
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-import org.apache.commons.codec.binary.Base64;
 
 import java.nio.charset.Charset;
 
