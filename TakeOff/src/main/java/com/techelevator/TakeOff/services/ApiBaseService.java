@@ -12,17 +12,19 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.Charset;
+import java.time.LocalDateTime;
 
 public class ApiBaseService {
 
     private static String API_AUTH_URL = "https://test.api.amadeus.com/v1/security/oauth2/token";
     private static String API_CLIENT_ID = "segAQY78SxIY5wcNSDsj1ADuLQ2IvvgD";
     private static String API_CLIENT_SECRET = "SQTS5J8SBblkgvqG";
-    private static String API_ACCESS_TOKEN;//Expires every 30 min
-    protected RestTemplate restTemplate = new RestTemplate();
+    private static String API_ACCESS_TOKEN = "";//Expires every 30 min
+    private static LocalDateTime API_ACCESS_TOKEN_EXPIRATION = LocalDateTime.MIN;
+    protected static RestTemplate restTemplate = new RestTemplate();
 
 
-    public void fetchAuthToken() {
+    private static void fetchAuthToken() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
@@ -37,12 +39,20 @@ public class ApiBaseService {
 
 
         ResponseEntity<JWT> response = restTemplate.exchange(API_AUTH_URL, HttpMethod.POST, request, JWT.class);
+        API_ACCESS_TOKEN_EXPIRATION = LocalDateTime.now().plusSeconds(response.getBody().getExpiresIn() - 5);
 
         API_ACCESS_TOKEN = response.getBody().getAccessToken();
     }
 
-    protected HttpHeaders getHeadersWithAuth() {
+    private static void validateAccessToken() {
+        if (API_ACCESS_TOKEN_EXPIRATION.isBefore(LocalDateTime.now()) ||
+                API_ACCESS_TOKEN.isEmpty()) {
+            fetchAuthToken();
+        }
+    }
 
+    protected static HttpHeaders getHeadersWithAuth() {
+        validateAccessToken();
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(API_ACCESS_TOKEN);
         return headers;

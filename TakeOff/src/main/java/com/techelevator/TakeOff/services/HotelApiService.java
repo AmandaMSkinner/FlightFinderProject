@@ -10,8 +10,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -22,6 +20,28 @@ public class HotelApiService extends ApiBaseService {
         HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
         String url = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=" + city;
         ResponseEntity<HotelData> response = restTemplate.exchange(url, HttpMethod.GET, entity, HotelData.class);
+        return response.getBody().getHotels();
+    }
+
+
+    public List<Hotel> getHotelsWithSpecialOffers(int hotelId, int adults) {
+
+        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
+        String urlPart1 = "https://test.api.amadeus.com/v3/shopping/hotel-offers?hotelIds=";
+        String urlPart2 = "&adults=";
+        ResponseEntity<HotelData> response =
+                restTemplate.exchange(urlPart1 + hotelId + urlPart2 + adults,
+                        HttpMethod.GET,
+                        entity,
+                        HotelData.class);
+        return response.getBody().getHotels();
+
+    }
+
+    public List<Hotel> getHotelsAutoComplete(String keyword, String subType) {
+        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
+        String url = "https://test.api.amadeus.com/v1/reference-data/locations/hotel?keyword={keyword}&subType={subType}";
+        ResponseEntity<HotelData> response = restTemplate.exchange(url, HttpMethod.GET, entity, HotelData.class, keyword, subType);
         return response.getBody().getHotels();
     }
 
