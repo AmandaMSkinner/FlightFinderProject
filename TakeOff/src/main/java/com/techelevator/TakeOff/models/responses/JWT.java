@@ -2,7 +2,7 @@
 Added to App 4/21/23 by AS
 */
 
-package com.techelevator.TakeOff.models.responses;
+package com.techelevator.takeoff.models.responses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
