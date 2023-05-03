@@ -107,7 +107,8 @@ a:hover {
     margin-top: 1em;
     display: flex;
     gap: 20px;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -131,34 +132,53 @@ a:hover {
 }
 
 .hotel-image-box {
-    width: 200px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .response-heading {
     flex-grow: 1;
+    margin: 0;
+    padding: 3px;
+
 }
 
 .response-sub-heading {
+    margin: 0;
+    padding: 3px;
     flex-grow: 1;
 
 }
 
 .response-time-sub-heading {
+    margin: 0;
+    padding: 3px;
 
 }
 
 .price-box {
     flex-grow: 1;
+    margin: 0;
+    padding: 3px;
+
 
 
 }
 
 .price-box-per-traveler {
     flex-grow: 1;
-
+    margin: 0;
+    padding-top: 1em;
+    margin-left: -13em;
 }
 
 .response-form {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -190,10 +210,22 @@ a:hover {
     .select-flights {
         margin-left: 48px;
     }
+
+    .price-box-per-traveler {
+        margin-left: -13em;
+    }
 }
 
-@media (min-width: 880px) {
+@media (min-width: 1000px) {
     .select-flights {
         margin-left: 0px;
     }    
+
+    .response-sub-heading {
+        margin-left: -10em;
+    }
+
+    .price-box-per-traveler {
+        margin-left: -80em;
+    }
 }
