@@ -37,10 +37,8 @@ public class ApiBaseService {
         map.add("grant_type", "client_credentials");
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, headers);
 
-
         ResponseEntity<JWT> response = restTemplate.exchange(API_AUTH_URL, HttpMethod.POST, request, JWT.class);
         API_ACCESS_TOKEN_EXPIRATION = LocalDateTime.now().plusSeconds(response.getBody().getExpiresIn() - 5);
-
         API_ACCESS_TOKEN = response.getBody().getAccessToken();
     }
 
@@ -50,15 +48,10 @@ public class ApiBaseService {
             fetchAuthToken();
         }
     }
-
     protected static HttpHeaders getHeadersWithAuth() {
         validateAccessToken();
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(API_ACCESS_TOKEN);
         return headers;
-
-
     }
-
-
 }
