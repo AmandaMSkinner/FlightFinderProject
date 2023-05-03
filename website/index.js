@@ -47,3 +47,4 @@ carousel.addEventListener('mouseleave', (startInterval) => {
   }
 });
 
+

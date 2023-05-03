@@ -199,7 +199,6 @@ a:hover {
     text-align: center;
     font-size: 2rem;
     text-align: center;
-    padding: 2em 2em;
 }
 
 .search-box {
@@ -209,7 +208,9 @@ a:hover {
     display: flex;
     padding-left: 10px;
     height: 50px;
+    
 }
+
 
 .search-box input {
     outline: none;
@@ -218,6 +219,7 @@ a:hover {
     border: 0;
     margin-left: 10px;
     width: 370px;
+    align-self: center;
 }
 
 .uil-plane-departure {
@@ -235,8 +237,29 @@ a:hover {
     align-self: center;
 }
 
+.search-flights {
+    background-color: white;
+    border-radius: 12px;
+    border-color: var(--primary-color);
+    display: flex;
+    padding-left: 10px;
+    height: 50px;
+    width: 430px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    
+}
+
+.search-flights:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
 .info-section-top {
     height: 5vh;
+    padding: 4em 4em;
 }
 
 
@@ -299,6 +322,25 @@ a:hover {
 
 .uil-luggage-cart {
     font-size: 2rem;
+}
+
+.search-hotels {
+    background-color: white;
+    border-radius: 12px;
+    border-color: var(--primary-color);
+    display: flex;
+    padding-left: 10px;
+    height: 50px;
+    width: 430px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.search-hotels:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 
