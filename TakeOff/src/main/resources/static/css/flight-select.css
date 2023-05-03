@@ -153,14 +153,40 @@ a:hover {
     color: var(--third-color);
     position: absolute;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
     background: rgba(0,0,0,0.5);
     width: 100%;
     height: 250px;
-    top: 1em;
+    top: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5em;
+}
+
+.img-carousel .overlay-text label {
+    display: block;
+    font-size: 4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.img-carousel .overlay-text label:hover {
+    color: var(--eighth-color);
+}
+
+
+.img-carousel .overlay-text label input {
+    display: none;
+}
+
+.img-carousel .overlay-text:has(label>input:checked) div {
+    display: block;
+
+}
+
+.img-carousel .overlay-text:not(:has(label>input:checked)) div {
+    display: none;
+    
 }
 
 .img-carousel div p {
