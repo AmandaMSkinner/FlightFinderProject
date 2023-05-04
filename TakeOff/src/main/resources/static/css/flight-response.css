@@ -265,7 +265,7 @@ a:hover {
     flex-grow: 1;
     margin: 0;
     padding-top: 1em;
-    margin-left: -13em;
+    margin-left: 0em;
 }
 
 .response-form {
@@ -306,7 +306,7 @@ a:hover {
     }
 
     .price-box-per-traveler {
-        margin-left: -13em;
+        margin-left: 0em;
     }
 }
 
@@ -316,10 +316,10 @@ a:hover {
     }    
 
     .response-sub-heading {
-        margin-left: -10em;
+        margin-left: 1em;
     }
 
     .price-box-per-traveler {
-        margin-left: -110em;
+        margin-left: -20em;
     }
 }

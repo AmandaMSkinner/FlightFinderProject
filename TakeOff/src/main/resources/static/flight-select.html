@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TakeOFF Flights</title>
+    <title>TakeOFF Flight Select</title>
 
     <link rel="stylesheet" href="css/flight-select.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -53,34 +53,37 @@
 
 
     <div class="option-selected-container">
-        <div class="response-box">
-            <h3 class="response-heading">
-                Time : 12:57pm - 5:50 pm
-            </h3>
-            <h4 class="response-sub-heading">
-                Los Angeles (LAX) - Mexico (MEX)
-            </h4>
-            <h4 class="response-time-sub-heading">
-                2h 53m (Nonstop)
-            </h4>
-            <h2 class="price-box">
-                $374
-            </h2>
-            <h6 class="price-box-per-traveler">
-                Roundtrip per traveler
-            </h6>
-
-            <!--
-                Following section has a class of "select-flights" instead
-                of "select-hotels" as they share the same properties 
-                and saw no need to add a seperate class if they are
-                behaving the same way.
-            -->
-
-            <form action="flight-purchase.html">
-                <button onclick="window.location.href='flight-purchase.html'"class="select-flights">Select Flight</button>
-            </form>
-         </div>
+        <div class="response-box">        
+            <div class="response-right">
+                <div class="location-row">
+                    <h3 class="response-heading">
+                        Dates : May 10, 2023 - May 20, 2023
+                    </h3>
+                    <h4 class="response-sub-heading">
+                        Airports: Los Angeles (LAX) - Mexico (MEX)
+                    </h4>
+                    <h4 class="response-time-sub-heading">
+                        Time: 2h 53m (Nonstop)
+                    </h4>
+                </div>
+                
+                <div class="price-row">
+                    <h2 class="price-box">
+                        $374
+                    </h2>
+                    <h6 class="price-box-per-traveler">
+                        Roundtrip per traveler
+                    </h6>
+    
+    
+    
+                    <form class="response-form" action="flight-select.html">
+                        <button onclick="window.location.href='flight-select.html'"class="select-flights">Select Flight</button>
+                    </form>
+                </div>
+    
+            </div>    
+        </div>
     </div>
 
     <div class="hotel-info-block-container">
@@ -112,7 +115,15 @@
                             </label>
                             
                             <div>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam ea molestias voluptate, nesciunt consectetur explicabo rerum debitis tempore suscipit quidem itaque asperiores impedit molestiae eaque. Facere illum quos earum ipsum!
+                                Airline: [Insert airline name]
+                                Flight Number: [Insert flight number]
+                                Departure Date: [Insert departure date]
+                                Departure Time: [Insert departure time]
+                                Departure Airport: [Insert departure airport code and name]
+                                Arrival Date: [Insert arrival date]
+                                Arrival Time: [Insert arrival time]
+                                Arrival Airport: [Insert arrival airport code and name]
+                                
                             </div>
 
                         </div>
@@ -121,32 +132,106 @@
                     </div>
     
                     <div>
-                        <h2 class="overlay-text">Dates</h2>
-    
+                        <div class="overlay-text">
+                            <label>
+                                <input type="checkbox">
+                                Dates
+
+                            </label>
+                            
+                            <div>
+                                Departure Date: [Insert departure date]
+                                Departure Time: [Insert departure time]
+                                Departure Airport: [Insert departure airport code and name]
+                                Arrival Date: [Insert arrival date]
+                                Arrival Time: [Insert arrival time]
+                                Arrival Airport: [Insert arrival airport code and name]
+                                
+                            </div>
+
+                        </div>
                         <img src="/Images/journey2_marco-lopez-qK6HAkB91Yc-unsplash.jpg" alt="image-destination">
                         <p>2/6</p>
                     </div>
-                    <div>
-                        <h2 class="overlay-text">What to Pack</h2>
-    
+
+                   <div>
+                        <div class="overlay-text">
+                            <label>
+                                <input type="checkbox">
+                                Let's Pack
+
+                            </label>
+                            
+                            <div>
+                                Please make sure to arrive at the airport at least two 
+                                hours before your scheduled departure time, and have all 
+                                necessary travel documents with you, including a valid 
+                                passport and any required visas or vaccinations. If you 
+                                have any questions or concerns about your flight, don't 
+                                hesitate to reach out to the airline's customer service 
+                                team. Have a safe and enjoyable trip to Mexico!
+                                
+                            </div>
+
+                        </div>
                         <img src="/Images/journey3_convertkit-iGXIjzloB2k-unsplash.jpg" alt="image-destination">
                         <p>3/6</p>
                     </div>
+                    
                     <div>
-                        <h2 class="overlay-text">Need a Hotel?</h2>
-    
-                        <img src="/Images/hotel4_francesca-saraco-_dS27XGgRyQ-unsplash.jpg" alt="image-destination">
+                        <div class="overlay-text">
+                            <label>
+                                <input type="checkbox">
+                                Need A Hotel?
+                            </label>
+                            
+                            
+                            <div>
+                                Book a Hotel with Us Today and <a style="color: yellow" href="hotel.html">Save!</a>
+                                
+                            </div>
+
+                        </div>
+                        <img src="/Images/hotelroom3_marvin-meyer-KCETNsfr4qo-unsplash.jpg" alt="image-destination">
                         <p>4/6</p>
                     </div>
+                    
                     <div>
-                        <h2 class="overlay-text">Airline Accomodations</h2>
-    
+                        <div class="overlay-text">
+                            <label>
+                                <input type="checkbox">
+                                Airline Accomodations
+                            </label>
+                            
+                            
+                            <div>
+                                Most airlines offer different 
+                                classes of service, such as economy, premium economy, business 
+                                class, and first class. It's always a good idea to research your 
+                                airline's specific accommodations and amenities before your 
+                                flight to ensure a comfortable and enjoyable travel experience.
+                                
+                            </div>
+
+                        </div>
                         <img src="/Images/journey4_chris-leipelt-XfGuPGBJyZc-unsplash.jpg" alt="image-destination">
                         <p>5/6</p>
                     </div>
+
                     <div>
-                        <h2 class="overlay-text">Plan your Itinerary</h2>
-    
+                        <div class="overlay-text">
+                            <label>
+                                <input type="checkbox">
+                                Itinerary
+                            </label>
+                            
+                            
+                            <div>
+                                Need A Car? Want to book an experience? We've got you <a style="color: yellow" href="Packages.html">covered</a>.
+                                
+                            </div>
+
+                        </div>
                         <img src="/Images/journey5_isaac-smith-9pTR4tiqkvs-unsplash.jpg" alt="image-destination">
                         <p>6/6</p>
                     </div>
@@ -161,27 +246,6 @@
             </div>
         </section>
     </div>
-
-    <!-- <div class="hotel-image-container">
-        <div class="row">
-            <div class="column">
-                <img class="image-block" src="/Images/hotelroom1_edelle-bruton-PJNO2sLlbB8-unsplash.jpg"
-                    alt="Image of a neon sign saying Mexico, My Love.">
-            </div>
-            <div class="column">
-                <img class="image-block" src="/Images/hotelroom2_jared-rice-PibraWHb4h8-unsplash.jpg"
-                    alt="Image of the venice canals in Italy.">
-            </div>
-            <div class="column">
-                <img class="image-block" src="/Images/hotelroom3_marvin-meyer-KCETNsfr4qo-unsplash.jpg"
-                    alt="Image of boats on a thai beach.">
-            </div>
-            <div class="column">
-                <img class="image-block" src="/Images/hoteleroom4_manuel-moreno-DGa0LQ0yDPc-unsplash.jpg"
-                    alt="Image of the northern lights in Iceland.">
-            </div>
-        </div>
-    </div>  -->
     
 
     <script src="/flight-select.js"></script>
