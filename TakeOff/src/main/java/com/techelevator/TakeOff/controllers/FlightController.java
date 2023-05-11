@@ -23,12 +23,12 @@ public class FlightController {
 
 @RequestMapping(method = RequestMethod.GET)
 public ResponseEntity<List<FlightOffer>> getFlightOffersBySearch(
-        @RequestParam(defaultValue = "") String originLocationCode,
-        @RequestParam(defaultValue = "") String destinationLocationCode,
-        @RequestParam(defaultValue = "") String departureDate,
-        @RequestParam(defaultValue = "") String returnDate, //If not entered will be a one way trip
-        @RequestParam(defaultValue = "") int adults, //Assume 1 person
-        @RequestParam(defaultValue = "") int max
+        @RequestParam(defaultValue = "SYD") String originLocationCode,
+        @RequestParam(defaultValue = "LAX") String destinationLocationCode,
+        @RequestParam(defaultValue = "2023-12-21") String departureDate,
+        @RequestParam(defaultValue = "2023-12-25") String returnDate, //If not entered will be a one way trip
+        @RequestParam(defaultValue = "1") int adults, //Assume 1 person
+        @RequestParam(defaultValue = "5") int max
 
 ){
         return new ResponseEntity<>(flightApiService.flightOffersSearch(originLocationCode, destinationLocationCode,
