@@ -1,10 +1,11 @@
 /*
 Created 5/2/23 by AS*/
 
-package com.techelevator.TakeOff.controllers;
+package com.techelevator.Takeoff.controllers;
 
-import com.techelevator.TakeOff.models.responses.flights.FlightOffer;
-import com.techelevator.TakeOff.services.FlightApiService;
+import com.techelevator.Takeoff.models.responses.flightinfo.FlightOffer;
+import com.techelevator.Takeoff.models.responses.flights.FlightOfferData;
+import com.techelevator.Takeoff.services.FlightApiService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +23,12 @@ public class FlightController {
 
 @RequestMapping(method = RequestMethod.GET)
 public ResponseEntity<List<FlightOffer>> getFlightOffersBySearch(
-        @RequestParam(defaultValue = "") String originLocationCode,
-        @RequestParam(defaultValue = "") String destinationLocationCode,
-        @RequestParam(defaultValue = "") String departureDate,
-        @RequestParam(defaultValue = "") String returnDate, //If not entered will be a one way trip
-        @RequestParam(defaultValue = "") int adults, //Assume 1 person
-        @RequestParam(defaultValue = "") int max
+        @RequestParam(defaultValue = "SYD") String originLocationCode,
+        @RequestParam(defaultValue = "LAX") String destinationLocationCode,
+        @RequestParam(defaultValue = "2023-12-21") String departureDate,
+        @RequestParam(defaultValue = "2023-12-25") String returnDate, //If not entered will be a one way trip
+        @RequestParam(defaultValue = "1") int adults, //Assume 1 person
+        @RequestParam(defaultValue = "5") int max
 
 ){
         return new ResponseEntity<>(flightApiService.flightOffersSearch(originLocationCode, destinationLocationCode,

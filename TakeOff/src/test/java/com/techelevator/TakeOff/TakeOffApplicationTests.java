@@ -1,4 +1,4 @@
-package com.techelevator.takeoff;
+package com.techelevator.Takeoff;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
