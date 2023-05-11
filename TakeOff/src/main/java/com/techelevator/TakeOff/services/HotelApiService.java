@@ -2,10 +2,10 @@
 Added to App 4/21/23 by AS
 */
 
-package com.techelevator.takeoff.services;
+package com.techelevator.TakeOff.services;
 
-import com.techelevator.takeoff.models.responses.Hotel;
-import com.techelevator.takeoff.models.responses.HotelData;
+import com.techelevator.TakeOff.models.responses.hotels.Hotel;
+import com.techelevator.TakeOff.models.responses.hotels.HotelData;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.techelevator.takeoff.models.responses;
+package com.techelevator.TakeOff.models.responses.flights;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

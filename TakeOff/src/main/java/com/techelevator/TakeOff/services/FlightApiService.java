@@ -1,10 +1,10 @@
 /*Created by AS on 5/2/23
  */
 
-package com.techelevator.takeoff.services;
+package com.techelevator.TakeOff.services;
 
-import com.techelevator.takeoff.models.responses.FlightOffer;
-import com.techelevator.takeoff.models.responses.FlightOfferData;
+import com.techelevator.TakeOff.models.responses.flights.FlightOffer;
+import com.techelevator.TakeOff.models.responses.flights.FlightOfferData;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;

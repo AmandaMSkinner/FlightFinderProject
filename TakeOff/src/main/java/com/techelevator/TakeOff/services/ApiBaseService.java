@@ -2,9 +2,9 @@
 Added to App 4/21/23 by AS
 */
 
-package com.techelevator.takeoff.services;
+package com.techelevator.TakeOff.services;
 
-import com.techelevator.takeoff.models.responses.JWT;
+import com.techelevator.TakeOff.models.responses.JWT;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
