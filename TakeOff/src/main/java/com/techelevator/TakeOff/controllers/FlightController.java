@@ -1,7 +1,7 @@
 /*
 Created 5/2/23 by AS*/
 
-package com.techelevator.TakeOff.controllers;
+package com.techelevator.takeoff.controllers;
 
 import com.techelevator.TakeOff.models.responses.flights.FlightOffer;
 import com.techelevator.TakeOff.services.FlightApiService;
