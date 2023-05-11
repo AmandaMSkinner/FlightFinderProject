@@ -1,7 +1,7 @@
 /*
 Added to App 4/21/23 by AS
 */
-package com.techelevator.takeoff.models.responses;
+package com.techelevator.TakeOff.models.responses.hotels;
 
 public class Hotel {
     private String iataCode;

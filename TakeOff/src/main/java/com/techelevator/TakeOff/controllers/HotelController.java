@@ -1,7 +1,7 @@
-package com.techelevator.takeoff.controllers;
+package com.techelevator.TakeOff.controllers;
 
-import com.techelevator.takeoff.models.responses.Hotel;
-import com.techelevator.takeoff.services.HotelApiService;
+import com.techelevator.TakeOff.models.responses.hotels.Hotel;
+import com.techelevator.TakeOff.services.HotelApiService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,9 +39,7 @@ public class HotelController {
 
     }
 
-    // http://localhost:8080/hotels/specialOffers/{hotelId}/{adults}
-    // http://localhost:8080/hotels/specialOffers?hotelId=xxx&adults=xxx
-    // http://localhost:8080/hotels/{id}/specialOffers?adults=xxx
+
     @RequestMapping(path = "/specialOffers", method = RequestMethod.GET)
     public List<Hotel> getHotelsWithSpecialOffers
     (@RequestParam int hotelID, @RequestParam int adults) {

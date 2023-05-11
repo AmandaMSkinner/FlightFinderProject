@@ -1,9 +1,10 @@
 /*
 Added to App 4/21/23 by AS
 */
-package com.techelevator.takeoff.models.responses;
+package com.techelevator.TakeOff.models.responses.hotels;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.techelevator.TakeOff.models.responses.hotels.Hotel;
 
 import java.util.List;
 

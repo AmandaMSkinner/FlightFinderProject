@@ -1,4 +1,4 @@
-package com.techelevator.takeoff;
+package com.techelevator.TakeOff;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
