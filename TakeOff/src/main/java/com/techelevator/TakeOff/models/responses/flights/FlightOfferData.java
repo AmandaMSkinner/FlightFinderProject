@@ -1,20 +1,47 @@
-package com.techelevator.TakeOff.models.responses.flights;
+package com.techelevator.Takeoff.models.responses.flights;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.techelevator.TakeOff.models.responses.flights.FlightOffer;
+import com.techelevator.Takeoff.models.responses.flightinfo.FlightOffer;
+import com.techelevator.Takeoff.models.responses.flightinfo.Dictionaries;
+import com.techelevator.Takeoff.models.responses.flightinfo.Meta;
 
 import java.util.List;
 
-public class FlightOfferData {
-    public List<FlightOffer> getFlightOffers() {
-        return flightOffers;
-    }
+public class FlightOfferData{
+	private List<FlightOffer> data;
+	private Meta meta;
+	private Dictionaries dictionaries;
 
-    public void setFlightOffers(List<FlightOffer> newFlightOffers) {
-        flightOffers = newFlightOffers;
-    }
+	public void setData(List<FlightOffer> data){
+		this.data = data;
+	}
 
-    @JsonProperty("data")
-    public List<FlightOffer> flightOffers;
+	public List<FlightOffer> getData(){
+		return data;
+	}
+
+	public void setMeta(Meta meta){
+		this.meta = meta;
+	}
+
+	public Meta getMeta(){
+		return meta;
+	}
+
+	public void setDictionaries(Dictionaries dictionaries){
+		this.dictionaries = dictionaries;
+	}
+
+	public Dictionaries getDictionaries(){
+		return dictionaries;
+	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"FlightOfferData{" + 
+			"data = '" + data + '\'' + 
+			",meta = '" + meta + '\'' + 
+			",dictionaries = '" + dictionaries + '\'' + 
+			"}";
+		}
 }
-

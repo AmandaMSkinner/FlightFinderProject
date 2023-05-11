@@ -1,10 +1,10 @@
 /*Created by AS on 5/2/23
  */
 
-package com.techelevator.TakeOff.services;
+package com.techelevator.Takeoff.services;
 
-import com.techelevator.TakeOff.models.responses.flights.FlightOffer;
-import com.techelevator.TakeOff.models.responses.flights.FlightOfferData;
+import com.techelevator.Takeoff.models.responses.flightinfo.FlightOffer;
+import com.techelevator.Takeoff.models.responses.flights.FlightOfferData;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class FlightApiService extends ApiBaseService{
+public class FlightApiService extends com.techelevator.TakeOff.services.ApiBaseService {
 
     public List<FlightOffer> flightOffersSearch(String originLocationCode, String destinationLocationCode, String departureDate, String returnDate, int adults, int max){
         HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
@@ -24,6 +24,6 @@ public class FlightApiService extends ApiBaseService{
                 "&adults="+adults +
                 "&max="+max;
         ResponseEntity<FlightOfferData> response = restTemplate.exchange(url, HttpMethod.GET, entity, FlightOfferData.class);
-        return response.getBody().getFlightOffers();
+        return response.getBody().getData();
     }
 }

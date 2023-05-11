@@ -1,10 +1,11 @@
 /*
 Created 5/2/23 by AS*/
 
-package com.techelevator.takeoff.controllers;
+package com.techelevator.Takeoff.controllers;
 
-import com.techelevator.TakeOff.models.responses.flights.FlightOffer;
-import com.techelevator.TakeOff.services.FlightApiService;
+import com.techelevator.Takeoff.models.responses.flightinfo.FlightOffer;
+import com.techelevator.Takeoff.models.responses.flights.FlightOfferData;
+import com.techelevator.Takeoff.services.FlightApiService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
