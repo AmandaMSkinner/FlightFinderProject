@@ -25,7 +25,13 @@ public class HotelController {
     public ResponseEntity<List<Hotel>> getHotelsByCity(
             @RequestParam(defaultValue = "") String city,
             @RequestParam(defaultValue = "") String keyword,
-            @RequestParam(defaultValue = "") String subType) {
+            @RequestParam(defaultValue = "") String subType,
+            @RequestParam(defaultValue = "") String stars) {
+
+        if (!city.isEmpty() && !stars.isEmpty()){
+           return new ResponseEntity<>(hotelApiService.getHotelsByCityAndStars(city,stars), HttpStatus.OK);
+        }
+
         if (!city.isEmpty()) {
             return new ResponseEntity<>(hotelApiService.getHotelsByCity(city), HttpStatus.OK);
         }

@@ -25,8 +25,8 @@ public ResponseEntity<List<FlightOffer>> getFlightOffersBySearch(
         @RequestParam(defaultValue = "") String originLocationCode,
         @RequestParam(defaultValue = "") String destinationLocationCode,
         @RequestParam(defaultValue = "") String departureDate,
-        @RequestParam(defaultValue = "") String returnDate, //If not entered will be a one way trip
-        @RequestParam(defaultValue = "") int adults, //Assume 1 person
+        @RequestParam(defaultValue = "") String returnDate,
+        @RequestParam(defaultValue = "") int adults,
         @RequestParam(defaultValue = "") int max
 
 ){
