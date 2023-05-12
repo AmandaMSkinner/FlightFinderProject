@@ -22,7 +22,6 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getHotels();
     }
 
-
     public List<Hotel> getHotelsAutoComplete(String keyword, String subType) {
         HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
         String url = "https://test.api.amadeus.com/v1/reference-data/locations/hotel?keyword={keyword}&subType={subType}";
@@ -31,10 +30,8 @@ public class HotelApiService extends ApiBaseService {
     }
 
     public List<Hotel> getHotelsByCityAndStars(String city, String stars) {
-        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
-
+        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
         String part1 = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?ratings=" + stars;
-
         String part2 = "&cityCode=" + city;
 
         ResponseEntity<HotelData> response =
@@ -42,10 +39,32 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getHotels();
     }
 
-    public List<HotelOffer> getHotelOffers(String hotelIds, String adults, String checkIn, String checkOut) {
-        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
+    public List<Hotel> getHotelsByCityAndAmenities(String city, String amenities) {
+        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
 
-        String url = "https://test.api.amadeus.com/v3/shopping/hotel-offers?hotelIds={hotelIds}&adults={adults}&checkInDate={checkInDate}&checkOutDate={checkOutDate}";
+        String part1 = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?amenities=" + amenities;
+        String part2 = "&cityCode=" + city;
+
+        ResponseEntity<HotelData> response =
+                restTemplate.exchange(part1 + part2, HttpMethod.GET, entity, HotelData.class);
+        return response.getBody().getHotels();
+    }
+
+    public List<Hotel> getHotelsByCityStarsAndAmenities(String city, String amenities, String stars) {
+        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
+        String part1 = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?amenities=" + amenities;
+        String part2 = "&ratings=" + stars;
+        String part3 = "&cityCode=" + city;
+        ResponseEntity<HotelData> response =
+                restTemplate.exchange(part1 + part2, HttpMethod.GET, entity, HotelData.class);
+        return response.getBody().getHotels();
+    }
+
+    public List<HotelOffer> getHotelOffers(String hotelIds, String adults, String checkIn, String checkOut) {
+        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
+
+        String url = "https://test.api.amadeus.com/v3/shopping/hotel-offers?hotelIds=" +
+                "{hotelIds}&adults={adults}&checkInDate={checkInDate}&checkOutDate={checkOutDate}";
 
         ResponseEntity<HotelOffers> response =
                 restTemplate.exchange(url,
@@ -55,7 +74,7 @@ public class HotelApiService extends ApiBaseService {
 
     public OfferData getOfferData(String offerId) {
 
-        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
+        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
 
         String url = "https://test.api.amadeus.com/v3/shopping/hotel-offers/{offerId}";
 
@@ -64,14 +83,16 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getOfferData();
     }
 
-//    public void bookHotel () {
-//        // a person object / something may need to get passed to this
-//        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
-//        String url = "https://test.api.amadeus.com/v1/booking/hotel-bookings";
-//        ResponseEntity<HotelData> response =
-//                restTemplate.exchange(url,HttpMethod.POST,entity,);
-//
-//    }
+    public List<BookingData> bookHotel(CustomerData customerData) {
+
+        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
+
+        String url = "https://test.api.amadeus.com/v1/booking/hotel-bookings";
+
+        ResponseEntity<BookingConfirmation> response =
+                restTemplate.exchange(url, HttpMethod.POST, entity, BookingConfirmation.class, customerData);
+        return response.getBody().getBookingData();
+    }
 
 
 }

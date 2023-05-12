@@ -1,22 +1,27 @@
-/*
-Added to App 4/21/23 by AS
-*/
 package com.techelevator.TakeOff.models.responses.hotels;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.techelevator.TakeOff.models.responses.hotels.Hotel;
 
 import java.util.List;
 
 public class HotelData {
-    public List<Hotel> getHotels() {
-        return Hotels;
-    }
+    @JsonProperty("data")
+    private List<Hotel> hotels;
+    private Meta meta;
 
     public void setHotels(List<Hotel> hotels) {
-        Hotels = hotels;
+        this.hotels = hotels;
     }
 
-    @JsonProperty("data")
-    public List<Hotel> Hotels;
+    public List<Hotel> getHotels() {
+        return hotels;
+    }
+
+    public void setMeta(Meta meta) {
+        this.meta = meta;
+    }
+
+    public Meta getMeta() {
+        return meta;
+    }
 }

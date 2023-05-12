@@ -1,13 +1,22 @@
 package com.techelevator.TakeOff.models.responses.hotels;
 
 public class Meta{
-	private String lang;
+	private int count;
+	private Links links;
 
-	public void setLang(String lang){
-		this.lang = lang;
+	public void setCount(int count){
+		this.count = count;
 	}
 
-	public String getLang(){
-		return lang;
+	public int getCount(){
+		return count;
+	}
+
+	public void setLinks(Links links){
+		this.links = links;
+	}
+
+	public Links getLinks(){
+		return links;
 	}
 }
