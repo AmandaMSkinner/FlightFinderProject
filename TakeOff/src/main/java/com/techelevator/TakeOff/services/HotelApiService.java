@@ -4,7 +4,6 @@ Added to App 4/21/23 by AS
 
 package com.techelevator.TakeOff.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.techelevator.TakeOff.models.responses.hotels.*;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -41,15 +40,6 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getHotels();
     }
 
-    public List<Hotel> getHotelsByCityStarsAndAmenities(String city, String amenities, String stars) {
-        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
-        String part1 = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?amenities=" + amenities;
-        String part2 = "&ratings=" + stars;
-        String part3 = "&cityCode=" + city;
-        ResponseEntity<HotelData> response =
-                restTemplate.exchange(part1 + part2, HttpMethod.GET, entity, HotelData.class);
-        return response.getBody().getHotels();
-    }
 
     public List<HotelOffer> getHotelOffers(String hotelIds, String adults, String checkIn, String checkOut) {
         HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
@@ -76,7 +66,6 @@ public class HotelApiService extends ApiBaseService {
 
 
     public List<BookingData> bookHotel(CustomerDataParent customerData) {
-
 
 
         HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
