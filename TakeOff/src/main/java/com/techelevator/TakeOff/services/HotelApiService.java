@@ -20,6 +20,7 @@ public class HotelApiService extends ApiBaseService {
 
     public List<Hotel> getHotelsByCity(String city, String stars, String amenities) {
         HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
+
         String url = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode={cityCode}";
 
         Map<String, String> queryParams = new HashMap<>();
@@ -36,6 +37,17 @@ public class HotelApiService extends ApiBaseService {
 
         ResponseEntity<HotelData> response = restTemplate.exchange(url, HttpMethod.GET, entity, HotelData.class, queryParams);
 
+
+        return response.getBody().getHotels();
+    }
+
+    public List<Hotel> getHotelsByCityStarsAndAmenities(String city, String amenities, String stars) {
+        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
+        String part1 = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?amenities=" + amenities;
+        String part2 = "&ratings=" + stars;
+        String part3 = "&cityCode=" + city;
+        ResponseEntity<HotelData> response =
+                restTemplate.exchange(part1 + part2, HttpMethod.GET, entity, HotelData.class);
         return response.getBody().getHotels();
     }
 
@@ -62,18 +74,23 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getOfferData();
     }
 
+
     public List<BookingData> bookHotel(CustomerDataParent customerData) {
+
+
 
         HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
 
         String url = "https://test.api.amadeus.com/v1/booking/hotel-bookings";
 
-        ObjectMapper om = new ObjectMapper();
-        try {
-            om.writeValue(System.out, customerData);
-        } catch (Throwable e) {
-            System.out.println("uh oh");
-        }
+// <<<<<<< priceybranch
+//         ObjectMapper om = new ObjectMapper();
+//         try {
+//             om.writeValue(System.out, customerData);
+//         } catch (Throwable e) {
+//             System.out.println("uh oh");
+//         }
+
 
         ResponseEntity<BookingConfirmation> response =
                 restTemplate.exchange(url, HttpMethod.POST, entity, BookingConfirmation.class, customerData);

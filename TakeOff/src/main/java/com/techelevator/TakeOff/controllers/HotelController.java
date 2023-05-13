@@ -22,6 +22,7 @@ public class HotelController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Hotel>> getHotelsByCity(
             @RequestParam(defaultValue = "") String city,
+
             @RequestParam(defaultValue = "") String stars,
             @RequestParam(defaultValue = "") String amenities) {
 
@@ -62,10 +63,11 @@ public class HotelController {
 
     }
 
+
     @PostMapping(path = "/bookRooms")
     public ResponseEntity<List<BookingData>> bookRoom(
             @RequestBody @Valid CustomerDataParent customerData) {
-        return new ResponseEntity(hotelApiService.bookHotel(customerData), HttpStatus.OK);
+
     }
 
 }
