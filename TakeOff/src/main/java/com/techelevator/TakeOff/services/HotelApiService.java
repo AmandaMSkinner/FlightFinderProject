@@ -40,7 +40,6 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getHotels();
     }
 
-
     public List<HotelOffer> getHotelOffers(String hotelIds, String adults, String checkIn, String checkOut) {
         HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
 
@@ -64,7 +63,6 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getOfferData();
     }
 
-
     public List<BookingData> bookHotel(CustomerDataParent customerData) {
 
 
@@ -85,6 +83,5 @@ public class HotelApiService extends ApiBaseService {
                 restTemplate.exchange(url, HttpMethod.POST, entity, BookingConfirmation.class, customerData);
         return response.getBody().getBookingData();
     }
-
 
 }

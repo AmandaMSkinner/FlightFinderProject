@@ -22,17 +22,14 @@ public class HotelController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Hotel>> getHotelsByCity(
             @RequestParam(defaultValue = "") String city,
-
             @RequestParam(defaultValue = "") String stars,
             @RequestParam(defaultValue = "") String amenities) {
 
         if (city.isEmpty()) {
             return new ResponseEntity("Request parameter city is missing.", HttpStatus.BAD_REQUEST);
         }
-
         return new ResponseEntity(hotelApiService.getHotelsByCity(city, stars, amenities), HttpStatus.OK);
     }
-
 
     @GetMapping(path = "/offers")
     public ResponseEntity<List<HotelOffer>> getHotelOffers
