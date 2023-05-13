@@ -4,49 +4,40 @@ Added to App 4/21/23 by AS
 
 package com.techelevator.TakeOff.services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.techelevator.TakeOff.models.responses.hotels.*;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class HotelApiService extends ApiBaseService {
 
-    public List<Hotel> getHotelsByCity(String city) {
+    public List<Hotel> getHotelsByCity(String city, String stars, String amenities) {
         HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
-        String url = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=" + city;
-        ResponseEntity<HotelData> response = restTemplate.exchange(url, HttpMethod.GET, entity, HotelData.class);
-        return response.getBody().getHotels();
-    }
 
-    public List<Hotel> getHotelsAutoComplete(String keyword, String subType) {
-        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
-        String url = "https://test.api.amadeus.com/v1/reference-data/locations/hotel?keyword={keyword}&subType={subType}";
-        ResponseEntity<HotelData> response = restTemplate.exchange(url, HttpMethod.GET, entity, HotelData.class, keyword, subType);
-        return response.getBody().getHotels();
-    }
+        String url = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode={cityCode}";
 
-    public List<Hotel> getHotelsByCityAndStars(String city, String stars) {
-        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
-        String part1 = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?ratings=" + stars;
-        String part2 = "&cityCode=" + city;
+        Map<String, String> queryParams = new HashMap<>();
+        queryParams.put("cityCode", city);
+        queryParams.put("ratings", stars);
+        queryParams.put("amenities", amenities);
 
-        ResponseEntity<HotelData> response =
-                restTemplate.exchange(part1 + part2, HttpMethod.GET, entity, HotelData.class);
-        return response.getBody().getHotels();
-    }
+        if (!stars.isEmpty()) {
+            url += "&ratings={ratings}";
+        }
+        if (!amenities.isEmpty()) {
+            url += "&amenities={amenities}";
+        }
 
-    public List<Hotel> getHotelsByCityAndAmenities(String city, String amenities) {
-        HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
+        ResponseEntity<HotelData> response = restTemplate.exchange(url, HttpMethod.GET, entity, HotelData.class, queryParams);
 
-        String part1 = "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?amenities=" + amenities;
-        String part2 = "&cityCode=" + city;
 
-        ResponseEntity<HotelData> response =
-                restTemplate.exchange(part1 + part2, HttpMethod.GET, entity, HotelData.class);
         return response.getBody().getHotels();
     }
 
@@ -83,11 +74,23 @@ public class HotelApiService extends ApiBaseService {
         return response.getBody().getOfferData();
     }
 
-    public List<BookingData> bookHotel(CustomerData customerData) {
+
+    public List<BookingData> bookHotel(CustomerDataParent customerData) {
+
+
 
         HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
 
         String url = "https://test.api.amadeus.com/v1/booking/hotel-bookings";
+
+// <<<<<<< priceybranch
+//         ObjectMapper om = new ObjectMapper();
+//         try {
+//             om.writeValue(System.out, customerData);
+//         } catch (Throwable e) {
+//             System.out.println("uh oh");
+//         }
+
 
         ResponseEntity<BookingConfirmation> response =
                 restTemplate.exchange(url, HttpMethod.POST, entity, BookingConfirmation.class, customerData);
