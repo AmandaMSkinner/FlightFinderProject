@@ -67,7 +67,7 @@ public class HotelController {
     @PostMapping(path = "/bookRooms")
     public ResponseEntity<List<BookingData>> bookRoom(
             @RequestBody @Valid CustomerDataParent customerData) {
-
+        return new ResponseEntity(hotelApiService.bookHotel(customerData), HttpStatus.OK);
     }
 
 }
