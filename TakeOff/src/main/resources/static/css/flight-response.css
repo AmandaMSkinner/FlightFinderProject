@@ -84,107 +84,6 @@ a {
 a:hover {
     color: var(--secondary-color);
 }
-/* 
-.destination-container {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-}
-
-.background-image-container {
-    background: linear-gradient(
-        rgba(0,0,0,0.5), 
-        rgba(0,0,0,0.5)),
-        url(/Images/luggage1_caroline-selfors-r2jpr8MDw0I-unsplash.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-}
-
-.destination-search-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    justify-items: center;
-    width: 100%;
-    gap: 20px;
-    flex-wrap: wrap;
-    text-align: center;
-    flex-direction: row;
-    padding: 9em;
-
-}
-
-.search-box {
-    background-color: white;
-    border-radius: 12px;
-    border-color: var(--fourth-color);
-    display: flex;
-    flex-wrap: nowrap;
-    padding-left: 10px;
-    align-items: center;
-    
-}
-
-
-.search-box input {
-    outline: none;
-    width: auto;
-    margin-right: 12px;
-    border: 0;
-    margin-left: 10px;
-    width: 170px;
-    align-self: center;
-}
-
-.uil-plane-departure {
-    font-size: 2rem;
-    align-self: center;
-}
-
-.uil-calendar-alt {
-    font-size: 2rem;
-    align-self: center;
-}
-
-.uil-calender {
-    font-size: 2rem;
-    align-self: center;
-} */
-/* 
-.search-flights {
-    background-color: white;
-    border-radius: 12px;
-    border-color: var(--primary-color);
-    display: flex;
-    padding-left: 10px;
-    height: 50px;
-    width: 230px;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    
-}
-
-.search-flights:hover {
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
-    cursor: pointer;
-}
-
-.offwego {
-    color: var(--eighth-color);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    display: flex;
-    padding-top: -2em;
-
-
-} */
-
 
 .main-container {
     background-color: var(--eighth-color);
@@ -199,6 +98,24 @@ a:hover {
     gap: 20px;
     margin: 1em;
     padding-top: 5em;
+}
+
+.form-container {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.form-container h4 {
+    padding-right: 15px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.form-container label {
+    padding-left: 20px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .response-box {
@@ -225,54 +142,45 @@ a:hover {
 
 }
 
-.price-row {
-    grid-area: price;
+
+.hotel-image-box {
+    width: 300px;
     display: flex;
-    justify-content: stretch;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .response-heading {
-    flex-grow: 1;
+    flex-grow: .45;
     margin: 0;
-    padding: 3px;
 
 }
 
 .response-sub-heading {
     margin: 0;
-    padding: 3px;
-    flex-grow: 1;
-
+    padding-left: 160px;
 }
 
 .response-time-sub-heading {
     margin: 0;
-    padding: 3px;
-
 }
 
 .price-box {
-    flex-grow: 1;
     margin: 0;
     padding: 3px;
-
-
-
 }
 
-.price-box-per-traveler {
-    flex-grow: 1;
-    margin: 0;
-    padding-top: 1em;
-    margin-left: 0em;
+h6 .price-box-per-traveler {
+    color: var(--fourth-color);
+    padding: 150px;
 }
 
 .response-form {
-    width: 350px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -50px;
 
 }
 
@@ -307,6 +215,21 @@ a:hover {
 
     .price-box-per-traveler {
         margin-left: 0em;
+        margin-top: 0em;
+    }
+
+    .response-sub-heading {
+        margin: 0;
+        padding-left: 0px;
+    }
+
+    .response-form {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -50px;
+    
     }
 }
 
@@ -315,11 +238,16 @@ a:hover {
         margin-left: 0px;
     }    
 
-    .response-sub-heading {
-        margin-left: 1em;
+    .response-form {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5px;
+    
     }
 
-    .price-box-per-traveler {
-        margin-left: -20em;
+    .response-time-sub-heading {
+        padding-left: 300px;
     }
 }
