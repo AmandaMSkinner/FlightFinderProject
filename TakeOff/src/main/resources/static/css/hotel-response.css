@@ -170,8 +170,9 @@ a:hover {
     padding: 3px;
 }
 
-.price-box-per-traveler {
-    margin: 0;
+h6 .price-box-per-traveler {
+    color: var(--fourth-color);
+    padding: 150px;
 }
 
 .response-form {
@@ -213,7 +214,8 @@ a:hover {
     }
 
     .price-box-per-traveler {
-        margin-left: -13em;
+        margin-left: 0em;
+        margin-top: 0em;
     }
 
     .response-sub-heading {
