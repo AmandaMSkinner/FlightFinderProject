@@ -100,6 +100,24 @@ a:hover {
     padding-top: 5em;
 }
 
+.form-container {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.form-container h4 {
+    padding-right: 15px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.form-container label {
+    padding-left: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
 .response-box {
     background-color: var(--third-color);
     border-radius: 50px;
@@ -124,12 +142,6 @@ a:hover {
 
 }
 
-.price-row {
-    grid-area: price;
-    display: flex;
-    justify-content: stretch;
-    flex-wrap: wrap;
-}
 
 .hotel-image-box {
     width: 300px;
@@ -139,46 +151,35 @@ a:hover {
 }
 
 .response-heading {
-    flex-grow: 1;
+    flex-grow: .45;
     margin: 0;
-    padding: 3px;
 
 }
 
 .response-sub-heading {
     margin: 0;
-    padding: 3px;
-    flex-grow: 1;
-
+    padding-left: 160px;
 }
 
 .response-time-sub-heading {
     margin: 0;
-    padding: 3px;
-
 }
 
 .price-box {
-    flex-grow: 1;
     margin: 0;
     padding: 3px;
-
-
-
 }
 
 .price-box-per-traveler {
-    flex-grow: 1;
     margin: 0;
-    padding-top: 1em;
-    margin-left: -13em;
 }
 
 .response-form {
-    width: 350px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -50px;
 
 }
 
@@ -214,6 +215,20 @@ a:hover {
     .price-box-per-traveler {
         margin-left: -13em;
     }
+
+    .response-sub-heading {
+        margin: 0;
+        padding-left: 0px;
+    }
+
+    .response-form {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -50px;
+    
+    }
 }
 
 @media (min-width: 1000px) {
@@ -221,11 +236,12 @@ a:hover {
         margin-left: 0px;
     }    
 
-    .response-sub-heading {
-        margin-left: -10em;
-    }
-
-    .price-box-per-traveler {
-        margin-left: -80em;
+    .response-form {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5px;
+    
     }
 }
