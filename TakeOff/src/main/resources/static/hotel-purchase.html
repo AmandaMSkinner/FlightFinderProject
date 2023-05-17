@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakeOFF Purchase Flight</title>
+
+    <link rel="stylesheet" href="css/hotel-purchase.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a class="logo" href="#">TAKE<span>OFF</span></a>
+            <nav>
+                <ul id="primary-navigation" class="primary-navigation">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="flight.html">Flights</a>
+                    </li>
+                    <li>
+                        <a href="hotel.html">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="main-section">
+            <div class="heading-text">
+                <h3 class="heading-text-h3">
+                    Finalize your details
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-75">
+                  <div class="container">
+                    <form action="#">
+                    
+                      <div class="row">
+                        <div class="col-50">
+                          <h3>Billing Address</h3>
+                          <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                          <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                          <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                          <input type="text" id="email" name="email" placeholder="john@example.com">
+                          <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                          <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                          <label for="city"><i class="fa fa-institution"></i> City</label>
+                          <input type="text" id="city" name="city" placeholder="New York">
+              
+                          <div class="row">
+                            <div class="col-50">
+                              <label for="state">State</label>
+                              <input type="text" id="state" name="state" placeholder="NY">
+                            </div>
+                            <div class="col-50">
+                              <label for="zip">Zip</label>
+                              <input type="text" id="zip" name="zip" placeholder="10001">
+                            </div>
+                          </div>
+                        </div>
+              
+                        <div class="col-50">
+                          <h3>Payment</h3>
+                          <label for="fname">Accepted Cards</label>
+                          <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                          </div>
+                          <label for="cname">Name on Card</label>
+                          <input type="text" id="cname" name="cardname" placeholder="John Smith">
+                          <label for="ccnum">Credit card number</label>
+                          <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                          <label for="expmonth">Exp Month</label>
+                          <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                          <div class="row">
+                            <div class="col-50">
+                              <label for="expyear">Exp Year</label>
+                              <input type="text" id="expyear" name="expyear" placeholder="2018">
+                            </div>
+                            <div class="col-50">
+                              <label for="cvv">CVV</label>
+                              <input type="text" id="cvv" name="cvv" placeholder="352">
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <label>
+                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                      </label>
+                      <input type="submit" value="Continue to checkout" class="btn">
+                    </form>
+                  </div>
+                </div>
+                <div class="col-25">
+                  <div class="container">
+                    <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>2</b></span></h4>
+                    <p><a href="#">Flight 111</a> <span class="price">$375</span></p>
+                    <p><a href="#">Hotel 222</a> <span class="price">$155</span></p>
+                    <hr>
+                    <p>Total <span class="price" style="color:black"><b>$430</b></span></p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <p class="disclaimer-p">
+                    Thank you for choosing our booking website for your travel needs. 
+                    Before proceeding with your flight or hotel purchase, please take
+                    a moment to read and understand the following disclaimer:
+                    Accuracy of Information: We strive to provide accurate and up-to-date 
+                    information regarding flights and hotels. However, we cannot guarantee 
+                    the accuracy, completeness, or reliability of all the information presented 
+                    on our website. It is recommended that you independently verify any details, 
+                    such as flight schedules, hotel amenities, and availability, before making 
+                    your final booking.
+                    Pricing and Availability: The prices and availability of flights and hotels
+                    displayed on our website are subject to change without prior notice. While 
+                    we make every effort to ensure that the prices shown are accurate, there may 
+                    be instances where the actual prices differ due to various factors, including 
+                    but not limited to fluctuations in currency exchange rates, additional taxes, 
+                    fees, or charges imposed by airlines or hotels. The availability of specific 
+                    flights or hotel rooms is also subject to change and may vary at the time of 
+                    booking.
+                    Third-Party Suppliers: We act as an intermediary between you and third-party 
+                    suppliers, such as airlines and hotels. We are not responsible for the actions, 
+                    errors, omissions, warranties, or representations of these suppliers. Any issues, 
+                    disputes, or claims arising from your interaction with a third-party supplier 
+                    should be addressed directly with them. We encourage you to review the terms 
+                    and conditions, privacy policies, and cancellation policies of these suppliers 
+                    before making a booking.
+                    
+                    Travel Documents and Requirements: It is your responsibility to ensure that 
+                    you possess the necessary travel documents, such as valid passports, visas, 
+                    or any other identification required for your destination. We recommend checking 
+                    the entry requirements, travel advisories, and health regulations of your 
+                    destination before making any travel arrangements.
+                    Limitation of Liability: We strive to provide a seamless booking experience, 
+                    but we cannot be held responsible for any loss, damage, injury, delay, or 
+                    inconvenience caused by events beyond our control, including but not limited 
+                    to flight or hotel cancellations, overbookings, strikes, natural disasters, 
+                    or acts of terrorism. Our liability is limited to the amount you paid for 
+                    your booking.
+                    
+                    Personal Responsibility: By proceeding with your flight or hotel purchase, 
+                    you acknowledge and accept personal responsibility for your decisions and 
+                    actions. You agree to hold us harmless from any claims, demands, liabilities, 
+                    losses, damages, or expenses arising from your use of our website or the 
+                    services provided by third-party suppliers.
+                    Please ensure that you carefully read and understand this disclaimer before 
+                    proceeding with your booking. If you have any questions or concerns, feel 
+                    free to contact our customer support team for clarification. 
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+</body>
+</html>
