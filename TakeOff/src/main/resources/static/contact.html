@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,44 +11,58 @@
 
     <title>TakeOff Contact Page</title>
 </head>
+
 <body>
-<header>
-    <div class="header-container">
-        <a class="logo" href="#">TAKE<span>OFF</span></a>
-        <nav>
-            <ul id="primary-navigation" class="primary-navigation">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="flight.html">Flights</a>
-                </li>
-                <li>
-                    <a href="hotel.html">Hotels</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
+    <header>
+        <div class="header-container">
+            <a class="logo" href="#">TAKE<span>OFF</span></a>
+            <nav>
+                <ul id="primary-navigation" class="primary-navigation">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="flight.html">Flights</a>
+                    </li>
+                    <li>
+                        <a href="hotel.html">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h3 id="content">Contact Us</h3>
+        <div class="contact-body">
+            <h1>Registration Form</h1>
+            <form id="form">
+              <label for="firstName">First Name:</label>
+              <input id="firstName" name="firstName" type="text" />
+              <br />
             
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
+              <label for="lastName">Last Name:</label>
+              <input id="lastName" name="lastName" type="text" />
+              <br />
+            
+              <label for="email">Email Address:</label>
+              <input id="email" name="email" type="email" />
+              <br /><br />
+            
+              <label for="about">Tell us about yourself:</label><br />
+              <textarea id="about" name="about" rows="8" cols="60"></textarea>
+            </form>
 
-<h3>Contact Us</h3>
-<div class="contact-body">
-    <div id="form">
-        <form>
-
-            <div>
-                <label for="Name">Your name</label>
-                <div>
-                    <input type="text" id="Name" required>
-                </div> 
+                </form>
             </div>
-
-        </form>
-    </div>
-</div>
+        </div>
+    </main>
+    <footer>
+        <h1>Placeholder</h1>
+    </footer>
 </body>
+
 </html>
