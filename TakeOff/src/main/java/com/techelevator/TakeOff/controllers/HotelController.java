@@ -19,9 +19,17 @@ public class HotelController {
         this.hotelApiService = hotelApiService;
     }
 
+    /*
+    This is where our program can take information from the frontend and pass it through AMADEUS to get
+    hotel info.  For demo purposes, I have put in default parameters.  These will be replaced with "" for final project
+    -AS 6-20-23
+
+    To verify, GET http://localhost:8080/hotels in Postman
+    */
+
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Hotel>> getHotelsByCity(
-            @RequestParam(defaultValue = "") String city,
+            @RequestParam(defaultValue = "DEL") String city,
             @RequestParam(defaultValue = "") String stars,
             @RequestParam(defaultValue = "") String amenities) {
 
@@ -31,12 +39,23 @@ public class HotelController {
         return new ResponseEntity(hotelApiService.getHotelsByCity(city, stars, amenities), HttpStatus.OK);
     }
 
+    /*
+    This is where our program can take information from the results of the primary hotel search and pass it through AMADEUS to get
+    offer info.  For demo purposes, I have put in default parameters.  These will be replaced with "" for final project
+
+    NOTE:  Even the examples provided in the Amadeus for Postman workspace return an empty set for the offers search.
+    We should ask for help in determining whether we can get results to display without paying for full API access.
+    -AS 6-20-23
+
+    To verify, GET http://localhost:8080/offers in Postman
+    */
+
     @GetMapping(path = "/offers")
     public ResponseEntity<List<HotelOffer>> getHotelOffers
-            (@RequestParam(defaultValue = "") String hotelID,
+            (@RequestParam(defaultValue = "AASYD4EN,BGSYD002") String hotelID,
              @RequestParam(defaultValue = "1") String adults,
-             @RequestParam(defaultValue = "") String checkIn,
-             @RequestParam(defaultValue = "") String checkOut) {
+             @RequestParam(defaultValue = "2023-08-10") String checkIn,
+             @RequestParam(defaultValue = "2023-08-12") String checkOut) {
         String errorResponse = "";
         if (hotelID.isEmpty()) {
             errorResponse += "Hotel ID parameter is empty";

@@ -23,17 +23,29 @@ public class FlightController {
         this.flightApiService = flightApiService;
     }
 
+    /*
+      This is where our program can take information from the frontend and pass it through AMADEUS to get
+      flight info.  For demo purposes, I have put in default parameters.  These will be replaced with "" for final project
+      -AS 6-20-23
+
+      To Verify:  GET http://localhost:8080/flights in Postman.
+    */
+
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<FlightOffer>> getFlightOffersBySearch(
-            @RequestParam(defaultValue = "") String originLocationCode,
-            @RequestParam(defaultValue = "") String destinationLocationCode,
-            @RequestParam(defaultValue = "") String departureDate,
-            @RequestParam(defaultValue = "") String returnDate,
-            @RequestParam(defaultValue = "") int adults,
-            @RequestParam(defaultValue = "") int max
+            @RequestParam(defaultValue = "SYD") String originLocationCode,
+            @RequestParam(defaultValue = "LAX") String destinationLocationCode,
+            @RequestParam(defaultValue = "2023-12-24") String departureDate,
+            @RequestParam(defaultValue = "2023-12-31") String returnDate,
+            @RequestParam(defaultValue = "3") Integer adults,
+            @RequestParam(defaultValue = "5") Integer max
 
-    ) {
+    )
+    {
         return new ResponseEntity<>(flightApiService.flightOffersSearch(originLocationCode, destinationLocationCode,
                 departureDate, returnDate, adults, max), HttpStatus.OK);
     }
+
+
+
 }
