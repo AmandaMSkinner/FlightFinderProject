@@ -47,15 +47,15 @@ public class HotelController {
     We should ask for help in determining whether we can get results to display without paying for full API access.
     -AS 6-20-23
 
-    To verify, GET http://localhost:8080/offers in Postman
+    To verify, GET http://localhost:8080/hotels/offers in Postman
     */
 
     @GetMapping(path = "/offers")
     public ResponseEntity<List<HotelOffer>> getHotelOffers
-            (@RequestParam(defaultValue = "AASYD4EN,BGSYD002") String hotelID,
+            (@RequestParam(defaultValue = "BWDEL538") String hotelID,
              @RequestParam(defaultValue = "1") String adults,
-             @RequestParam(defaultValue = "2023-08-10") String checkIn,
-             @RequestParam(defaultValue = "2023-08-12") String checkOut) {
+             @RequestParam(defaultValue = "2023-06-20") String checkIn,
+             @RequestParam(defaultValue = "2023-06-21") String checkOut) {
         String errorResponse = "";
         if (hotelID.isEmpty()) {
             errorResponse += "Hotel ID parameter is empty";
