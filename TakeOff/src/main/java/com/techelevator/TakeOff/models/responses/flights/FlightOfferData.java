@@ -1,8 +1,8 @@
-package com.techelevator.Takeoff.models.responses.flights;
+package com.techelevator.TakeOff.models.responses.flights;
 
-import com.techelevator.Takeoff.models.responses.flightinfo.FlightOffer;
-import com.techelevator.Takeoff.models.responses.flightinfo.Dictionaries;
-import com.techelevator.Takeoff.models.responses.flightinfo.Meta;
+import com.techelevator.TakeOff.models.responses.flightinfo.FlightOffer;
+import com.techelevator.TakeOff.models.responses.flightinfo.Dictionaries;
+import com.techelevator.TakeOff.models.responses.flightinfo.Meta;
 
 import java.util.List;
 

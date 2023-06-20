@@ -1,7 +1,7 @@
-package com.techelevator.Takeoff.models.responses.flightinfo;
+package com.techelevator.TakeOff.models.responses.flightinfo;
 
-import com.techelevator.Takeoff.models.responses.flightinfo.AdditionalServicesItem;
-import com.techelevator.Takeoff.models.responses.flightinfo.FeesItem;
+import com.techelevator.TakeOff.models.responses.flightinfo.AdditionalServicesItem;
+import com.techelevator.TakeOff.models.responses.flightinfo.FeesItem;
 
 import java.util.List;
 

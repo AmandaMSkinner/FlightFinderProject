@@ -1,4 +1,4 @@
-package com.techelevator.Takeoff.models.responses.flightinfo;
+package com.techelevator.TakeOff.models.responses.flightinfo;
 
 public class Locations{
 	private ZRH zRH;
