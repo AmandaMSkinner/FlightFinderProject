@@ -4,7 +4,7 @@
 
 <template>
   <header>
-    <router-link class="logo" :to="('/')">TAKE<span>OFF</span></router-link>
+    <router-link class="logo" :to="{ path:'/' }">TAKE<span>OFF</span></router-link>
   
     <nav>
       <ul>

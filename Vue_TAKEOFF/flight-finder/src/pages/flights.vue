@@ -1,59 +1,61 @@
-<script setup>
+<script>
 // export default {
-    
+
 // }
 </script>
 
 <template>
-    
-    <div class="destination-container">
-        <div class="background-image-container">
-            <div class="destination-search-container">
-
-                <h1 class="flight-search-h1">Find Flights From Anywhere</h1>
-                <h3 class="flight-search-h3">Let's start your adventure</h3>
-                <div class="search-box-flights">
-                    <i class="uil uil-users-alt"></i>
-                    <input class="number-form-flights" type="number" min="1" placeholder="Select Number Of Passengers">
-                </div>
-                <div class="search-box-flights">
-                    <i class="uil uil-plane-departure"></i>
-                    <input type="text" placeholder="Going To...">
-                </div>
-                <div class="search-box-flights">
-                    <i class="uil uil-calendar-alt"></i>
-                    <input type="date" placeholder="Arrival...">
-                </div>
-                <div class="search-box-flights">
-                    <i class="uil uil-calender"></i>
-                    <input type="date" placeholder="Departure...">
-                </div>
-               <form id="search-flights-form" action="flight-response.html">
-                    <button
-                        onclick="window.location.href='flights-selected.vue'"
-                        class="search-flights">
-                        Search Flights
-                    </button>
-               </form>
-            </div>
+  <div class="destination-container">
+    <div class="background-image-container">
+      <div class="destination-search-container">
+        <h1 class="flight-search-h1">Find Flights From Anywhere</h1>
+        <h3 class="flight-search-h3">Let's start your adventure</h3>
+        <div class="search-box-flights">
+          <i class="uil uil-users-alt"></i>
+          <input
+            class="number-form-flights"
+            type="number"
+            min="1"
+            placeholder="Select Number Of Passengers"
+          />
         </div>
-    </div>    
+        <div class="search-box-flights">
+          <i class="uil uil-plane-departure"></i>
+          <input type="text" placeholder="Going To..." />
+        </div>
+        <div class="search-box-flights">
+          <i class="uil uil-calendar-alt"></i>
+          <input type="date" placeholder="Arrival..." />
+        </div>
+        <div class="search-box-flights">
+          <i class="uil uil-calender"></i>
+          <input type="date" placeholder="Departure..." />
+        </div>
+        <form id="search-flights-form">
+          <button class="search-flights">
+            <router-link :to="{ name: 'FlightView' }">
+              Search Flights
+            </router-link>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-  :root {
-    --primary-color: #0038FF;
-    --secondary-color: #85C4FF;
-    --third-color: #ffffff;
-    --fourth-color: #000000;
-    --fifth-color: #e0e0e0;
-    --sixth-color: #db0f0f;
-    --seventh-color: #8a2020;
-    --eighth-color: #ffc107;
-  }
+:root {
+  --primary-color: #0038ff;
+  --secondary-color: #85c4ff;
+  --third-color: #ffffff;
+  --fourth-color: #000000;
+  --fifth-color: #e0e0e0;
+  --sixth-color: #db0f0f;
+  --seventh-color: #8a2020;
+  --eighth-color: #ffc107;
+}
 
-
- .destination-container {
+.destination-container {
   height: 100vh;
   display: flex;
   text-align: center;
@@ -70,27 +72,24 @@
 }
 
 .destination-search-container {
-  padding-top: 6em;
+  padding-top: 9em;
   display: flex;
   align-items: center;
   gap: 20px;
   flex-direction: column;
-
 }
 
 .flight-search-h1 {
   color: var(--third-color);
   text-align: center;
   font-size: 3rem;
-  padding-left: .75em;
+  /* margin-top: 1.5em; */
 }
 
 .flight-search-h3 {
   color: var(--eighth-color);
   text-align: center;
   font-size: 2rem;
-  text-align: center;
-  padding-left: 1.5em;
 }
 
 .search-box-flights {
@@ -104,7 +103,7 @@
 }
 
 .number-form-flights {
-    width: 100%;
+  width: 100%;
 }
 
 .uil-users-alt {

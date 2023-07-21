@@ -1,57 +1,83 @@
-<script setup>
+<script>
+import UtilitiesService from '../services/UtilitiesService';
 
+export default {
+  name: "Hotels",
+  component: {
+    UtilitiesService
+  },
+  data() {
+    return {
+      hotelPreferencesDto: {
+        iataCode: "",
+        city: "",
+        adults: 0,
+        checkIn: "",
+        checkOut: "",
+      }
+    };
+  },
+  methods: {
+    setHotelPreferences(hotelPreferencesDto) {
+      this.$store.commit("SET_HOTEL_PREFERENCES_DTO", hotelPreferencesDto);
+    },
+    getIataCode(city) {
+      UtilitiesService.getIataCode(city).then((response) => {
+        this.iataCode = response.data.iataCode;
+      })
+    }
+  }
+};
 </script>
 
 <template>
-    <div class="hotel-search-container">
-                <div class="background-image-container-hotel">
-                    <div class="hotel-search">
-                        <h1 class="hotel-search-h1">Find Hotels with your Flight</h1>
-                        <h3 class="hotel-search-h3">Create a Package and Save</h3>
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-users-alt"></i>
-                        <input
-                            id="number-guests-form-hotel"
-                            type="number"
-                            min="1"
-                            placeholder="Select Number Of Guests"
-                        />
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-compass"></i>
-                        <input 
-                            id="city-state-form-hotels"
-                            type="text" 
-                            placeholder="City/State" />
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-bed-double"></i>
-                        <input type="date" placeholder="Checking in.." />
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-luggage-cart"></i>
-                        <input type="date" placeholder="Checking out.." />
-                    </div>
+  <div class="hotel-search-container">
+    <div class="background-image-container-hotel">
+      <div class="hotel-search">
+        <h1 class="hotel-search-h1">Find Hotels with your Flight</h1>
+        <h3 class="hotel-search-h3">Create a Package and Save</h3>
+      </div>
+      <div class="search-box-hotel">
+        <i class="uil uil-users-alt"></i>
+        <input
+          id="number-guests-form-hotel"
+          type="number"
+          min="1"
+          placeholder="Select Number Of Guests"
+          v-model="adults"
+        />
+      </div>
+      <div class="search-box-hotel">
+        <i class="uil uil-compass"></i>
+        <input
+          id="city-state-form-hotels"
+          type="text"
+          placeholder="City/State"
+          v-model="city"
+        />
+      </div>
+      <div class="search-box-hotel">
+        <i class="uil uil-bed-double"></i>
+        <input type="date" placeholder="Checking in.." v-model="checkIn" />
+      </div>
+      <div class="search-box-hotel">
+        <i class="uil uil-luggage-cart"></i>
+        <input type="date" placeholder="Checking out.." v-model="checkOut" />
+      </div>
 
-                    <form id="search-hotels-form" action="hotel-response.html">
-                        <button
-                            onclick="window.location.href='hotel-response.html'"
-                            class="search-hotels"
-                            >
-                            Search Hotels
-                        </button>
-                    </form>
+      <form id="search-hotels-form">
+        <button class="search-hotels" @click="getIataCode(this.city)">
+          <router-link :to="{ name: 'HotelView', params: {iataCode: this.hotelPreferencesDto.iataCode}}"> Search Hotels </router-link>
+        </button>
+      </form>
 
-                    <router-link to="/">Home</router-link>&nbsp;
-                    <router-link to="/about">Go Back</router-link>
-                </div>
+      <router-link to="/">Home</router-link>&nbsp;
+      <router-link to="/about">Go Back</router-link>
     </div>
-
+  </div>
 </template>
 
 <style scoped>
-
 :root {
   --primary-color: #0038ff;
   --secondary-color: #85c4ff;
@@ -74,7 +100,6 @@
   text-align: center;
   justify-content: space-around;
   align-items: stretch;
-  
 }
 
 .background-image-container-hotel {
@@ -97,17 +122,16 @@
 }
 
 .search-box-hotel {
-    background-color: white;
-    border-radius: 12px;
-    border-color: var(--fourth-color);
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    height: 50px;
-    width: 400px;
-    margin: 1em auto;
+  background-color: white;
+  border-radius: 12px;
+  border-color: var(--fourth-color);
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: 50px;
+  width: 400px;
+  margin: 1em auto;
 }
-
 
 .hotel-search-h1 {
   color: var(--third-color);
@@ -122,12 +146,12 @@
 }
 
 #number-guests-form-hotel {
-    width: 100%;
+  width: 100%;
 }
 
 .uil-users-alt {
-    font-size: 2rem;
-    color: black;
+  font-size: 2rem;
+  color: black;
 }
 
 .uil-compass {
@@ -157,7 +181,6 @@
   align-items: center;
   font-size: 1rem;
   margin: 1em auto;
-
 }
 
 .search-hotels:hover {
@@ -165,5 +188,4 @@
   background-color: var(--primary-color);
   border: 2px solid var(--secondary-color);
 }
-
 </style>

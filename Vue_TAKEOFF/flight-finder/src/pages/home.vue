@@ -1,12 +1,4 @@
-<script setup>
-// import { ref } from 'vue'
-// const flights = ref([
-//     { id: 1, name: 'Flight to CLE' },
-//     { id: 2, name: 'Flight to JFK' },
-//     { id: 3, name: 'Flight to EVN' },
-//     { id: 4, name: 'Flight to CDG' },
-//     { id: 5, name: 'Flight to ATL' },
-// ]);
+<script>
 </script>
 
 <template>
@@ -66,11 +58,11 @@
             </div>
 
             <form id="search-flights-form">
-              <button
-                onclick="window.location.href='flights-details.vue'"
-                class="search-flights"
-              >
+              <button class="search-flights">
+                <router-link :to=" {name: 'FlightView'}">
                 Search Flights
+                </router-link>
+
               </button>
             </form>
           </div>
@@ -173,6 +165,7 @@
         </div>
       </section>
 
+    <!-- ::::CODE FOR IMAGE CAROUSEL:::: -->
       <!-- 
             <v-carousel
             cycle
@@ -190,8 +183,8 @@
   </div>
 </template>
 
-    // // ::::CODE FOR FLIGHT-DETAILS PAGE::::
-    // <!-- <li v-for="flight in flights">
+    // ::::CODE FOR FLIGHT-DETAILS PAGE::::
+     <!-- <li v-for="flight in flights">
     //             <router-link :to="`/flight-details/${flight.id}`">{{flight.name}}</router-link>
     //         </li> -->
 
@@ -286,7 +279,7 @@ span {
 }
 
 .destination-search-container {
-  padding-top: 6em;
+  padding-top: 2em;
   display: flex;
   align-items: center;
   gap: 20px;
