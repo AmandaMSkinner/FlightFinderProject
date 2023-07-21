@@ -11,6 +11,9 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import HotelOffers from './components/HotelOffers.vue'
+import HotelOfferz from './components/HotelOfferz.vue'
+
 
 const vuetify = createVuetify({
   components,
@@ -24,7 +27,9 @@ const router = createRouter({
         { path: '/hotels', component: Hotels },
         { path: '/flights', component: Flights },
         { path: '/contact', component: Contact },
-        { path: '/flight-details/:id', component: FlightDetails }
+        { path: '/flight-details/:id', component: FlightDetails },
+        {path: '/jaxandswim', component: HotelOffers, name: 'jaxAndSwim'},
+        {path: '/hotelofferz/:hotelId', component: HotelOfferz, name: 'hotelOfferz'}
     ]
 })
 
