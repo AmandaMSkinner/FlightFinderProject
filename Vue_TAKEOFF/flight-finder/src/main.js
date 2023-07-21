@@ -7,6 +7,7 @@ import Flights from './pages/flights.vue'
 import Hotels from './pages/hotels.vue'
 import Contact from './pages/contact.vue'
 import FlightDetails from './pages/flight-details.vue'
+import HotelDetails from './pages/hotel-details.vue'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
@@ -20,11 +21,12 @@ const vuetify = createVuetify({
 const router = createRouter({
     history: createWebHashHistory(),
     routes:   [
-        { path: '/', component: Home },
-        { path: '/hotels', component: Hotels },
-        { path: '/flights', component: Flights },
-        { path: '/contact', component: Contact },
-        { path: '/flight-details/:id', component: FlightDetails }
+        { path: '/', component: Home, name: 'Home'},
+        { path: '/hotels', component: Hotels, name: 'Hotels'},
+        { path: '/flights', component: Flights, name: 'Flights'},
+        { path: '/contact', component: Contact, name: 'Contact'},
+        { path: '/flight-details/:id', component: FlightDetails, name: 'FlightDetails'},
+        { path: '/hotel-details/:id', component: HotelDetails, name: 'HotelDetails'}
     ]
 })
 
