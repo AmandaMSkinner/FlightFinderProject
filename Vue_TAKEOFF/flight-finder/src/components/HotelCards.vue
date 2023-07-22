@@ -1,8 +1,12 @@
 <template>
     <main>
         <section id="hotel-cards">
+            
             <article class="hotel-card" v-for="hotel in hotels" :key="hotel.hotelId">
-                <div>{{hotel.hotelId}}</div>
+
+                <router-link :to="{name: 'HotelOffers', params: {hotelId:hotel.hotelId}}">
+                    <div>{{hotel.hotelId}}</div>
+                </router-link>
 
             </article>
 

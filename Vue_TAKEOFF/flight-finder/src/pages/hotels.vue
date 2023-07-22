@@ -18,13 +18,9 @@ export default {
     };
   },
   methods: {
-    setHotelPreferences(hotelPreferencesDto) {
-      this.$store.commit("SET_HOTEL_PREFERENCES_DTO", hotelPreferencesDto);
-    },
-    getIataCode(city) {
-      UtilitiesService.getIataCode(city).then((response) => {
-        this.iataCode = response.data.iataCode;
-      })
+    searchHotels() {
+      this.$store.commit("SET_HOTEL_PREFERENCES_DTO", this.hotelPreferencesDto);
+      this.$router.push({ name: 'HotelView', params: {city: this.hotelPreferencesDto.city}});
     }
   }
 };
@@ -44,7 +40,7 @@ export default {
           type="number"
           min="1"
           placeholder="Select Number Of Guests"
-          v-model="adults"
+          v-model="hotelPreferencesDto.adults"
         />
       </div>
       <div class="search-box-hotel">
@@ -53,22 +49,22 @@ export default {
           id="city-state-form-hotels"
           type="text"
           placeholder="City/State"
-          v-model="city"
+          v-model="hotelPreferencesDto.city"
         />
       </div>
       <div class="search-box-hotel">
         <i class="uil uil-bed-double"></i>
-        <input type="date" placeholder="Checking in.." v-model="checkIn" />
+        <input type="date" placeholder="Checking in.." v-model="hotelPreferencesDto.checkIn" />
       </div>
       <div class="search-box-hotel">
         <i class="uil uil-luggage-cart"></i>
-        <input type="date" placeholder="Checking out.." v-model="checkOut" />
+        <input type="date" placeholder="Checking out.." v-model="hotelPreferencesDto.checkOut" />
       </div>
 
       <form id="search-hotels-form">
-        <button class="search-hotels" @click="getIataCode(this.city)">
-          <router-link :to="{ name: 'HotelView', params: {iataCode: this.hotelPreferencesDto.iataCode}}"> Search Hotels </router-link>
-        </button>
+          <button @click="searchHotels">
+            Search Hotels
+          </button>
       </form>
 
       <router-link to="/">Home</router-link>&nbsp;

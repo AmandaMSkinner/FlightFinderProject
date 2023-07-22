@@ -12,19 +12,29 @@ export default {
     HotelService,
     UtilitiesService
   },
-  props: ['hotel-cards'],
   data() {
     return {
       hotels: [],
     };
   },
   created() {
-    HotelService.getHotelsByCity(
-      this.$store.state.hotelPreferencesDto.iataCode
-    ).then((response) => {
-      this.hotels = response.data;
-    });
+    UtilitiesService.getIataCode(city).then((response) => {
+      const iataCode = response.data.iataCode;
+      HotelService.getHotelsByCity(
+        iataCode
+      ).then((response) => {
+        this.hotels = response.data;
+      });
+    })
   },
+  /*
+  async created2() {
+    const iataResponse = await UtilitiesService.getIataCode(city);
+    const iataCode = iataResponse.data.iataCode;
+    const hotelsResponse = await HotelService.getHotelsByCity(iataCode);
+    this.hotels = hotelsResponse.data;
+  },
+  */
   methods: {
     seeOffersAtHotel(hotel) {
       this.$router.push({
