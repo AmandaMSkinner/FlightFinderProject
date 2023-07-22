@@ -14,7 +14,8 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import HotelOffers from './components/HotelOffers'
+import HotelOffers from './components/HotelOffers.vue'
+import axios from 'axios'
 
 
 
@@ -26,12 +27,14 @@ const vuetify = createVuetify({
 const router = createRouter({
     history: createWebHashHistory(),
     routes:   [
-        { path: '/', component: Home },
-        { path: '/hotels', component: Hotels },
-        { path: '/flights', component: Flights },
-        { path: '/contact', component: Contact },
-        { path: '/flight-details/:id', component: FlightDetails },
-        { path: '/hotels/offers/:hotelId', name: 'hotelOffers', component: HotelOffers}
+      { path: '/', component: Home, name: 'Home'},
+      { path: '/hotels', component: Hotels, name: 'Hotels'},
+      { path: '/flights', component: Flights, name: 'Flights'},
+      { path: '/contact', component: Contact, name: 'Contact'},
+      { path: '/flight-details', component: FlightDetails, name: 'FlightDetails'},
+      { path: '/flight-view', component: FlightView, name: 'FlightView'},
+      { path: '/hotel-details', component: HotelDetails, name: 'HotelDetails'},
+      { path: '/hotel-view/:iataCode', component: HotelView, name: 'HotelView'}
 
     ]
 })

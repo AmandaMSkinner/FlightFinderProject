@@ -213,7 +213,7 @@
 
 .main-container {
   height: 100vh;
-  background-image: url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\airplane1_nikhil-mitra-gssCjrDR5Y4-unsplash.jpg);
+  background-image: url(airplane1_nikhil-mitra-gssCjrDR5Y4-unsplash.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -271,7 +271,7 @@ span {
 
 .background-image-container {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\flight1_suhyeon-choi-tTfDMaRq-FE-unsplash.jpg);
+    url(flight1_suhyeon-choi-tTfDMaRq-FE-unsplash.jpg);
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -369,7 +369,7 @@ span {
 
 .background-image-container-hotel {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
+    url('hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg');
   background-position: right center;
   background-repeat: repeat;
   background-size: cover;
