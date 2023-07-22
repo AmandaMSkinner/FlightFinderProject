@@ -31,6 +31,10 @@ template > h1 {
     color: var(--third-color);
 }
 
+header {
+    display: flex;
+    background-color: var(--primary-color);
+}
 
 header > a {
     text-decoration: none;
@@ -39,8 +43,7 @@ header > a {
     font-size: 2rem;
     padding-left: 10px;
     padding-top: 5px;
-    z-index: 1;
-    position: fixed;
+    z-index: 0;
 }
 
 nav {
@@ -52,7 +55,7 @@ nav {
     text-align: center;
     height: 5vh;
     z-index: 0;
-    position: fixed;
+    position: sticky;
 }
 
 span {
@@ -94,9 +97,9 @@ a:hover {
 }
 
 footer {
-    margin-top: 93vh;
     background-color: var(--primary-color);
     padding: 7px;
     display: flex;
     justify-content: center;
+    bottom: 0;
 }

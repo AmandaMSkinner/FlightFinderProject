@@ -13,6 +13,7 @@
     "vue": "^3.2.47",
     "vue-carousel": "^0.18.0",
     "vue-router": "^4.2.0",
+    "vue-star-rating": "^1.7.0",
     "vuetify": "^3.3.2"
   },
   "devDependencies": {

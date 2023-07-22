@@ -1,13 +1,13 @@
 <template>
-    <section>
 
-        <router-link v-bind:to="{name:HotelOfferz}">
-            <article v-for="(offer, index) in hotelOffers" v-bind:key="index">
-                <h1>{{ offer.name }}</h1>
-            </article>
-        </router-link>
-        
+    <section>
+        <article v-for="hotel in hotels" v-bind:key="hotel.hotelId">
+            <h1 @click="seeOffersAtHotel(hotel)">
+                {{ hotel.name }}
+            </h1>
+        </article>
     </section>
+
 </template>
 
 <!-- {
@@ -30,15 +30,20 @@ import hotelService from '../services/HotelService.js';
 export default {
     data(){
         return {
-            hotelOffers : []
+            hotels : []
         }
     },
-    name : 'hotelOffers',
+    name : 'hotels',
     created(){
-        hotelService.goToJaxAndSwim().then(response => {
-            console.log(response.data);
-           this.hotelOffers = response.data;
+        hotelService.getHotelsByCity(city,[stars],[amenities])
+        .then(response => {
+            hotels = response.data;
         })
+    },
+    methods: {
+        seeOffersAtHotel(hotel){
+            this.$router.push({name: 'hotelOffers', params: {hotelId:hotel.hotelId}})
+        }
     }
 }
 </script>

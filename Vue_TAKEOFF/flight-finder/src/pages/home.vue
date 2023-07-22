@@ -1,176 +1,172 @@
-<script setup>
-// import { ref } from 'vue'
-// const flights = ref([
-//     { id: 1, name: 'Flight to CLE' },
-//     { id: 2, name: 'Flight to JFK' },
-//     { id: 3, name: 'Flight to EVN' },
-//     { id: 4, name: 'Flight to CDG' },
-//     { id: 5, name: 'Flight to ATL' },
-// ]);
+<script>
 </script>
 
 <template>
-    <div>
-    
+  <div>
+    <main>
+      <div class="main-container">
+        <h1>TAKE<span>OFF</span></h1>
+        <h3>Find affordable flights from anywhere in the world</h3>
+      </div>
 
-        <main>
-            <div class="main-container">
-                <h1>TAKE<span>OFF</span></h1>
-                <h3>Find affordable flights from anywhere in the world</h3>
+      <div class="search-container">
+        <div class="links-search">
+          <router-link class="active" :to="'/flights'">Flights</router-link>
+          <router-link :to="'/hotels'">Hotels</router-link>
+          <input
+            name="search-form"
+            type="text"
+            placeholder="Search.."
+            class="search"
+          />
+        </div>
+      </div>
+
+      <div class="destination-container">
+        <div class="background-image-container">
+          <div class="destination-search-container">
+            <h1 class="flight-search-h1">Find Flights From Anywhere</h1>
+            <h3 class="flight-search-h3">Let's start your adventure</h3>
+
+            <div class="search-box-flights">
+              <i class="uil uil-users-alt"></i>
+              <input
+                id="number-form-flights"
+                type="number"
+                min="1"
+                placeholder="Select Number Of Passengers"
+              />
             </div>
 
-            <div class="search-container">
-                <div class="links-search">
-                    <router-link class="active" :to="'/flights'">Flights</router-link>
-                    <router-link :to="'/hotels'">Hotels</router-link>
-                    <input name="search-form" type="text" placeholder="Search.." class="search" />
-                </div>
+            <div class="search-box-flights">
+              <i class="uil uil-plane-departure"></i>
+              <input
+                id="destination-form-flights"
+                type="text"
+                placeholder="Going To..."
+              />
             </div>
 
-            <div class="destination-container">
-                <div class="background-image-container">
-                    <div class="destination-search-container">
-
-                        <h1 class="flight-search-h1">Find Flights From Anywhere</h1>
-                        <h3 class="flight-search-h3">Let's start your adventure</h3>
-
-                        <div class="search-box-flights">
-                            <i class="uil uil-users-alt"></i>
-                            <input
-                            id="number-form-flights"
-                            type="number"
-                            min="1"
-                            placeholder="Select Number Of Passengers"
-                            />
-                        </div>
-
-                        <div class="search-box-flights">
-                            <i class="uil uil-plane-departure"></i>
-                            <input 
-                            id="destination-form-flights"
-                            type="text" 
-                            placeholder="Going To..." />
-                        </div>
-
-                        <div class="search-box-flights">
-                            <i class="uil uil-calendar-alt"></i>
-                            <input type="date" placeholder="Arrival..." />
-                        </div>
-
-                        <div class="search-box-flights">
-                            <i class="uil uil-calender"></i>
-                            <input type="date" placeholder="Departure..." />
-                        </div>
-
-                        <form id="search-flights-form" action="flight-response.html">
-                            <button
-                                onclick="window.location.href='flights-selected.vue'"
-                                class="search-flights">
-                                Search Flights
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-    
-
-            <hr />
-
-            <div class="three-container">
-                <div class="one-of-three">
-
-                    <i class="uil uil-moneybag"></i>
-
-                    <p class="info-paragraph1">
-                        From flights to accommodations, we've got you covered. Discover the
-                        ultimate travel experience with our one-stop-shop. Start planning your
-                        next adventure today!
-                    </p>
-                </div>
-
-                <div class="two-of-three">
-                    <i class="uil uil-lightbulb-alt"></i>
-
-                    <p class="info-paragraph1">
-                        Get inspired for your next travel adventure! Our website is a treasure
-                        trove of exciting destinations and unique experiences. From stunning
-                        beaches to cultural landmarks, browse our site and let your
-                        imagination take flight!
-                    </p>
-                </div>
-
-                <div class="three-of-three">
-                    <i class="uil uil-fire"></i>
-
-                    <p class="info-paragraph1">
-                        Unlock unbeatable deals on flights from around the globe! Browse
-                        hundreds of discounted flights and jet off to your dream destination
-                        without breaking the bank. Hurry, these fiery deals won't last!
-                    </p>
-                </div>
+            <div class="search-box-flights">
+              <i class="uil uil-calendar-alt"></i>
+              <input type="date" placeholder="Arrival..." />
             </div>
 
-            <hr />
-
-            <div class="hotel-search-container">
-                <div class="background-image-container-hotel">
-                    <div class="hotel-search">
-                        <h1 class="hotel-search-h1">Find Hotels with your Flight</h1>
-                        <h3 class="hotel-search-h3">Create a Package and Save</h3>
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-users-alt"></i>
-                        <input
-                            id="number-guests-form-hotel"
-                            type="number"
-                            min="1"
-                            placeholder="Select Number Of Guests"
-                        />
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-compass"></i>
-                        <input 
-                            id="city-state-form-hotels"
-                            type="text" 
-                            placeholder="City/State" />
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-bed-double"></i>
-                        <input type="date" placeholder="Checking in.." />
-                    </div>
-                    <div class="search-box-hotel">
-                        <i class="uil uil-luggage-cart"></i>
-                        <input type="date" placeholder="Checking out.." />
-                    </div>
-
-                    <form id="search-hotels-form" action="hotel-response.html">
-                        <button
-                            onclick="window.location.href='hotel-response.html'"
-                            class="search-hotels"
-                            >
-                            Search Hotels
-                        </button>
-                    </form>
-
-                </div>
+            <div class="search-box-flights">
+              <i class="uil uil-calender"></i>
+              <input type="date" placeholder="Departure..." />
             </div>
 
-            <section id="info-block">
-                <div class="info-block-container">
-                    <h1 class="info-block-h1">Browse Popular Destinations</h1>
-                    <p class="info-block-p">
-                        Looking to plan your next vacation or book a flight? Look no further!
-                        Our website is your one-stop-shop for all your travel needs. With a
-                        wide range of destinations and travel options, we make it easy for you
-                        to plan your dream vacation. Whether you're looking for a relaxing
-                        beach getaway or an exciting adventure, we have everything you need to
-                        make your trip unforgettable. So why wait? Browse through our website
-                        now and start planning your next travel adventure today!
-                    </p>
-                </div>
-            </section>
+            <form id="search-flights-form">
+              <button class="search-flights">
+                <router-link :to=" {name: 'FlightView'}">
+                Search Flights
+                </router-link>
 
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
 
+      <hr />
+
+      <div class="three-container">
+        <div class="one-of-three">
+          <i class="uil uil-moneybag"></i>
+
+          <p class="info-paragraph1">
+            From flights to accommodations, we've got you covered. Discover the
+            ultimate travel experience with our one-stop-shop. Start planning
+            your next adventure today!
+          </p>
+        </div>
+
+        <div class="two-of-three">
+          <i class="uil uil-lightbulb-alt"></i>
+
+          <p class="info-paragraph1">
+            Get inspired for your next travel adventure! Our website is a
+            treasure trove of exciting destinations and unique experiences. From
+            stunning beaches to cultural landmarks, browse our site and let your
+            imagination take flight!
+          </p>
+        </div>
+
+        <div class="three-of-three">
+          <i class="uil uil-fire"></i>
+
+          <p class="info-paragraph1">
+            Unlock unbeatable deals on flights from around the globe! Browse
+            hundreds of discounted flights and jet off to your dream destination
+            without breaking the bank. Hurry, these fiery deals won't last!
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="hotel-search-container">
+        <div class="background-image-container-hotel">
+          <div class="hotel-search">
+            <h1 class="hotel-search-h1">Find Hotels with your Flight</h1>
+            <h3 class="hotel-search-h3">Create a Package and Save</h3>
+          </div>
+          <div class="search-box-hotel">
+            <i class="uil uil-users-alt"></i>
+            <input
+              id="number-guests-form-hotel"
+              type="number"
+              min="1"
+              placeholder="Select Number Of Guests"
+            />
+          </div>
+          <div class="search-box-hotel">
+            <i class="uil uil-compass"></i>
+            <input
+              id="city-state-form-hotels"
+              type="text"
+              placeholder="City/State"
+            />
+          </div>
+          <div class="search-box-hotel">
+            <i class="uil uil-bed-double"></i>
+            <input type="date" placeholder="Checking in.." />
+          </div>
+          <div class="search-box-hotel">
+            <i class="uil uil-luggage-cart"></i>
+            <input type="date" placeholder="Checking out.." />
+          </div>
+
+          <form id="search-hotels-form" action="hotel-response.html">
+            <button
+              onclick="window.location.href='hotel-response.html'"
+              class="search-hotels"
+            >
+              Search Hotels
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <section id="info-block">
+        <div class="info-block-container">
+          <h1 class="info-block-h1">Browse Popular Destinations</h1>
+          <p class="info-block-p">
+            Looking to plan your next vacation or book a flight? Look no
+            further! Our website is your one-stop-shop for all your travel
+            needs. With a wide range of destinations and travel options, we make
+            it easy for you to plan your dream vacation. Whether you're looking
+            for a relaxing beach getaway or an exciting adventure, we have
+            everything you need to make your trip unforgettable. So why wait?
+            Browse through our website now and start planning your next travel
+            adventure today!
+          </p>
+        </div>
+      </section>
+
+    <!-- ::::CODE FOR IMAGE CAROUSEL:::: -->
+      <!-- 
             <v-carousel
             cycle
             height="400"
@@ -182,13 +178,13 @@
             <v-carousel-item> Slide 2 </v-carousel-item>
 
             <v-carousel-item> Slide 3 </v-carousel-item>
-            </v-carousel>
-        </main>
-    </div>
+            </v-carousel> -->
+    </main>
+  </div>
 </template>
 
-    // // ::::CODE FOR FLIGHT-DETAILS PAGE::::
-    // <!-- <li v-for="flight in flights">
+    // ::::CODE FOR FLIGHT-DETAILS PAGE::::
+     <!-- <li v-for="flight in flights">
     //             <router-link :to="`/flight-details/${flight.id}`">{{flight.name}}</router-link>
     //         </li> -->
 
@@ -217,7 +213,7 @@
 
 .main-container {
   height: 100vh;
-  background-image: url(C:\Users\Student\Desktop\vuefolder\flight-finder\src\static\airplane1_nikhil-mitra-gssCjrDR5Y4-unsplash.jpg);
+  background-image: url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\airplane1_nikhil-mitra-gssCjrDR5Y4-unsplash.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -275,7 +271,7 @@ span {
 
 .background-image-container {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(C:\Users\Student\Desktop\vuefolder\flight-finder\src\static\flight1_suhyeon-choi-tTfDMaRq-FE-unsplash.jpg);
+    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\flight1_suhyeon-choi-tTfDMaRq-FE-unsplash.jpg);
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -283,8 +279,7 @@ span {
 }
 
 .destination-search-container {
-  padding-top: 6em;
-  /* padding-right: 4em; */
+  padding-top: 2em;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -295,7 +290,7 @@ span {
   color: var(--third-color);
   text-align: center;
   font-size: 3rem;
-  padding-left: .75em;
+  padding-left: 0.75em;
 }
 
 .flight-search-h3 {
@@ -307,17 +302,16 @@ span {
 }
 
 .search-box-flights {
-  background-color: white;
+  background-color: var(--third-color);
   border-radius: 12px;
   border-color: var(--fourth-color);
   display: flex;
   padding-left: 20px;
   height: 50px;
-
 }
 
 #number-form-flights {
-    width: 100%;
+  width: 100%;
 }
 
 .uil-users-alt {
@@ -345,7 +339,7 @@ span {
 }
 
 #search-flights-form {
-    padding-left: 4em;
+  padding-left: 4em;
 }
 
 .search-flights {
@@ -362,7 +356,6 @@ span {
   border: 2px solid var(--secondary-color);
 }
 
-
 /* ::::HOTEL SEARCH CODE:::: */
 
 .hotel-search-container {
@@ -372,12 +365,11 @@ span {
   text-align: center;
   justify-content: space-around;
   align-items: stretch;
-  
 }
 
 .background-image-container-hotel {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(C:\Users\Student\Desktop\vuefolder\flight-finder\src\static\hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
+    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
   background-position: right center;
   background-repeat: repeat;
   background-size: cover;
@@ -395,17 +387,20 @@ span {
 }
 
 .search-box-hotel {
-    background-color: white;
-    border-radius: 12px;
-    border-color: var(--fourth-color);
-    display: flex;
-    padding-left: 10px;
-    height: 50px;
+  background-color: white;
+  border-radius: 12px;
+  border-color: var(--fourth-color);
+  display: flex;
+  padding-left: 10px;
+  height: 50px;
+  align-items: center;
+  width: 400px;
 }
 
 .hotel-search-h1 {
   color: var(--third-color);
   text-align: center;
+  font-size: 3rem;
 }
 
 .hotel-search-h3 {
@@ -415,7 +410,7 @@ span {
 }
 
 #number-guests-form-hotel {
-    width: 100%;
+  width: 100%;
 }
 
 .uil-compass {
@@ -434,7 +429,7 @@ span {
 }
 
 .search-hotels {
-  background-color: white;
+  background-color: var(--primary-color);
   border-radius: 12px;
   border-color: var(--primary-color);
   display: flex;
@@ -501,7 +496,6 @@ span {
   justify-content: center;
   flex-wrap: wrap;
 }
-
 
 .uil-moneybag {
   font-size: 3rem;
@@ -650,7 +644,7 @@ span {
   }
 
   .flight-search-h1 {
-      padding: 1em;
+    padding: 1em;
   }
 
   .flight-search-h3 {
@@ -658,13 +652,12 @@ span {
   }
 
   .search-box-flights {
-      width: 400px;    
+    width: 400px;
   }
 
   .search-flights {
     margin-left: -4em;
   }
-
 
   .hotel-search {
   }
@@ -673,7 +666,7 @@ span {
     font-size: 3rem;
   }
 
- .search-box-hotel {
+  .search-box-hotel {
     width: 400px;
     margin: 0 auto 1em auto;
   }
@@ -682,9 +675,7 @@ span {
     margin: 0 auto;
     background-color: var(--primary-color);
   }
-
 }
-
 
 @media screen and (min-width: 800px) {
   .main-container h1 {
