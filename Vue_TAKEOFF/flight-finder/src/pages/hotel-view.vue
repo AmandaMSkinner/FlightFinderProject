@@ -25,16 +25,16 @@ export default {
       this.hotels = response.data;
     });
 
-    /*
-    UtilitiesService.getIataCode(this.$route.params.city).then((response) => {
-      const iataCode = response.data.iataCode;
-      HotelService.getHotelsByCity(
-        iataCode
-      ).then((response) => {
-        this.hotels = response.data;
-      });
-    }) 
-    */
+    
+    // UtilitiesService.getIataCode(this.$route.params.city).then((response) => {
+    //   const iataCode = response.data.iataCode;
+    //   HotelService.getHotelsByCity(
+    //     iataCode
+    //   ).then((response) => {
+    //     this.hotels = response.data;
+    //   });
+    // }) 
+    
   },
 
 

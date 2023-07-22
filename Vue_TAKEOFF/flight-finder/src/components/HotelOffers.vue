@@ -1,5 +1,7 @@
 <template>
 
+<!-- Have product offer cards that v-for through the hotelOffers array and display offers at a particular hotel -->
+
 </template>
 
 

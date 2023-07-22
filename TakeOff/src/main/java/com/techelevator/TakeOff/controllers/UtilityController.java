@@ -29,7 +29,5 @@ public class UtilityController {
         return  new ResponseEntity<>(cityService.getLocationsByKeyword(keyword),HttpStatus.OK);
     }
 
-
-
 }
 

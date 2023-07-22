@@ -18,9 +18,10 @@ export default {
     };
   },
   methods: {
-    searchHotels() {
+    seePossibleDestinationOptions() {
       this.$store.commit("SET_HOTEL_PREFERENCES_DTO", this.hotelPreferencesDto);
-      this.$router.push({ name: 'HotelView', params: {city: this.hotelPreferencesDto.city}});
+      // @TODO what if the user pressed search without entering anything?
+      this.$router.push({ name: 'PossibleDestinations', params: {keyword: this.hotelPreferencesDto.city}});
     }
   }
 };
@@ -52,6 +53,7 @@ export default {
           v-model="hotelPreferencesDto.city"
         />
       </div>
+     
       <div class="search-box-hotel">
         <i class="uil uil-bed-double"></i>
         <input type="date" placeholder="Checking in.." v-model="hotelPreferencesDto.checkIn" />
@@ -62,7 +64,7 @@ export default {
       </div>
 
       <form id="search-hotels-form">
-          <button @click="searchHotels">
+          <button @click="seePossibleDestinationOptions">
             Search Hotels
           </button>
       </form>

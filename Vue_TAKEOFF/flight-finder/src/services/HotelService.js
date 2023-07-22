@@ -42,27 +42,19 @@ export default {
         let path = '/hotels/offers';
 
 
-        // let amenities = [
-        //     SWIMMING_POOL, SPA, FITNESS_CENTER, AIR_CONDITIONING, RESTAURANT, 
-        //     PARKING, PETS_ALLOWED, AIRPORT_SHUTTLE, BUSINESS_CENTER, DISABLED_FACILITIES, WIFI, 
-        //     MEETING_ROOMS, NO_KID_ALLOWED, TENNIS, GOLF, KITCHEN, ANIMAL_WATCHING, BABY-SITTING, 
-        //     BEACH, CASINO, JACUZZI, SAUNA, SOLARIUM, MASSAGE, VALET_PARKING, KIDS_WELCOME, NO_PORN_FILMS,
-        //      MINIBAR, TELEVISION, WI-FI_IN_ROOM, ROOM_SERVICE, GUARDED_PARKG, SERV_SPEC_MENU
-        // ]
 
-
-
-        if(hotelId !== undefined && hotelId !== '') {
-            path += '?hotelID=' + hotelId;
-        }
+      
         if(adults !== undefined && adults !== '') {
-            path += '&adults=' + adults;
+            path += '?adults=' + adults;
         }
         if(checkIn !== undefined && checkIn !== ''){
             path += '&checkIn=' + checkIn;
         }
         if(checkOut !== undefined && checkOut !== ''){
             path += '&checkOut=' + checkOut;
+        }
+        if(hotelId !== undefined && hotelId !== '') {
+            path += '&hotelID=' + hotelId;
         }
         
         return axios.get(path);

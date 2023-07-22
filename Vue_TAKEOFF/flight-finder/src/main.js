@@ -17,6 +17,7 @@ import * as directives from 'vuetify/directives'
 import HotelOffers from './components/HotelOffers.vue'
 import axios from 'axios'
 import store from './store';
+import PossibleDestinations from './pages/possible-destinations.vue'
 
 
 
@@ -35,8 +36,9 @@ const router = createRouter({
       { path: '/flight-details', component: FlightDetails, name: 'FlightDetails'},
       { path: '/flight-view', component: FlightView, name: 'FlightView'},
       { path: '/hotel-details', component: HotelDetails, name: 'HotelDetails'},
-      { path: '/hotel-view/:city?', component: HotelView, name: 'HotelView'},
-      { path: '/hotel-offers/:hotelId', component: HotelOffers, name: 'HotelOffers'}
+      { path: '/hotel-view/:iataCode', component: HotelView, name: 'HotelView'},
+      { path: '/hotel-offers/:hotelId', component: HotelOffers, name: 'HotelOffers'},
+      { path: '/hotel/possible-destinations/:keyword', component: PossibleDestinations, name: 'PossibleDestinations'}
 
     ]
 })
