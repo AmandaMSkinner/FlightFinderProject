@@ -18,15 +18,26 @@ export default {
     };
   },
   created() {
-    UtilitiesService.getIataCode(city).then((response) => {
+
+    HotelService.getHotelsByCity(
+      this.$route.params.city
+    ).then((response) => {
+      this.hotels = response.data;
+    });
+
+    /*
+    UtilitiesService.getIataCode(this.$route.params.city).then((response) => {
       const iataCode = response.data.iataCode;
       HotelService.getHotelsByCity(
         iataCode
       ).then((response) => {
         this.hotels = response.data;
       });
-    })
+    }) 
+    */
   },
+
+
   /*
   async created2() {
     const iataResponse = await UtilitiesService.getIataCode(city);
@@ -65,7 +76,7 @@ export default {
     </div>
 
     <filtration-options />
-    <hotel-cards/>
+    <hotel-cards :hotels="hotels"/>
   </main>
 </template>
 

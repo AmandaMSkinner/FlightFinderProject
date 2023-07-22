@@ -5,7 +5,7 @@
             <article class="hotel-card" v-for="hotel in hotels" :key="hotel.hotelId">
 
                 <router-link :to="{name: 'HotelOffers', params: {hotelId:hotel.hotelId}}">
-                    <div>{{hotel.hotelId}}</div>
+                    <div>{{hotel.hotelId}} - {{ hotel.name }}</div>
                 </router-link>
 
             </article>

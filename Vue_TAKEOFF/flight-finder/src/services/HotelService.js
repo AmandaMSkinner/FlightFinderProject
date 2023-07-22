@@ -1,7 +1,7 @@
 import axios from 'axios';
 export default {
-    getHotelsByCity(city, [stars], [amenities]){
-        let path = 'http://localhost:8080/hotels';
+    getHotelsByCity(city, stars, amenities){
+        let path = '/hotels';
         if(city !== undefined && city !== ''){
             path += `?city=${city};`
         }
@@ -39,7 +39,7 @@ export default {
     },
 
     getHotelOffersByHotelId(hotelId,adults,checkIn,checkOut){
-        let path = 'http://localhost:8080/hotels/offers';
+        let path = '/hotels/offers';
 
 
         // let amenities = [

@@ -16,7 +16,7 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import HotelOffers from './components/HotelOffers.vue'
 import axios from 'axios'
-
+import store from './store';
 
 
 
@@ -36,16 +36,17 @@ const router = createRouter({
       { path: '/flight-view', component: FlightView, name: 'FlightView'},
       { path: '/hotel-details', component: HotelDetails, name: 'HotelDetails'},
       { path: '/hotel-view/:city?', component: HotelView, name: 'HotelView'},
-      { path: 'hotel-offers/:hotelId', component: HotelOffers, name: 'HotelOffers'}
+      { path: '/hotel-offers/:hotelId', component: HotelOffers, name: 'HotelOffers'}
 
     ]
 })
 
-axios.defaults.baseURL = 'http://localhost:5001';
+axios.defaults.baseURL = 'http://localhost:8080';
 
 var app = createApp(App)
 app.use(router)
 app.use(vuetify)
+app.use(store);
 // app.component('star-rating', VueStarRating.default)
 app.mount('#app')
 
