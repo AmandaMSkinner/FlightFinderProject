@@ -34,13 +34,12 @@ public class FlightController {
             @RequestParam(defaultValue = "LAX") String destinationLocationCode,
             @RequestParam(defaultValue = "2023-12-24") String departureDate,
             @RequestParam(defaultValue = "2023-12-31") String returnDate,
-            @RequestParam(defaultValue = "3") Integer adults,
-            @RequestParam(defaultValue = "5") Integer max
+            @RequestParam(defaultValue = "3") Integer adults
 
     )
     {
         return new ResponseEntity<>(flightApiService.flightOffersSearch(originLocationCode, destinationLocationCode,
-                departureDate, returnDate, adults, max), HttpStatus.OK);
+                departureDate, returnDate, adults), HttpStatus.OK);
     }
 
 }
