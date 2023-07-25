@@ -2,8 +2,9 @@ import axios from 'axios';
 
 export default {
 
-    getFlights() {
-        return axios.get('/flights');
+    getFlights(originLocationCode,destinationLocationCode, departureDate, returnDate) {
+        let path = '/flights';
+        return axios.get(path);
     },
 
     getFlightsById(id) {
@@ -14,5 +15,17 @@ export default {
         if(searchTerm) {
             return axios.get('/flights?name=' + searchTerm);
         }
+    },
+
+    convertDateFormat(slashDate) {
+        const dt = new Date(slashDate);
+        let year = '' + dt.getFullYear();
+        let month = '' + (dt.getMonth() + 1);
+        let day = '' + (dt.getDate() + 1);
+
+        if (month.length == 1) month = '0' + month;
+        if (day.length == 1) day = '0' + day;
+
+        return year + '-' + month + '-' + day;
     }
 }
