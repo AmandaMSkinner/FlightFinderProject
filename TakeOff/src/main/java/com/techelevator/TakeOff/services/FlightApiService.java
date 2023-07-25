@@ -21,6 +21,7 @@ public class FlightApiService extends com.techelevator.TakeOff.services.ApiBaseS
         HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
 
         Map<String,String> queryParams = new HashMap<>();
+        //Updated to handle proper params and tested in postman//
         queryParams.put("originLocationCode", originLocationCode);
         queryParams.put("destinationLocationCode", destinationLocationCode);
         queryParams.put("departureDate", departureDate);
