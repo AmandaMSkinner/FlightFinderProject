@@ -55,8 +55,8 @@ public class HotelController {
     public ResponseEntity<List<HotelOffer>> getHotelOffers
             (@RequestParam(defaultValue = "BWDEL538") String hotelID,
              @RequestParam(defaultValue = "1") String adults,
-             @RequestParam(defaultValue = "2023-06-20") String checkIn,
-             @RequestParam(defaultValue = "2023-06-21") String checkOut) {
+             @RequestParam() String checkIn,
+             @RequestParam() String checkOut) {
         String errorResponse = "";
         if (hotelID.isEmpty()) {
             errorResponse += "Hotel ID parameter is empty";

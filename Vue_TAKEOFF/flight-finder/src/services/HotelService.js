@@ -42,21 +42,30 @@ export default {
         let path = '/hotels/offers';
 
 
-
+        path += '?hotelID=' + hotelId;
       
         if(adults !== undefined && adults !== '') {
-            path += '?adults=' + adults;
+            path += '&adults=' +  adults;
         }
         if(checkIn !== undefined && checkIn !== ''){
-            path += '&checkIn=' + checkIn;
+            path += '&checkIn=' + this.convertDateFormat(checkIn);
         }
         if(checkOut !== undefined && checkOut !== ''){
-            path += '&checkOut=' + checkOut;
+            path += '&checkOut=' + this.convertDateFormat(checkOut);
         }
-        if(hotelId !== undefined && hotelId !== '') {
-            path += '&hotelID=' + hotelId;
-        }
+
         
         return axios.get(path);
+    },
+    convertDateFormat(slashDate) {
+        const dt = new Date(slashDate);
+        let year = '' + dt.getFullYear();
+        let month = '' + (dt.getMonth() + 1);
+        let day = '' + (dt.getDate() + 1);
+
+        if (month.length == 1) month = '0' + month;
+        if (day.length == 1) day = '0' + day;
+
+        return year + '-' + month + '-' + day;
     }
 }

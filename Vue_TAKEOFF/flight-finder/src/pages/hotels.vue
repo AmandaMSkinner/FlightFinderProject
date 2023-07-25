@@ -42,6 +42,7 @@ export default {
           min="1"
           placeholder="Select Number Of Guests"
           v-model="hotelPreferencesDto.adults"
+          required
         />
       </div>
       <div class="search-box-hotel">
@@ -51,16 +52,18 @@ export default {
           type="text"
           placeholder="City/State"
           v-model="hotelPreferencesDto.city"
+          required
         />
       </div>
      
       <div class="search-box-hotel">
         <i class="uil uil-bed-double"></i>
-        <input type="date" placeholder="Checking in.." v-model="hotelPreferencesDto.checkIn" />
+        <input type="date" placeholder="Checking in.." v-model="hotelPreferencesDto.checkIn" required />
       </div>
+      
       <div class="search-box-hotel">
         <i class="uil uil-luggage-cart"></i>
-        <input type="date" placeholder="Checking out.." v-model="hotelPreferencesDto.checkOut" />
+        <input type="date" placeholder="Checking out.." v-model="hotelPreferencesDto.checkOut" required />
       </div>
 
       <form id="search-hotels-form">

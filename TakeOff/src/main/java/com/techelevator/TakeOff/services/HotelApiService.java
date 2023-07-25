@@ -43,9 +43,25 @@ public class HotelApiService extends ApiBaseService {
     public List<HotelOffer> getHotelOffers(String hotelIds, String adults, String checkIn, String checkOut) {
         HttpEntity<String> entity = new HttpEntity<>(getHeadersWithAuth());
 
-        String url = "https://test.api.amadeus.com/v3/shopping/hotel-offers?hotelIds=" +
-                "{hotelIds}&adults={adults}&checkInDate={checkInDate}&checkOutDate={checkOutDate}";
+        String params = "hotelIds={hotelIds}";
 
+        if (adults != null && !adults.isBlank())
+            params += "&adults={adults}";
+
+        if(checkIn != null && !checkIn.isBlank()) {
+            params += "&checkInDate={checkInDate}";
+        }
+
+        if(checkOut != null && !checkOut.isBlank()) {
+            params += "&checkOutDate={checkOutDate}";
+        }
+
+        String url =
+                "https://test.api.amadeus.com/v3/shopping/hotel-offers?currency=USD&countryOfResidence=US&" + params;
+
+        System.out.println("--------------------------------------");
+        System.out.println(url);
+        System.out.println("--------------------------------------");
         ResponseEntity<HotelOffers> response =
                 restTemplate.exchange(url,
                         HttpMethod.GET, entity, HotelOffers.class, hotelIds, adults, checkIn, checkOut);
