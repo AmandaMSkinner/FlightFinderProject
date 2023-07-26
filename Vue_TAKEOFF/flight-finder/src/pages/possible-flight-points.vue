@@ -13,6 +13,8 @@
 <div>
     <flight-destination-card v-for="(destination, index) in possibleDestinations" :key="index" v-bind:destination="destination" />
 </div>
+<hr>
+<button @click="viewResults()">SEE FLIGHTS</button>
  
 </template>
 
@@ -40,6 +42,11 @@ export default {
             this.possibleDestinations = response.data;
             this.loading = false;
         })
+    },
+    methods:{
+        viewResults(){
+            this.$router.push({name: "FlightOptions"})
+        }
     }
 }
 </script>
