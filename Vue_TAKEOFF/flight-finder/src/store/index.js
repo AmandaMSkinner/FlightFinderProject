@@ -14,6 +14,8 @@ export default createStore({
     checkOut : ''
    },
    flightPreferencesDto : {
+     originInput:'',
+     destinationInput:'',
      originLocationCode: '',
      destinationLocationCode: '',
      departureDate: '',

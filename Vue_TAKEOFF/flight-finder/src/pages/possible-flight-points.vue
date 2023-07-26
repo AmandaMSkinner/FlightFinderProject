@@ -2,11 +2,15 @@
 <div style="width: 100vw; display: flex; justify-content: center;">
     <img src="spinner.gif" v-if = "loading"/>
 </div>
+<h2>Select the Origin:</h2>
 <div>
     <destination-card v-for="(destination, index) in possibleOrigins" :key="index" v-bind:destination="destination" />
 </div>
+<hr>
+<h2>Select the Destination:</h2>
+<h3>Your current destination is: {{this.$store.state.flightPreferencesDto.destinationLocationCode}}</h3>
 <div>
-    <destination-card v-for="(destination, index) in possibleDestinations" :key="index" v-bind:destination="destination" />
+    <flight-destination-card v-for="(destination, index) in possibleDestinations" :key="index" v-bind:destination="destination" />
 </div>
  
 
@@ -14,10 +18,11 @@
 
 <script>
 import UtilitiesService from '../services/UtilitiesService';
+import FlightDestinationCard from '../components/FlightDestinationCard.vue';
 import DestinationCard from '../components/DestinationCard.vue';
 
 export default {
-    components: {DestinationCard},
+    components: {DestinationCard, FlightDestinationCard},
     data(){
         return{
             possibleOrigins:[],
@@ -27,11 +32,11 @@ export default {
     },
     created(){
         this.loading = true;
-        UtilitiesService.getPossibleDestinations(this.$store.state.flightPreferencesDto.originLocationCode)        .then(response => {
+        UtilitiesService.getPossibleDestinations(this.$store.state.flightPreferencesDto.originInput)        .then(response => {
             this.possibleOrigins = response.data;
             //this.loading = false;
         })
-        UtilitiesService.getPossibleDestinations(this.$store.state.flightPreferencesDto.destinationLocationCode)        .then(response => {
+        UtilitiesService.getPossibleDestinations(this.$store.state.flightPreferencesDto.destinationInput)        .then(response => {
             this.possibleDestinations = response.data;
             this.loading = false;
         })

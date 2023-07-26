@@ -46,13 +46,13 @@ export default {
         <div class="search-box-flights">
           <i class="uil uil-plane-departure"></i>
           <input type="text" placeholder="Leaving From..." 
-          v-model="flightPreferencesDto.originLocationCode"
+          v-model="flightPreferencesDto.originInput"
           required />
         </div>
         <div class="search-box-flights">
           <i class="uil uil-plane-departure"></i>
           <input type="text" placeholder="Going To..." 
-          v-model="flightPreferencesDto.destinationLocationCode"
+          v-model="flightPreferencesDto.destinationInput"
           required />
         </div>
         <div class="search-box-flights">
@@ -68,10 +68,8 @@ export default {
           required />
         </div>
         <form id="search-flights-form">
-          <button class="search-flights">
-            <router-link :to="{ name: 'FlightView' }">
+          <button @click="seePossibleFlights()" class="search-flights">
               Search Flights
-            </router-link>
           </button>
         </form>
       </div>
