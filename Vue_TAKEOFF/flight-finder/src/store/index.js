@@ -12,11 +12,21 @@ export default createStore({
     adults : 0,
     checkIn : '',
     checkOut : ''
+   },
+   flightPreferencesDto : {
+     originLocationCode: '',
+     destinationLocationCode: '',
+     departureDate: '',
+     returnDate: '',
+     adults: 0
    }
   },
   mutations: {
     SET_HOTEL_PREFERENCES_DTO(state,hotelPreferencesDto) {
         state.hotelPreferencesDto = hotelPreferencesDto;
+    },
+    SET_FLIGHT_PREFERENCES_DTO(state,flightPreferencesDto){
+        state.flightPreferencesDto = flightPreferencesDto;
     }
   },
   plugins: [vuexLocal.plugin]
