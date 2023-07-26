@@ -5,7 +5,9 @@
   <main id="main-div">
     <h2 id="contact-header">Contact</h2>
 
-    <form id="contact-form">
+
+ 
+    <form action="mailto:ian.henderson1215@gmail.com" method="post" enctype="text/plain" id="contact-form">
         <label class="contact-form-label"> First Name:
         <input type="text" placeholder="First" />
         </label>
@@ -19,7 +21,7 @@
         <input type="text" id="concerns" placeholder="" />
         </label>
         <br>
-        <input type="submit" value="Submit" id="submit-button">
+        <input type="submit" value="Send" id="submit-button">
     </form>
    
   </main>
@@ -43,7 +45,7 @@
 }
 
 #main-div {
-    background-image: url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\bahamas1_allen-dewberry-jr-XjKiG46fkQI-unsplash.jpg);
+    background-image: url("public/contact-4.jpeg");
     height: 100vh;
     background-size: 2000px;
     background-position: center center;
