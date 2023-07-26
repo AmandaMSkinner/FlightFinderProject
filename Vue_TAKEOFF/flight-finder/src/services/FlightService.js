@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export default {
 
-    getFlights(originLocationCode,destinationLocationCode, departureDate, returnDate) {
-        let path = '/flights';
+    getFlights(originLocationCode, destinationLocationCode, departureDate, returnDate, adults) {
+        let path = '/flights?originLocationCode='+originLocationCode+'&destinationLocationCode='+destinationLocationCode+'&departureDate='+departureDate+'&returnDate='+returnDate+'&adults='+adults;
         return axios.get(path);
     },
 
