@@ -35,7 +35,6 @@ public class FlightApiService extends com.techelevator.TakeOff.services.ApiBaseS
                 "&adults="+adults;
 
         ResponseEntity<FlightOfferData> response = restTemplate.exchange(url, HttpMethod.GET, entity, FlightOfferData.class, queryParams);
-        System.out.println(response);
         return response.getBody().getData();
     }
 
