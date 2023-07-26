@@ -8,7 +8,6 @@ import Hotels from './pages/hotels.vue'
 import Contact from './pages/contact.vue'
 import FlightView from './pages/flight-view.vue'
 import FlightDetails from './pages/flight-details.vue'
-import HotelDetails from './pages/hotel-details.vue'
 import HotelView from './pages/hotel-view.vue'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -18,6 +17,8 @@ import HotelOffers from './components/HotelOffers.vue'
 import axios from 'axios'
 import store from './store';
 import PossibleDestinations from './pages/possible-destinations.vue'
+import HotelOfferDetails from './pages/hotel-offer-details.vue'
+import Confirmation from './pages/confirmation.vue'
 
 
 
@@ -35,10 +36,11 @@ const router = createRouter({
       { path: '/contact', component: Contact, name: 'Contact'},
       { path: '/flight-details', component: FlightDetails, name: 'FlightDetails'},
       { path: '/flight-view', component: FlightView, name: 'FlightView'},
-      { path: '/hotel-details', component: HotelDetails, name: 'HotelDetails'},
       { path: '/hotel-view/:iataCode', component: HotelView, name: 'HotelView'},
       { path: '/hotel-offers/:hotelId', component: HotelOffers, name: 'HotelOffers'},
-      { path: '/hotel/possible-destinations/:keyword', component: PossibleDestinations, name: 'PossibleDestinations'}
+      { path: '/hotel/possible-destinations/:keyword', component: PossibleDestinations, name: 'PossibleDestinations'},
+      { path: '/hotel-offer-details/:offerId', component: HotelOfferDetails, name: 'HotelOfferDetails'},
+      {path: '/hotel-confirm', component: Confirmation, name:'Confirmation'}
 
     ]
 })

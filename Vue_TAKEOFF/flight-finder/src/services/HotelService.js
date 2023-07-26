@@ -53,7 +53,6 @@ export default {
         if(checkOut !== undefined && checkOut !== ''){
             path += '&checkOut=' + this.convertDateFormat(checkOut);
         }
-
         
         return axios.get(path);
     },
@@ -67,5 +66,11 @@ export default {
         if (day.length == 1) day = '0' + day;
 
         return year + '-' + month + '-' + day;
+    },
+
+    getHotelOfferDetailsByOfferId(offerId) {
+        let path = 'hotels/offerDetails/';
+
+        return axios.get(path + offerId);
     }
 }
