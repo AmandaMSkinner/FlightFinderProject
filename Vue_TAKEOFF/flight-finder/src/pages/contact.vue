@@ -1,5 +1,3 @@
-<script setup>
-</script>
 
 <template>
   <main id="main-div">
@@ -7,18 +5,18 @@
 
 
  
-    <form action="mailto:ian.henderson1215@gmail.com" method="post" enctype="text/plain" id="contact-form">
+    <form id="contact-form">
         <label class="contact-form-label"> First Name:
-        <input type="text" placeholder="First" />
+        <input type="text" v-model="name" name="name" placeholder="First" />
         </label>
         <label class="contact-form-label"> Last Name:
         <input type="text" placeholder="Last" />
         </label>
         <label class="contact-form-label"> Email:
-        <input type="email" placeholder="Email" />
+        <input type="email" v-model="email" name="email" placeholder="Email" />
         </label>
         <label class="contact-form-label"> Message:
-        <input type="text" id="concerns" placeholder="" />
+        <input type="text" v-model="message" name="message" id="concerns" placeholder="" />
         </label>
         <br>
         <input type="submit" value="Send" id="submit-button">
@@ -27,6 +25,41 @@
   </main>
 
 </template>
+
+<script>
+import emailjs from 'emailjs-com';
+
+export default {
+  name: 'ContactUs',
+  data() {
+    return {
+      name: '',
+      email: '',
+      message: ''
+    }
+  },
+  methods: {
+    sendEmail(e) {
+      try {
+        emailjs.sendForm('service_gtdhnck', 'template_9g0nnll', e.target,
+        '', {
+          name: this.name,
+          email: this.email,
+          message: this.message
+        })
+
+      } catch(error) {
+          console.log({error})
+      }
+      // Reset form field
+      this.name = ''
+      this.email = ''
+      this.message = ''
+    },
+  }
+}
+</script>
+
 
 <style scoped>
 :root {
