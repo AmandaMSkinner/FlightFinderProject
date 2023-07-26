@@ -1,7 +1,29 @@
 <script>
-// export default {
+import UtilitiesService from '../services/UtilitiesService.js'
 
-// }
+export default {
+ name: "Flights",
+ component: {
+   UtilitiesService,
+ },
+ data(){
+   return{
+     flightPreferencesDto : {
+     originLocationCode: '',
+     destinationLocationCode: '',
+     departureDate: '',
+     returnDate: '',
+     adults: 0
+   }
+   };
+ },
+ methods: {
+   seePossibleFlights(){
+     this.$store.commit("SET_FLIGHT_PREFERENCES_DTO", this.flightPreferencesDto);
+     this.$router.push({name: 'PossibleFlightPoints'});
+   }
+ }
+ }
 </script>
 
 <template>
@@ -17,19 +39,33 @@
             type="number"
             min="1"
             placeholder="Select Number Of Passengers"
+            v-model="flightPreferencesDto.adults"
+            required
           />
         </div>
         <div class="search-box-flights">
           <i class="uil uil-plane-departure"></i>
-          <input type="text" placeholder="Going To..." />
+          <input type="text" placeholder="Leaving From..." 
+          v-model="flightPreferencesDto.originLocationCode"
+          required />
+        </div>
+        <div class="search-box-flights">
+          <i class="uil uil-plane-departure"></i>
+          <input type="text" placeholder="Going To..." 
+          v-model="flightPreferencesDto.destinationLocationCode"
+          required />
         </div>
         <div class="search-box-flights">
           <i class="uil uil-calendar-alt"></i>
-          <input type="date" placeholder="Arrival..." />
+          <input type="date" placeholder="Departure..." 
+          v-model="flightPreferencesDto.departureDate"
+          required />
         </div>
         <div class="search-box-flights">
           <i class="uil uil-calender"></i>
-          <input type="date" placeholder="Departure..." />
+          <input type="date" placeholder="Return..." 
+          v-model="flightPreferencesDto.returnDate"
+          required />
         </div>
         <form id="search-flights-form">
           <button class="search-flights">
