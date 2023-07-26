@@ -1,4 +1,9 @@
-
+<template>
+  
+</template>
+<script>
+</script>
+<!--
 <template>
   <main id="main-div">
     <h2 id="contact-header">Contact</h2>
@@ -135,3 +140,4 @@ export default {
   border: 2px solid var(--secondary-color);
 }
 </style>
+-->

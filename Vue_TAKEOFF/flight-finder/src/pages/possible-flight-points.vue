@@ -3,8 +3,9 @@
     <img src="spinner.gif" v-if = "loading"/>
 </div>
 <h2>Select the Origin:</h2>
+<h3>Your current origin is: {{this.$store.state.flightPreferencesDto.originLocationCode}}</h3>
 <div>
-    <destination-card v-for="(destination, index) in possibleOrigins" :key="index" v-bind:destination="destination" />
+    <flight-origin-card v-for="(destination, index) in possibleOrigins" :key="index" v-bind:destination="destination" />
 </div>
 <hr>
 <h2>Select the Destination:</h2>
@@ -13,16 +14,15 @@
     <flight-destination-card v-for="(destination, index) in possibleDestinations" :key="index" v-bind:destination="destination" />
 </div>
  
-
 </template>
 
 <script>
 import UtilitiesService from '../services/UtilitiesService';
 import FlightDestinationCard from '../components/FlightDestinationCard.vue';
-import DestinationCard from '../components/DestinationCard.vue';
+import FlightOriginCard from '../components/FlightOriginCard.vue';
 
 export default {
-    components: {DestinationCard, FlightDestinationCard},
+    components: {FlightDestinationCard, FlightOriginCard},
     data(){
         return{
             possibleOrigins:[],

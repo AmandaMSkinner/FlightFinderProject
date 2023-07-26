@@ -3,23 +3,23 @@
     <h1> {{ destination.name }}</h1>
     <h2>{{ destination.address.stateCode }}</h2>
     <p>{{ destination.iataCode }}</p>
-    <button @click="setDestinationCode()">SELECT DESTINATION</button>
+    <button @click="setOriginCode()">SELECT ORIGIN</button>
 </div>
 </template>
 
 <script>
 export default {
-    name: 'FlightDestinationCard',
+    name: 'FlightOriginCard',
     props: ['destination'],
     data() {
         return{
-            destinationLocationCode : "",
+            originLocationCode : "",
         }
     },
     methods: {
-        setDestinationCode(){
+        setOriginCode(){
         //this only works for obj w/iataCodes
-        this.$store.state.flightPreferencesDto.destinationLocationCode=this.destination.iataCode;
+        this.$store.state.flightPreferencesDto.originLocationCode=this.destination.iataCode;
 
         }
     }
