@@ -1,4 +1,7 @@
 <template>
+<div style="width: 100vw; display: flex; justify-content: center;">
+    <img src="spinner.gif" v-if = "loading"/>
+</div>
 <div>
     <destination-card v-for="(destination, index) in possibleDestinations" :key="index" v-bind:destination="destination" />
 </div>
@@ -14,13 +17,16 @@ export default {
     data(){
         
         return {
-            possibleDestinations : []
+            possibleDestinations : [],
+            loading : false
         }
     },
     created() {
+        this.loading = true;
         UtilitiesService.getPossibleDestinations(this.$route.params.keyword)
         .then(response => {
             this.possibleDestinations = response.data;
+            this.loading = false;
         })
     }
 }

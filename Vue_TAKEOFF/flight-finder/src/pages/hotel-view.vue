@@ -15,14 +15,17 @@ export default {
   data() {
     return {
       hotels: [],
+      loading: false
     };
   },
   created() {
-
+    this.loading = true;
     HotelService.getHotelsByCity(
-      this.$route.params.city
+      
+      this.$route.params.iataCode
     ).then((response) => {
       this.hotels = response.data;
+      this.loading = false;
     });
 
     
@@ -66,7 +69,9 @@ export default {
         can review any additional fees before checkout. Prices are not final
         until you complete your purchase.
       </h5>
-
+      <div style="width: 100vw; display: flex; justify-content: center;">
+          <img src="spinner.gif" v-if = "loading"/>
+      </div>
       <input
         type="text"
         placeholder="Search"
