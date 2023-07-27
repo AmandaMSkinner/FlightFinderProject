@@ -1,21 +1,16 @@
-<template>
-  
-</template>
-<script>
-</script>
-<!--
+
 <template>
   <main id="main-div">
     <h2 id="contact-header">Contact</h2>
 
 
  
-    <form id="contact-form">
+    <form id="contact-form" ref="form" @submit.prevent="sendEmail">
         <label class="contact-form-label"> First Name:
-        <input type="text" v-model="name" name="name" placeholder="First" />
+        <input type="text" v-model="firstName" name="firstName" placeholder="First" />
         </label>
         <label class="contact-form-label"> Last Name:
-        <input type="text" placeholder="Last" />
+        <input type="text" v-model="lastName" name="lastName" placeholder="Last" />
         </label>
         <label class="contact-form-label"> Email:
         <input type="email" v-model="email" name="email" placeholder="Email" />
@@ -38,7 +33,8 @@ export default {
   name: 'ContactUs',
   data() {
     return {
-      name: '',
+      firstName: '',
+      lastName: '',
       email: '',
       message: ''
     }
@@ -46,9 +42,10 @@ export default {
   methods: {
     sendEmail(e) {
       try {
-        emailjs.sendForm('service_gtdhnck', 'template_9g0nnll', e.target,
-        '', {
-          name: this.name,
+        emailjs.sendForm('service_gtdhnck', 'template_9g0nnll', this.$refs.form,
+        'hEyRWctJMpmeXNVCK', {
+          firstName: this.firstName,
+          lastName: this.lastName,
           email: this.email,
           message: this.message
         })
@@ -57,7 +54,8 @@ export default {
           console.log({error})
       }
       // Reset form field
-      this.name = ''
+      this.firstName = ''
+      this.lastName = ''
       this.email = ''
       this.message = ''
     },
@@ -83,7 +81,7 @@ export default {
 }
 
 #main-div {
-    background-image: url("public/contact-4.jpeg");
+    background-image: url("/contact-4.jpeg");
     height: 100vh;
     background-size: 2000px;
     background-position: center center;
@@ -140,4 +138,3 @@ export default {
   border: 2px solid var(--secondary-color);
 }
 </style>
--->
