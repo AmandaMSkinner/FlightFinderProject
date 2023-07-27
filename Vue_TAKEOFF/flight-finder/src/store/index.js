@@ -21,7 +21,9 @@ export default createStore({
      departureDate: '',
      returnDate: '',
      adults: 0
-   }
+   },
+   flightOffers: [],
+   flightCarrierCodeCache: {}
   },
   mutations: {
     SET_HOTEL_PREFERENCES_DTO(state,hotelPreferencesDto) {
@@ -29,6 +31,12 @@ export default createStore({
     },
     SET_FLIGHT_PREFERENCES_DTO(state,flightPreferencesDto){
         state.flightPreferencesDto = flightPreferencesDto;
+    },
+    SET_FLIGHT_OFFERS_ARRAY(state,flightOffers){
+      state.flightOffers = flightOffers;
+    },
+    ADD_FLIGHT_CARRIER_CODE_CACHE(state,carrierCode,businessName){
+      state.flightCarrierCodeCache[carrierCode] = businessName;
     }
   },
   plugins: [vuexLocal.plugin]

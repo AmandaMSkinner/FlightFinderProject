@@ -2,8 +2,19 @@ import axios from 'axios';
 
 export default {
 
-    getFlights(originLocationCode, destinationLocationCode, departureDate, returnDate, adults) {
-        let path = '/flights?originLocationCode='+originLocationCode+'&destinationLocationCode='+destinationLocationCode+'&departureDate='+departureDate+'&returnDate='+returnDate+'&adults='+adults;
+    getFlights(flightPreferencesDto) {
+        //originLocationCode, destinationLocationCode, departureDate, returnDate, adults
+        let path = 
+        '/flights?originLocationCode='+ 
+        flightPreferencesDto.originLocationCode+
+        '&destinationLocationCode='
+        +flightPreferencesDto.destinationLocationCode+
+        '&departureDate='+
+        flightPreferencesDto.departureDate+
+        '&returnDate='
+        + flightPreferencesDto.returnDate+
+        '&adults='+
+        flightPreferencesDto.adults;
         return axios.get(path);
     },
 

@@ -11,9 +11,9 @@
         <h2> {{ hotelOfferDetails.checkOutDate }}</h2>
         
         <h2> {{ hotelOfferDetails.guests.adults }}</h2>
-        <h2> {{ hotelOfferDetails.room.typeEstimated.category }}</h2>
-        <h2> {{ hotelOfferDetails.room.typeEstimated.beds }}</h2>
-        <h2> {{ hotelOfferDetails.room.typeEstimated.bedType}}</h2>
+        <h2 v-if="hotelOfferDetails.room.typeEstimated != null"> {{ hotelOfferDetails.room.typeEstimated.category }}</h2>
+        <h2 v-if="hotelOfferDetails.room.typeEstimated != null"> {{ hotelOfferDetails.room.typeEstimated.beds }}</h2>
+        <h2 v-if="hotelOfferDetails.room.typeEstimated != null"> {{ hotelOfferDetails.room.typeEstimated.bedType}}</h2>
         <h2> {{ hotel.name }}</h2>
         <h2> {{ hotelOfferDetails.room.description.text }}</h2>
 

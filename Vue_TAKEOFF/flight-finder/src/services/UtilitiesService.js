@@ -6,5 +6,8 @@ export default{
         return axios.get(path + "?keyword=" + keyword);
     },
 
+    getBusinessNamesByCarrierCode(carrierCode) {
+        return axios.get(`/flights/businessName/${carrierCode}`);
+    }
 
 }

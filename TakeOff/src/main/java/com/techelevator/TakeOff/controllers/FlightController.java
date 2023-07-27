@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/flights")
+@CrossOrigin
 public class FlightController {
     private FlightApiService flightApiService;
 
@@ -40,6 +41,12 @@ public class FlightController {
     {
         return new ResponseEntity<>(flightApiService.flightOffersSearch(originLocationCode, destinationLocationCode,
                 departureDate, returnDate, adults), HttpStatus.OK);
+    }
+    @GetMapping("/businessName/{carrierCode}")
+    public ResponseEntity<String> getAirlineBusinessNameByCarrierCode(
+            @PathVariable String carrierCode
+    ) {
+        return new ResponseEntity<>(flightApiService.getAirlineBusinessNameByCarrierCode(carrierCode),HttpStatus.OK);
     }
 
 }

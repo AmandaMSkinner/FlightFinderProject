@@ -21,6 +21,7 @@ import HotelOfferDetails from './pages/hotel-offer-details.vue'
 import Confirmation from './pages/confirmation.vue'
 import PossibleFlightPoints from './pages/possible-flight-points.vue'
 import FlightOptions from './pages/flight-options.vue'
+import FlightOfferDetails from './pages/flight-offer-details.vue'
 
 
 
@@ -44,7 +45,8 @@ const router = createRouter({
       { path: '/hotel-offer-details/:offerId', component: HotelOfferDetails, name: 'HotelOfferDetails'},
       {path: '/hotel-confirm', component: Confirmation, name:'Confirmation'},
       {path: '/possible-flight-points', component: PossibleFlightPoints, name:'PossibleFlightPoints'},
-      {path: '/flight-options', component: FlightOptions, name:'FlightOptions'}
+      {path: '/flight-options', component: FlightOptions, name:'FlightOptions'},
+      {path: '/flight-offer-details/:id', component: FlightOfferDetails, name: 'FlightOfferDetails'}
 
     ]
 })

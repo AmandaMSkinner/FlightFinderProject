@@ -3,6 +3,8 @@
 
 package com.techelevator.TakeOff.services;
 
+import com.techelevator.TakeOff.models.responses.flightCodes.DataItem;
+import com.techelevator.TakeOff.models.responses.flightCodes.Response;
 import com.techelevator.TakeOff.models.responses.flightinfo.FlightOffer;
 import com.techelevator.TakeOff.models.responses.flights.FlightOfferData;
 import org.springframework.http.HttpEntity;
@@ -36,6 +38,16 @@ public class FlightApiService extends com.techelevator.TakeOff.services.ApiBaseS
 
         ResponseEntity<FlightOfferData> response = restTemplate.exchange(url, HttpMethod.GET, entity, FlightOfferData.class, queryParams);
         return response.getBody().getData();
+    }
+
+    public String getAirlineBusinessNameByCarrierCode(String carrierCode){
+        HttpEntity<String> entity = new HttpEntity<String>(getHeadersWithAuth());
+
+        String url = "https://test.api.amadeus.com/v1/reference-data/airlines?airlineCodes=" + carrierCode;
+
+        ResponseEntity<Response> response =
+                restTemplate.exchange(url,HttpMethod.GET,entity,Response.class);
+        return response.getBody().getData().get(0).getBusinessName();
     }
 
 }
