@@ -98,7 +98,7 @@ export default {
 
 .background-image-container {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\flight1_suhyeon-choi-tTfDMaRq-FE-unsplash.jpg);
+    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\public\flight1_suhyeon-choi-tTfDMaRq-FE-unsplash.jpg);
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -177,4 +177,6 @@ export default {
   background-color: var(--primary-color);
   border: 2px solid var(--secondary-color);
 }
+
+
 </style>

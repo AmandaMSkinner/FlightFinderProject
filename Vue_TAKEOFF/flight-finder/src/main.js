@@ -43,10 +43,10 @@ const router = createRouter({
       { path: '/hotel-offers/:hotelId', component: HotelOffers, name: 'HotelOffers'},
       { path: '/hotel/possible-destinations/:keyword', component: PossibleDestinations, name: 'PossibleDestinations'},
       { path: '/hotel-offer-details/:offerId', component: HotelOfferDetails, name: 'HotelOfferDetails'},
-      {path: '/hotel-confirm', component: Confirmation, name:'Confirmation'},
-      {path: '/possible-flight-points', component: PossibleFlightPoints, name:'PossibleFlightPoints'},
-      {path: '/flight-options', component: FlightOptions, name:'FlightOptions'},
-      {path: '/flight-offer-details/:id', component: FlightOfferDetails, name: 'FlightOfferDetails'}
+      { path: '/hotel-confirm', component: Confirmation, name:'Confirmation'},
+      { path: '/possible-flight-points', component: PossibleFlightPoints, name:'PossibleFlightPoints'},
+      { path: '/flight-options', component: FlightOptions, name:'FlightOptions'},
+      { path: '/flight-offer-details/:id', component: FlightOfferDetails, name: 'FlightOfferDetails'}
 
     ]
 })

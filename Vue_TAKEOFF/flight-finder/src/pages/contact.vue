@@ -130,6 +130,7 @@ export default {
     width: 400px;
     margin: 1em auto;
     justify-content: center;
+    border-radius: 10px;
 }
 
 #submit-button:hover {

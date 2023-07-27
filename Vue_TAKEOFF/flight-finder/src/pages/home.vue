@@ -164,30 +164,9 @@
           </p>
         </div>
       </section>
-
-    <!-- ::::CODE FOR IMAGE CAROUSEL:::: -->
-      <!-- 
-            <v-carousel
-            cycle
-            height="400"
-            hide-delimiter-background
-            show-arrows="hover"
-            >
-            <v-carousel-item> Slide 1 </v-carousel-item>
-
-            <v-carousel-item> Slide 2 </v-carousel-item>
-
-            <v-carousel-item> Slide 3 </v-carousel-item>
-            </v-carousel> -->
     </main>
   </div>
 </template>
-
-    // ::::CODE FOR FLIGHT-DETAILS PAGE::::
-     <!-- <li v-for="flight in flights">
-    //             <router-link :to="`/flight-details/${flight.id}`">{{flight.name}}</router-link>
-    //         </li> -->
-
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap");

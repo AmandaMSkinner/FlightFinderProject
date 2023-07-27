@@ -73,7 +73,7 @@ export default {
       </form>
 
       <router-link to="/">Home</router-link>&nbsp;
-      <router-link to="/about">Go Back</router-link>
+      <router-link to="/flights">Flights</router-link>
     </div>
   </div>
 </template>
@@ -105,7 +105,7 @@ export default {
 
 .background-image-container-hotel {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\src\static\hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
+    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\public\hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
   background-position: right center;
   background-repeat: repeat;
   background-size: cover;
@@ -188,5 +188,28 @@ export default {
   color: var(--secondary-color);
   background-color: var(--primary-color);
   border: 2px solid var(--secondary-color);
+}
+
+#search-hotels-form > button{
+  width: 400px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: .5em;
+  margin-bottom: 1em;
+}
+
+#search-hotels-form > button:hover {
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+a {
+  background-color: var(--sixth-color);
+  padding: .5em;
+  border-radius: 10px;
+}
+
+a:hover {
+  color: var(--eighth-color);
 }
 </style>

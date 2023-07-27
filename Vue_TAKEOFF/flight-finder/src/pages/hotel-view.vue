@@ -73,6 +73,7 @@ export default {
           <img src="spinner.gif" v-if = "loading"/>
       </div>
       <input
+        id="search"
         type="text"
         placeholder="Search"
         v-model="searchTerm"
@@ -113,5 +114,11 @@ export default {
 
 .text-box > h5 {
   color: black;
+}
+
+#search {
+  background-color: var(--third-color);
+  width: 100%;
+  padding: .25em;
 }
 </style>
