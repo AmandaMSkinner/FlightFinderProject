@@ -1,13 +1,23 @@
 <template>
-    <main>
-        <section id="hotel-cards">
+    <main v-if="hotelAndOffer.hotelOffers[0]">
+        <section id="hotel-cards" >
             
-            <article class="hotel-card" v-for="hotel in hotels" :key="hotel.hotelId">
+            <article class="hotel-card">
 
-                <router-link :to="{name: 'HotelOffers', params: {hotelId:hotel.hotelId}}">
+                <!-- <router-link  :to="{name: 'HotelOffers', params: {hotelId:hotel.hotelId}}">
                     <div>{{hotel.hotelId}} - {{ hotel.name }}</div>
-                </router-link>
+                </router-link> -->
 
+                <h2>{{ hotelAndOffer.hotelOffers[0].hotel.name }}</h2>
+                <h2>{{ hotelAndOffer.hotelOffers[0].offers[0].price.total }}</h2>
+                <h2>{{ this.$store.state.hotelPreferencesDto.adults }}</h2>
+                <h2>{{ this.$store.state.hotelPreferencesDto.checkIn }}</h2>
+                <h2>{{ this.$store.state.hotelPreferencesDto.checkOut }}</h2>
+                <img src="hotel4_francesca-saraco-_dS27XGgRyQ-unsplash.jpg" alt="">
+
+                <router-link :to="{name:'HotelOfferDetails', params: {offerId:hotelAndOffer.hotelOffers[0].offers[0].id}}">
+                <button>SEE OFFER DETAILS</button>
+                </router-link>
             </article>
 
         </section>
@@ -15,10 +25,13 @@
     </main>
 </template>
 
+
+
+
 <script>
     export default {
         name: 'hotel-cards',
-        props: ['hotels'],
+        props: ['hotelAndOffer'],
 
     }
 </script>

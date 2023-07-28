@@ -19,12 +19,14 @@
       </h2>
      
       <button @click="selectOffer">SELECT OFFER</button>
+      
     </div>
   </main>
 </template>
 
 
 <script>
+import { getTransitionRawChildren } from "vue";
 import UtilitiesService from "../services/UtilitiesService.js";
 export default {
   data() {
@@ -46,26 +48,11 @@ export default {
       });
     },
     getBusinessNameFromCarrierCode(carrierCode) {
-      UtilitiesService.getBusinessNamesByCarrierCode(carrierCode).then(
-        (response) => {
-          this.carrierCode = response.data;
-        }
-      );
+      return UtilitiesService.getBusinessNamesByCarrierCode(carrierCode);
     },
   },
   created() {
-    let carrierCode = this.flightOffer.itineraries[0].segments[0].carrierCode;
-    if (this.$store.state.flightCarrierCodeCache[carrierCode] !== undefined) {
-      this.businessName = this.$store.state.flightCarrierCodeCache[carrierCode];
-    } else {
-      let businessName = this.getBusinessNameFromCarrierCode(carrierCode);
-      this.businessName = businessName;
-      this.$store.commit(
-        "ADD_FLIGHT_CARRIER_CODE_CACHE",
-        carrierCode,
-        businessName
-      );
-    }
+    this.businessName = this.getBusinessNameFromCarrierCode(this.flightOffer.itineraries[0].segments[0].carrierCode);
   },
 };
 </script>

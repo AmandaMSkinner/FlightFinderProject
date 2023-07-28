@@ -20,7 +20,9 @@
       {{ flightOffer.travelerPricings[0].price.total }}
       </h2>
     </div>
+    <router-link :to="{name: 'FlightConfirmation'}">
     <button>BOOK FLIGHT</button>
+    </router-link>
   </main>
 </template>
 

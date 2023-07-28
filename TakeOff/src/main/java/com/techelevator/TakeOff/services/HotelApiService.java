@@ -4,12 +4,14 @@ Added to App 4/21/23 by AS
 
 package com.techelevator.TakeOff.services;
 
+import com.techelevator.TakeOff.models.combination.HotelAndOffers;
 import com.techelevator.TakeOff.models.responses.hotels.*;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -66,6 +68,18 @@ public class HotelApiService extends ApiBaseService {
                 restTemplate.exchange(url,
                         HttpMethod.GET, entity, HotelOffers.class, hotelIds, adults, checkIn, checkOut);
         return response.getBody().getHotelOffers();
+    }
+
+    public List<HotelAndOffers> getHotelsAndTheirOffers(String city, String adults, String checkIn, String checkOut) {
+        List<HotelAndOffers> hotelAndOffers = new ArrayList<>();
+        int i = 0;
+        List<Hotel> hotels = getHotelsByCity(city, "", "");
+        for(Hotel hotel : hotels) {
+            i++;
+            if (i > 5) { break; }
+            hotelAndOffers.add(new HotelAndOffers(hotel,getHotelOffers(hotel.getHotelId(),adults,checkIn,checkOut)));
+        }
+        return hotelAndOffers;
     }
 
     public OfferData getOfferData(String offerId) {

@@ -72,5 +72,23 @@ export default {
         let path = 'hotels/offerDetails/';
 
         return axios.get(path + offerId);
+    },
+
+    getHotelsAndOffers(iataCode,adults,checkIn,checkOut) {
+        let path = "/hotels/hotelsAndOffers";
+
+        path += '?city=' + iataCode;
+      
+        if(adults !== undefined && adults !== '') {
+            path += '&adults=' +  adults;
+        }
+        if(checkIn !== undefined && checkIn !== ''){
+            path += '&checkIn=' + this.convertDateFormat(checkIn);
+        }
+        if(checkOut !== undefined && checkOut !== ''){
+            path += '&checkOut=' + this.convertDateFormat(checkOut);
+        }
+
+        return axios.get(path);
     }
 }

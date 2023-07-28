@@ -1,5 +1,6 @@
 package com.techelevator.TakeOff.controllers;
 
+import com.techelevator.TakeOff.models.combination.HotelAndOffers;
 import com.techelevator.TakeOff.models.responses.hotels.*;
 import com.techelevator.TakeOff.services.HotelApiService;
 import org.springframework.http.HttpStatus;
@@ -85,6 +86,18 @@ public class HotelController {
     public ResponseEntity<List<BookingData>> bookRoom(
             @RequestBody @Valid CustomerDataParent customerData) {
         return new ResponseEntity(hotelApiService.bookHotel(customerData), HttpStatus.OK);
+    }
+
+
+    @GetMapping(path = "/hotelsAndOffers")
+    public ResponseEntity<List<HotelAndOffers>> getHotelsAndOffers(
+             @RequestParam(defaultValue = "Jacksonville") String city,
+             @RequestParam(defaultValue = "1") String adults,
+             @RequestParam() String checkIn,
+             @RequestParam() String checkOut
+    ) {
+        return new ResponseEntity<>(hotelApiService.getHotelsAndTheirOffers(city,adults,checkIn,checkOut),HttpStatus.OK);
+
     }
 
 }

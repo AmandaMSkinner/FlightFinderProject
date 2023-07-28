@@ -1,34 +1,36 @@
 <template>
   <main>
+    
     <div
       id="hotel-offer-cards"
       v-for="(hotelOffer, index) in hotelOffers"
       v-bind:key="index"
     >
-      <h2>
-        <span>Total: </span>
-        {{
-          hotelOffer.price.total.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
-          })
-        }}
-      </h2>
-      <h2>
-        <span>Check In:</span>
-        {{ hotelOffer.checkInDate }}
-      </h2>
-      <h2><span>Check Out: </span>
-          {{ hotelOffer.checkOutDate }}</h2>
-      <h2><span>Room Type:</span>
-          {{ hotelOffer.room.typeEstimated.category?.replace("_", " ") }}</h2>
-      <h2><span>Beds: </span> 
-      {{ hotelOffer.room.typeEstimated.beds }}</h2>
-      <h2> <span>Bed Type:</span>
-          {{ hotelOffer.room.typeEstimated.bedType }}</h2>
+        <h2>
+          <span>Total: </span>
+          {{
+            hotelOffer.price.total.toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+            })
+          }}
+        </h2>
+        <h2>
+          <span>Check In:</span>
+          {{ hotelOffer.checkInDate }}
+        </h2>
+        <h2><span>Check Out: </span>
+            {{ hotelOffer.checkOutDate }}</h2>
+        <h2><span>Room Type:</span>
+            {{ hotelOffer.room.typeEstimated.category?.replace("_", " ") }}</h2>
+        <h2><span>Beds: </span> 
+        {{ hotelOffer.room.typeEstimated.beds }}</h2>
+        <h2> <span>Bed Type:</span>
+            {{ hotelOffer.room.typeEstimated.bedType }}</h2>
 
-      <button @click="seeOfferDetails(hotelOffer)">SEE OFFER DETAILS</button>
-    </div>
+        <button @click="seeOfferDetails(hotelOffer)">SEE OFFER DETAILS</button>
+      </div>
+ 
   </main>
 </template>
     

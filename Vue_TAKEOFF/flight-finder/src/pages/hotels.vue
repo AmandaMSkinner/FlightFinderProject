@@ -105,7 +105,7 @@ export default {
 
 .background-image-container-hotel {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\public\hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
+    url(hotel2_vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
   background-position: right center;
   background-repeat: repeat;
   background-size: cover;

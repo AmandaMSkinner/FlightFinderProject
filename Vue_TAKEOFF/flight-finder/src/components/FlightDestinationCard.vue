@@ -1,5 +1,5 @@
 <template>
-<div id="destination-card">
+<div id="destination-card" v-if="destination.iataCode">
     <h1> {{ destination.name }}</h1>
     <h2>{{ destination.address.stateCode }}</h2>
     <p>{{ destination.iataCode }}</p>

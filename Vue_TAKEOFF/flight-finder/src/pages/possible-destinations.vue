@@ -7,14 +7,17 @@
         <h1>
             Select Destination
         </h1>
+ 
     </div>
-    <div>
-      <destination-card
-        v-for="(destination, index) in possibleDestinations"
-        :key="index"
-        v-bind:destination="destination"
-      />
-    </div>
+  
+        <div>
+          <destination-card
+            v-for="(destination, index) in possibleDestinations"
+            :key="index"
+            v-bind:destination="destination"
+            
+          />
+        </div>
   </main>
 </template>
 
