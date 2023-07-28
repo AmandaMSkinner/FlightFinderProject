@@ -4,7 +4,7 @@
       <div id="destination-card" v-if="destination.iataCode">
         <h1>{{ destination.name }}</h1>
         <h2>{{ destination.address.stateCode }}</h2>
-        <p>{{ destination.iataCode }}</p>
+        <p id="iatacode">{{ destination.iataCode }}</p>
         <button @click="seeHotelsInDestination">SEE HOTELS</button>
       </div>
       
@@ -47,12 +47,6 @@ export default {
   box-sizing: border-box;
 }
 
-main {
-  background-color: var(--eighth-color);
-  
-}
-
-
 #destination-card {
   background-color: var(--primary-color);
   display: flex;
@@ -60,7 +54,7 @@ main {
   align-items: center;
   gap: 20px;
   padding: 1em;
-  width: 100%;
+  width: 99%;
   flex-wrap: wrap;
   color: var(--eighth-color);
   margin-bottom: 10px;
@@ -81,26 +75,19 @@ p {
 }
 
 button {
-  background-color: var(--sixth-color);
+  background-color: var(--secondary-color);
   color: white;
   font-weight: 600;
   padding: 1em;
 }
 
 button:hover {
-  color: var(--eighth-color);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
-#hotel-details {
-  margin-top: 20px;
-  padding: 1em;
-}
-
-#hotel-details > h3 {
-  color: black;
-}
-
-#hotel-details > p {
-  color: black;
+#iatacode {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 </style>

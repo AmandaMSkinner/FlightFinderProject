@@ -80,7 +80,7 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   flex-direction: column;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   padding: 3em;
   font-size: 0.75rem;
   margin-top: 2em;

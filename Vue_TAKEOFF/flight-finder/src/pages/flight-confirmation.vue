@@ -1,10 +1,10 @@
 <template>
   <main id="flight-confirm-main">
     <div id="confirm-container">
-      <h2>
+      <h2 id="message">
         Thank you! Your flight has been booked. Your confirmation code is:
       </h2>
-      <h2>{{ confirmationCode }}</h2>
+      <h2 id="confirm-code">{{ confirmationCode }}</h2>
     </div>
   </main>
 </template>
@@ -63,13 +63,24 @@ export default {
     align-items: center;
     text-align: center;
     padding: 1em;
-    background-image: url(journey3_convertkit-iGXIjzloB2k-unsplash.jpg);
+    background-image: url(journey4_chris-leipelt-XfGuPGBJyZc-unsplash.jpg);
     background-size: cover;
     background-position: center center;
 }
 
-#confirm-container {
-    border: 3px solid var(--eighth-color);
+#message {
+    border: 3px solid var(--primary-color);
+    padding: 1em;
+    color: var(--third-color);
+    background-color:#0004ff98;
+}
+
+#confirm-code {
+    margin-top: 1em;
+    border: 3px solid var(--primary-color);
+    padding: 1em;
+    color: var(--third-color);
+    background-color:#0004ff98;
 }
 </style>
 

@@ -92,7 +92,7 @@ main {
 .header-h1 {
   display: flex;
   align-items: center;
-  color: var(--primary-color);
+  color: var(--fourth-color);
 }
 
 #spinner-style {

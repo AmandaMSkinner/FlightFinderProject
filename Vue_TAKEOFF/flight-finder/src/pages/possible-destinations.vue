@@ -6,7 +6,6 @@
     <div id="heading">
       <h1 v-if="!loading">Select Destination</h1>
     </div>
-    
 
     <div>
       <destination-card
@@ -20,7 +19,7 @@
       <div>
         <h2>Things to Consider</h2>
         <div id="three-row">
-          <section id="heading">Room Availability:</section>
+          <section id="heading-info">Room Availability:</section>
           <p id="paragraph">
             While we strive to offer real-time room availability, the actual
             availability may vary due to factors such as recent bookings,
@@ -30,7 +29,7 @@
           </p>
         </div>
         <div id="three-row">
-          <section id="heading">Pricing and Offers:</section>
+          <section id="heading-info">Pricing and Offers:</section>
           <p id="paragraph">
             The prices and special offers displayed on our website are subject
             to change based on various factors, including but not limited to
@@ -40,7 +39,7 @@
           </p>
         </div>
         <div id="three-row">
-          <section id="heading">Third-Party Partners:</section>
+          <section id="heading-info">Third-Party Partners:</section>
           <p id="paragraph">
             Our website may feature links to third-party booking platforms and
             travel agencies. We do not control the information provided on these
@@ -105,7 +104,10 @@ main {
   color: var(--third-color);
   background-color: var(--secondary-color);
   width: 100vw;
-  padding: .5em;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #plane {
@@ -118,28 +120,37 @@ main {
 }
 
 article {
-  padding: 1em;
+  padding: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
 }
 
 h2 {
   padding-left: 1em;
   color: var(--fifth-color);
-  background-color: var(--seventh-color);
+  background-color: #162977;
   padding: 1em;
+  width: 99%;
 }
 
 #three-row {
   display: flex;
   gap: 20px;
   color: white;
-  background-color: var(--seventh-color);
+  background-color: var(--primary-color);
   padding: 2em;
+  width: 99%;
 }
 
-#heading {
-  color: var(--eighth-color);
+#heading-info {
+  width: 99%;
+  display: flex;
+  color: var(--third-color);
   font-weight: 600;
-  background-color: var(--seventh-color);
+  text-align: center;
+  align-items: center;
+  background-color: #161d3877;
   width: 400px;
+  padding: 0.5em;
 }
 </style>
