@@ -1,14 +1,11 @@
 <script>
-// export default {
-//    methods: {
-//    seePossibleFlights(){
-//      this.$store.commit("SET_FLIGHT_PREFERENCES_DTO", this.flightPreferencesDto);
-//      this.$router.push({name: 'PossibleFlightPoints'});
-//    }
-//  }
-
-//   }
-
+import Flights from './flights.vue';
+export default {
+ name: "Home",
+ components: {
+   Flights,
+ },
+}
 </script>
 
 <template>
@@ -26,51 +23,7 @@
           
         </div>
       </div>
-
-      <div class="destination-container">
-        <div class="background-image-container">
-          <div class="destination-search-container">
-            <h1 class="flight-search-h1">Find Flights From Anywhere</h1>
-            <h3 class="flight-search-h3">Let's start your adventure</h3>
-
-            <div class="search-box-flights">
-              <i class="uil uil-users-alt"></i>
-              <input
-                id="number-form-flights"
-                type="number"
-                min="1"
-                placeholder="Select Number Of Passengers"
-              />
-            </div>
-
-            <div class="search-box-flights">
-              <i class="uil uil-plane-departure"></i>
-              <input
-                id="destination-form-flights"
-                type="text"
-                placeholder="Going To..."
-              />
-            </div>
-
-            <div class="search-box-flights">
-              <i class="uil uil-calendar-alt"></i>
-              <input type="date" placeholder="Arrival..." />
-            </div>
-
-            <div class="search-box-flights">
-              <i class="uil uil-calender"></i>
-              <input type="date" placeholder="Departure..." />
-            </div>
-
-           <form id="search-flights-form">
-          <button @click="seePossibleFlights()" class="search-flights">
-              Search Flights
-          </button>
-        </form>
-          </div>
-        </div>
-      </div>
-
+      <Flights></Flights>
       <hr />
 
       <div class="three-container">
