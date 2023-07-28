@@ -72,8 +72,6 @@ export default {
           </button>
       </form>
 
-      <router-link to="/">Home</router-link>&nbsp;
-      <router-link to="/flights">Flights</router-link>
     </div>
   </div>
 </template>
