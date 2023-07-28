@@ -1,14 +1,13 @@
 <script>
-// export default {
-//    methods: {
-//    seePossibleFlights(){
-//      this.$store.commit("SET_FLIGHT_PREFERENCES_DTO", this.flightPreferencesDto);
-//      this.$router.push({name: 'PossibleFlightPoints'});
-//    }
-//  }
-
-//   }
-
+import Flights from './flights.vue';
+import Hotels from './hotels.vue';
+export default {
+ name: "Home",
+ components: {
+   Flights,
+   Hotels,
+ },
+}
 </script>
 
 <template>
@@ -26,51 +25,7 @@
           
         </div>
       </div>
-
-      <div class="destination-container">
-        <div class="background-image-container">
-          <div class="destination-search-container">
-            <h1 class="flight-search-h1">Find Flights From Anywhere</h1>
-            <h3 class="flight-search-h3">Let's start your adventure</h3>
-
-            <div class="search-box-flights">
-              <i class="uil uil-users-alt"></i>
-              <input
-                id="number-form-flights"
-                type="number"
-                min="1"
-                placeholder="Select Number Of Passengers"
-              />
-            </div>
-
-            <div class="search-box-flights">
-              <i class="uil uil-plane-departure"></i>
-              <input
-                id="destination-form-flights"
-                type="text"
-                placeholder="Going To..."
-              />
-            </div>
-
-            <div class="search-box-flights">
-              <i class="uil uil-calendar-alt"></i>
-              <input type="date" placeholder="Arrival..." />
-            </div>
-
-            <div class="search-box-flights">
-              <i class="uil uil-calender"></i>
-              <input type="date" placeholder="Departure..." />
-            </div>
-
-           <form id="search-flights-form">
-          <button @click="seePossibleFlights()" class="search-flights">
-              Search Flights
-          </button>
-        </form>
-          </div>
-        </div>
-      </div>
-
+      <Flights></Flights>
       <hr />
 
       <div class="three-container">
@@ -107,49 +62,7 @@
       </div>
 
       <hr />
-
-      <div class="hotel-search-container">
-        <div class="background-image-container-hotel">
-          <div class="hotel-search">
-            <h1 class="hotel-search-h1">Find Hotels with your Flight</h1>
-            <h3 class="hotel-search-h3">Create a Package and Save</h3>
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-users-alt"></i>
-            <input
-              id="number-guests-form-hotel"
-              type="number"
-              min="1"
-              placeholder="Select Number Of Guests"
-            />
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-compass"></i>
-            <input
-              id="city-state-form-hotels"
-              type="text"
-              placeholder="City/State"
-            />
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-bed-double"></i>
-            <input type="date" placeholder="Checking in.." />
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-luggage-cart"></i>
-            <input type="date" placeholder="Checking out.." />
-          </div>
-
-          <form id="search-hotels-form" action="hotel-response.html">
-            <button
-              onclick="window.location.href='hotel-response.html'"
-              class="search-hotels"
-            >
-              Search Hotels
-            </button>
-          </form>
-        </div>
-      </div>
+      <Hotels></Hotels>
 
       <section id="info-block">
         <div class="info-block-container">
