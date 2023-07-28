@@ -1,7 +1,8 @@
 <template>
   <main>
-    <div style="width: 100vw; display: flex; justify-content: center">
-      <img src="spinner.gif" v-if="loading" />
+    <div id="spinner-style">
+      <img id="plane" src="spinner.gif" v-if="loading" />
+      <h1 v-if="!loading" class="header-h1">Select Locations</h1>
     </div>
     <h2 id="origin-select">Select Origin Location</h2>
     <h3 id="current-origin">
@@ -85,50 +86,69 @@ export default {
 }
 
 main {
-    background-color: var(--eighth-color);
+  background-color: var(--eighth-color);
 }
 
-#origin-select  {
-    background-color: var(--primary-color);
-    border-top: 2px solid var(--fifth-color);
-    border-bottom: 10px solid var(--eighth-color);
-    padding-left: .5em;
-    padding: .5em;
+.header-h1 {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+#spinner-style {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+}
+
+#origin-select {
+  background-color: var(--primary-color);
+  border-top: 2px solid var(--fifth-color);
+  padding-left: 0.5em;
+  padding: 1em;
 }
 
 #current-origin {
-    background-color: var(--secondary-color);
-    padding: 1em; 
-    color: var(--primary-color);
+  background-color: var(--secondary-color);
+  padding: 1em;
+  color: var(--fourth-color);
 }
 
 #destination-select {
-    background-color: var(--primary-color);
-    padding: .5em;
-    margin-top: 1em;
-    border-bottom: 10px solid var(--eighth-color);
+  background-color: var(--primary-color);
+  padding: 1em;
+  margin-top: 1em;
 }
 
 #current-destination {
-    background-color: var(--secondary-color);
-    padding-left: 1em;
-    padding: 1em;
-    color: var(--primary-color);
+  background-color: var(--secondary-color);
+  padding-left: 1em;
+  padding: 1em;
+  color: var(--fourth-color);
 }
 
 button {
-    width: 100%;
-    background-color: var(--primary-color);
-    padding: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    border: 2px solid var(--eighth-color);
-    
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 2px solid var(--eighth-color);
 }
 
 button:hover {
-    border: 5px solid var(--secondary-color);
-    color: var(--eighth-color);
+  border: 5px solid var(--secondary-color);
+  color: var(--eighth-color);
+}
 
+#plane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+  margin-top: 20em;
+  margin-bottom: 20em;
 }
 </style>

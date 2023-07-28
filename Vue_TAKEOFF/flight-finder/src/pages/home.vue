@@ -1,4 +1,14 @@
 <script>
+// export default {
+//    methods: {
+//    seePossibleFlights(){
+//      this.$store.commit("SET_FLIGHT_PREFERENCES_DTO", this.flightPreferencesDto);
+//      this.$router.push({name: 'PossibleFlightPoints'});
+//    }
+//  }
+
+//   }
+
 </script>
 
 <template>
@@ -57,14 +67,11 @@
               <input type="date" placeholder="Departure..." />
             </div>
 
-            <form id="search-flights-form">
-              <button class="search-flights">
-                <router-link :to=" {name: 'FlightView'}">
-                Search Flights
-                </router-link>
-
-              </button>
-            </form>
+           <form id="search-flights-form">
+          <button @click="seePossibleFlights()" class="search-flights">
+              Search Flights
+          </button>
+        </form>
           </div>
         </div>
       </div>

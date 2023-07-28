@@ -8,12 +8,12 @@ export default {
   components: {
     HotelService,
     UtilitiesService,
-    HotelCards
+    HotelCards,
   },
   data() {
     return {
       hotelsAndOffers: [],
-      loading: false
+      loading: false,
     };
   },
   created() {
@@ -27,37 +27,36 @@ export default {
       this.hotelsAndOffers = response.data;
       this.loading = false;
     });
-
-    
-
-    
   },
-
 };
 </script>
 
 <template>
   <main>
     <div class="text-box">
-      <h4>Browse through Hotel options</h4>
-      <h5>
+      <h4 id="heading-h4">Browse through Hotel options</h4>
+      <h5 id="p-h5">
         Prices displayed include taxes and may change based on availability. You
         can review any additional fees before checkout. Prices are not final
         until you complete your purchase.
       </h5>
+      <h5 id="p-h5">
+        While we strive to offer real-time room availability, the actual
+        availability may vary due to factors such as recent bookings,
+        cancellations, or modifications. Therefore, we cannot guarantee that a
+        specific room type or package will be available for your preferred
+        dates.
+      </h5>
       <div style="width: 100vw; display: flex; justify-content: center">
-      <img src="spinner.gif" v-if="loading" />
+        <img id="plane" src="spinner.gif" v-if="loading" />
+      </div>
     </div>
-    </div>
 
-
-
-
-
-
-    <hotel-cards v-for="(hotelAndOffer,index) in hotelsAndOffers" :key="index" :hotelAndOffer="hotelAndOffer"/>
-   
-   
+    <hotel-cards
+      v-for="(hotelAndOffer, index) in hotelsAndOffers"
+      :key="index"
+      :hotelAndOffer="hotelAndOffer"
+    />
   </main>
 </template>
 
@@ -77,6 +76,11 @@ export default {
   box-sizing: border-box;
 }
 
+main {
+  height: 100vh;
+  background-color: var(--eighth-color);
+}
+
 .text-box {
   width: 100%;
   background-color: var(--eighth-color);
@@ -94,6 +98,25 @@ export default {
 #search {
   background-color: var(--third-color);
   width: 100%;
-  padding: .25em;
+  padding: 0.25em;
 }
+
+#plane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20em;
+}
+
+#heading-h4 {
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+}
+
+#p-h5 {
+  width: 90%;
+  padding-top: 1.5em;
+  padding-left: 2em;
+}
+
 </style>

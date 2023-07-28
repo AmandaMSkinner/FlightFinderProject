@@ -6,7 +6,7 @@
         <span>Cabin:</span>
         {{ flightOffer.travelerPricings[0].fareDetailsBySegment[0].cabin }}
       </h2>
-       <h2>
+      <h2>
         <span>Departure:</span>
         {{ loseTheT(flightOffer.itineraries[0].segments[0].departure.at) }}
       </h2>
@@ -17,9 +17,8 @@
       <h2>
         <span>Total:</span> {{ flightOffer.travelerPricings[0].price.total }}
       </h2>
-     
+
       <button @click="selectOffer">SELECT OFFER</button>
-      
     </div>
   </main>
 </template>
@@ -52,7 +51,9 @@ export default {
     },
   },
   created() {
-    this.businessName = this.getBusinessNameFromCarrierCode(this.flightOffer.itineraries[0].segments[0].carrierCode);
+    this.businessName = this.getBusinessNameFromCarrierCode(
+      this.flightOffer.itineraries[0].segments[0].carrierCode
+    );
   },
 };
 </script>
@@ -79,34 +80,36 @@ main {
 }
 
 #flight-offer-card {
-  width: 100%;
-  background-color: var(--secondary-color);
-  border: 1px solid var(--eighth-color);
+  width: calc(100% - 40px);
+  margin: 1em;
+  background-color: var(--primary-color);
   padding: 1em;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  border-top: 15px solid var(--eighth-color);
+  align-items: center;
 }
 
 span {
-  color: var(--primary-color);
+  color: var(--eighth-color);
 }
 
 h2 {
-    font-size: 1.25rem;
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    gap: 10px;
+  font-size: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 button {
-    background-color: var(--primary-color);
+  background-color: var(--seventh-color);
+  padding: 1em;
+  color: var(--fifth-color);
+  font-weight: 700;
 }
 
 button:hover {
-    border: 1px solid var(--eighth-color);
-    color: var(--eighth-color);
+  border: 1px solid var(--eighth-color);
+  color: var(--eighth-color);
 }
 </style>

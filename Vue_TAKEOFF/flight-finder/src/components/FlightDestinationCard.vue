@@ -52,18 +52,17 @@ export default {
     gap: 50px;
     width: 99%;
     height: 100px;
-    background-color: var(--secondary-color);
+    background-color: var(--fifth-color);
     border: 3px solid var(--eighth-color);
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
     flex-wrap: no-wrap;
-
+    color: black;
 }
 
 h1 {
     font-size: 1.5rem;
-    text-decoration: underline;
     padding-left: .5em;
     display: flex;
     flex-grow: 1;
@@ -76,6 +75,8 @@ button {
     padding: .75em;
     border-radius: 10px;
     margin-right: 1em;
+    color: white;
+    font-weight: 600;
     
 }
 

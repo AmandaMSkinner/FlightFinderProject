@@ -1,11 +1,16 @@
 <template>
   <main>
-    <div id="destination-card" v-if="destination.iataCode">
-      <h1>{{ destination.name }}</h1>
-      <h2>{{ destination.address.stateCode }}</h2>
-      <p>{{ destination.iataCode }}</p>
-      <button @click="seeHotelsInDestination">SEE HOTELS</button>
+    <div id="container">      
+      <div id="destination-card" v-if="destination.iataCode">
+        <h1>{{ destination.name }}</h1>
+        <h2>{{ destination.address.stateCode }}</h2>
+        <p>{{ destination.iataCode }}</p>
+        <button @click="seeHotelsInDestination">SEE HOTELS</button>
+      </div>
+      
     </div>
+
+    
   </main>
 </template>
 
@@ -44,19 +49,21 @@ export default {
 
 main {
   background-color: var(--eighth-color);
+  
 }
 
+
 #destination-card {
-  background-color: var(--secondary-color);
-  margin-bottom: 20px;
-  margin-top: 20px;
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   padding: 1em;
-  width: 99%;
+  width: 100%;
   flex-wrap: wrap;
+  color: var(--eighth-color);
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -65,8 +72,35 @@ h1 {
   font-size: 1.5rem;
 }
 
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
 button {
-  background-color: var(--primary-color);
-  padding: 0.5em;
+  background-color: var(--sixth-color);
+  color: white;
+  font-weight: 600;
+  padding: 1em;
+}
+
+button:hover {
+  color: var(--eighth-color);
+}
+
+#hotel-details {
+  margin-top: 20px;
+  padding: 1em;
+}
+
+#hotel-details > h3 {
+  color: black;
+}
+
+#hotel-details > p {
+  color: black;
 }
 </style>

@@ -65,7 +65,8 @@ export default {
 
 main {
   height: 100vh;
-  background-image: url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\public\journey6_aleksei-zaitcev-Nc34cnxcfH0-unsplash.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(journey6_aleksei-zaitcev-Nc34cnxcfH0-unsplash.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -89,12 +90,14 @@ main {
     height: 200px;
     display: flex;
     gap: 20px;
-    background-color: var(--secondary-color);
-    padding: 1em;
+    background-color: rgba(42, 21, 7, 0.39);
+    padding: .5em;
     justify-content: space-between;
     border: 20px solid var(--eighth-color);
     flex-wrap: wrap;
     align-items: center;
+    color: var(--fifth-color);
+
     
     
 }
@@ -106,7 +109,7 @@ h2 {
 }
 
 span {
-    color: var(--primary-color);
+    color: var(--eighth-color);
     padding-right: 10px;
 }
 
@@ -115,6 +118,7 @@ button {
     width: 100%;
     padding: 1em;
     margin-top: 17.5em;
+    font-weight: 700;
 }
 
 button:hover {
