@@ -1,9 +1,11 @@
 <script>
 import Flights from './flights.vue';
+import Hotels from './hotels.vue';
 export default {
  name: "Home",
  components: {
    Flights,
+   Hotels,
  },
 }
 </script>
@@ -60,49 +62,7 @@ export default {
       </div>
 
       <hr />
-
-      <div class="hotel-search-container">
-        <div class="background-image-container-hotel">
-          <div class="hotel-search">
-            <h1 class="hotel-search-h1">Find Hotels with your Flight</h1>
-            <h3 class="hotel-search-h3">Create a Package and Save</h3>
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-users-alt"></i>
-            <input
-              id="number-guests-form-hotel"
-              type="number"
-              min="1"
-              placeholder="Select Number Of Guests"
-            />
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-compass"></i>
-            <input
-              id="city-state-form-hotels"
-              type="text"
-              placeholder="City/State"
-            />
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-bed-double"></i>
-            <input type="date" placeholder="Checking in.." />
-          </div>
-          <div class="search-box-hotel">
-            <i class="uil uil-luggage-cart"></i>
-            <input type="date" placeholder="Checking out.." />
-          </div>
-
-          <form id="search-hotels-form" action="hotel-response.html">
-            <button
-              onclick="window.location.href='hotel-response.html'"
-              class="search-hotels"
-            >
-              Search Hotels
-            </button>
-          </form>
-        </div>
-      </div>
+      <Hotels></Hotels>
 
       <section id="info-block">
         <div class="info-block-container">
