@@ -17,7 +17,7 @@
         {{ fixDuration(flightOffer.itineraries[0].segments[0].duration) }}
       </h2>
       <h2><span>Total:</span> 
-      {{ flightOffer.travelerPricings[0].price.total }}
+      ${{ flightOffer.travelerPricings[0].price.total }}
       </h2>
     </div>
     <router-link :to="{name: 'FlightConfirmation'}">
@@ -86,11 +86,13 @@ main {
 #flight-offer {
     position: absolute;
     margin-top: 5em;
+    margin-right: auto;
+    margin-left: auto;
     width: 100%;
     height: 200px;
     display: flex;
     gap: 20px;
-    background-color: rgba(42, 21, 7, 0.39);
+    background-color: rgba(42, 21, 7, 0.582);
     padding: .5em;
     justify-content: space-between;
     border: 20px solid var(--eighth-color);

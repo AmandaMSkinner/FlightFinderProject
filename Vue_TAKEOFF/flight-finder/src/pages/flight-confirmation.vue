@@ -63,6 +63,9 @@ export default {
     align-items: center;
     text-align: center;
     padding: 1em;
+    background-image: url(journey3_convertkit-iGXIjzloB2k-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
 }
 
 #confirm-container {

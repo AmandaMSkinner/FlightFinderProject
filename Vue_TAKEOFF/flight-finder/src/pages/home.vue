@@ -23,12 +23,7 @@
         <div class="links-search">
           <router-link class="active" :to="'/flights'">Flights</router-link>
           <router-link :to="'/hotels'">Hotels</router-link>
-          <input
-            name="search-form"
-            type="text"
-            placeholder="Search.."
-            class="search"
-          />
+          
         </div>
       </div>
 

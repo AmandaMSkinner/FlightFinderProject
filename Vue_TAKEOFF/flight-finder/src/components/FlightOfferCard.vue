@@ -15,7 +15,7 @@
         {{ loseTheT(flightOffer.itineraries[0].segments[0].arrival.at) }}
       </h2>
       <h2>
-        <span>Total:</span> {{ flightOffer.travelerPricings[0].price.total }}
+        <span>Total:</span> ${{ flightOffer.travelerPricings[0].price.total }}
       </h2>
 
       <button @click="selectOffer">SELECT OFFER</button>
@@ -82,7 +82,7 @@ main {
 #flight-offer-card {
   width: calc(100% - 40px);
   margin: 1em;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -91,7 +91,7 @@ main {
 }
 
 span {
-  color: var(--eighth-color);
+  color: var(--primary-color);
 }
 
 h2 {
@@ -102,14 +102,14 @@ h2 {
 }
 
 button {
-  background-color: var(--seventh-color);
+  background-color: var(--primary-color);
   padding: 1em;
   color: var(--fifth-color);
   font-weight: 700;
 }
 
 button:hover {
-  border: 1px solid var(--eighth-color);
+  /* border: 2px solid var(--eighth-color); */
   color: var(--eighth-color);
 }
 </style>

@@ -18,7 +18,7 @@
     </div>
     <h2 id="destination-select">Select Destination Location</h2>
     <h3 id="current-destination">
-      Your current destination is:
+      Your desired destination is:
       {{ this.$store.state.flightPreferencesDto.destinationLocationCode }}
     </h3>
     <div>
@@ -129,12 +129,18 @@ main {
 }
 
 button {
-  width: 100%;
+  width: 500px;
   background-color: var(--primary-color);
-  padding: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  padding: .5em;
+  margin-top: 1em;
+  /* margin-bottom: 2em; */
   border: 2px solid var(--eighth-color);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button:hover {

@@ -57,6 +57,17 @@ export default {
       :key="index"
       :hotelAndOffer="hotelAndOffer"
     />
+
+    <div id="disclaimer">
+      <h1>Hotel Disclaimer:</h1>
+      <p>
+        While we make every effort to maintain accurate and reliable
+        information, we disclaim all liability for any inaccuracies, errors, or
+        omissions in the hotel information displayed on our website. We also
+        cannot be held responsible for any losses, damages, or inconveniences
+        caused by reliance on this information.
+      </p>
+    </div>
   </main>
 </template>
 
@@ -77,8 +88,9 @@ export default {
 }
 
 main {
-  height: 100vh;
   background-color: var(--eighth-color);
+  overflow: auto;
+  height: 100%;
 }
 
 .text-box {
@@ -105,7 +117,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20em;
+  margin-top: 10em;
+  margin-bottom: 15em;
 }
 
 #heading-h4 {
@@ -119,4 +132,18 @@ main {
   padding-left: 2em;
 }
 
+#disclaimer {
+  color: black;
+  background-color: var(--eighth-color);
+  padding: 1em;
+  
+}
+
+#disclaimer > h1 {
+  font-size: 1rem;
+}
+
+#disclaimer > p {
+  font-size: 1rem;
+}
 </style>
