@@ -51,9 +51,12 @@ export default {
   box-sizing: border-box;
 }
 #main {
-  background-color: var(--eighth-color);
+  background-color: rgba(79, 14, 122, 0.616);
+  background-image: url(airplane3_nathan-nelson-HyjnY2oKOxk-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
   height: 100vh;
-  width: 99%;
+  width: 100%;
   overflow: auto;
 }
 

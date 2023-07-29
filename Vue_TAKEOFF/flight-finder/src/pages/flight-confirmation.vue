@@ -63,24 +63,22 @@ export default {
     align-items: center;
     text-align: center;
     padding: 1em;
-    background-image: url(journey4_chris-leipelt-XfGuPGBJyZc-unsplash.jpg);
+    background-image: url(airplane6_julian-hochgesang-s4i33r-KszI-unsplash.jpg);
     background-size: cover;
     background-position: center center;
 }
 
 #message {
-    border: 3px solid var(--primary-color);
     padding: 1em;
     color: var(--third-color);
-    background-color:#0004ff98;
+    background-color:#03031383;
 }
 
 #confirm-code {
     margin-top: 1em;
-    border: 3px solid var(--primary-color);
     padding: 1em;
     color: var(--third-color);
-    background-color:#0004ff98;
+    background-color: #03031383;
 }
 </style>
 

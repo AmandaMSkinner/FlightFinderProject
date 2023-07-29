@@ -86,13 +86,16 @@ export default {
 }
 
 main {
-  background-color: var(--eighth-color);
+  background-color: var(--fourth-color);
+  background-image: url(clouds2_taylor-van-riper-yQorCngxzwI-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
 }
 
 .header-h1 {
   display: flex;
   align-items: center;
-  color: var(--fourth-color);
+  color: var(--fifth-color);
 }
 
 #spinner-style {
@@ -104,7 +107,6 @@ main {
 
 #origin-select {
   background-color: var(--primary-color);
-  border-top: 2px solid var(--fifth-color);
   padding-left: 0.5em;
   padding: 1em;
 }
@@ -129,13 +131,12 @@ main {
 }
 
 button {
-  width: 500px;
-  background-color: var(--primary-color);
+  width: 100%;
+  background-color: rgba(11, 11, 12, 0.822);
   padding: .5em;
   margin-top: 1em;
   /* margin-bottom: 2em; */
-  border: 2px solid var(--eighth-color);
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +145,6 @@ button {
 }
 
 button:hover {
-  border: 5px solid var(--secondary-color);
   color: var(--eighth-color);
 }
 

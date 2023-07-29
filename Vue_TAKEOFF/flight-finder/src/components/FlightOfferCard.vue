@@ -76,13 +76,13 @@ export default {
 }
 
 main {
-  background-color: var(--eighth-color);
+  /* background-color: var(--eighth-color); */
 }
 
 #flight-offer-card {
   width: calc(100% - 40px);
   margin: 1em;
-  background-color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.801);
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -91,7 +91,7 @@ main {
 }
 
 span {
-  color: var(--primary-color);
+  color: var(--fifth-color);
 }
 
 h2 {

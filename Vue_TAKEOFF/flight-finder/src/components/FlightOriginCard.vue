@@ -52,8 +52,7 @@ export default {
     gap: 30px;
     width: 99%;
     height: 100px;
-    background-color: var(--fifth-color);
-    border: 1px solid var(--eighth-color);
+    background-color: #2465a183;
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
@@ -72,7 +71,7 @@ h1 {
 #iatacode {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--eighth-color);
 }
 
 button {

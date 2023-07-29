@@ -95,13 +95,15 @@ main {
   height: auto;
   display: flex;
   background-color: rgba(42, 21, 7, 0.582);
-  padding: 0.5em;
-  border: 10px solid var(--eighth-color);
+  padding: 2em;
+  border: 10px solid rgba(170, 9, 9, 0.685);
   flex-wrap: wrap;
   align-items: center;
   color: var(--fifth-color);
   padding-left: 30px;
-  font-size: 1rem;
+  font-size: .75rem;
+  justify-content: space-between;
+
 }
 
 h2 {
@@ -116,14 +118,13 @@ span {
 }
 
 button {
-  background-color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.616);
   width: 700px;
   padding: 1em;
   font-weight: 700;
 }
 
 button:hover {
-  border: 2px solid var(--secondary-color);
   color: var(--eighth-color);
 }
 </style>
