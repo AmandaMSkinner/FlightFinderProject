@@ -76,7 +76,8 @@ export default {
 }
 
 main {
-  /* background-color: var(--eighth-color); */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #flight-offer-card {
@@ -88,6 +89,7 @@ main {
   justify-content: space-between;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 span {
