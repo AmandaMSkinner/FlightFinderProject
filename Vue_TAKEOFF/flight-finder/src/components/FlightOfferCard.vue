@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     loseTheT(string) {
-      return string.split("T")[0];
+      return string.split("T")[0]+" @ "+string.split("T")[1];
     },
     selectOffer() {
       this.$router.push({
