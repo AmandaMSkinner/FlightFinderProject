@@ -4,31 +4,31 @@
       <img id="plane" src="spinner.gif" v-if="loading" />
       <h1 v-if="!loading" class="header-h1">Select Locations</h1>
     </div>
-    <h2 id="origin-select">Select Origin Location</h2>
-    <h3 id="current-origin">
+    <h2 v-if="!loading" id="origin-select">Select Origin Location</h2>
+    <h3 v-if="!loading" id="current-origin">
       Your current origin is:
       {{ this.$store.state.flightPreferencesDto.originLocationCode }}
     </h3>
-    <div>
+    <div v-if="!loading">
       <flight-origin-card
         v-for="(destination, index) in possibleOrigins"
         :key="index"
         v-bind:destination="destination"
       />
     </div>
-    <h2 id="destination-select">Select Destination Location</h2>
-    <h3 id="current-destination">
+    <h2 v-if="!loading" id="destination-select">Select Destination Location</h2>
+    <h3 v-if="!loading" id="current-destination">
       Your desired destination is:
       {{ this.$store.state.flightPreferencesDto.destinationLocationCode }}
     </h3>
-    <div>
+    <div v-if="!loading">
       <flight-destination-card
         v-for="(destination, index) in possibleDestinations"
         :key="index"
         v-bind:destination="destination"
       />
     </div>
-    <button @click="viewResults()">SEE FLIGHTS</button>
+    <button v-if="!loading" @click="viewResults()">SEE FLIGHTS</button>
   </main>
 </template>
 
@@ -52,13 +52,15 @@ export default {
       this.$store.state.flightPreferencesDto.originInput
     ).then((response) => {
       this.possibleOrigins = response.data;
+        UtilitiesService.getPossibleDestinations(
+          this.$store.state.flightPreferencesDto.destinationInput
+        ).then((response) => {
+          this.possibleDestinations = response.data;
+          this.loading = false;
+        });
     });
-    UtilitiesService.getPossibleDestinations(
-      this.$store.state.flightPreferencesDto.destinationInput
-    ).then((response) => {
-      this.possibleDestinations = response.data;
-    });
-    this.loading = false;
+
+    
   },
   methods: {
     viewResults() {
@@ -89,6 +91,8 @@ main {
   background-image: url(clouds2_taylor-van-riper-yQorCngxzwI-unsplash.jpg);
   background-size: cover;
   background-position: center center;
+  min-height: 100vh;
+  padding-bottom: 1em;
 }
 
 .header-h1 {
@@ -101,7 +105,6 @@ main {
   width: 100vw;
   display: flex;
   justify-content: center;
-  height: 10vh;
 }
 
 #origin-select {
@@ -151,8 +154,6 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 20vh;
   margin-top: 20em;
   margin-bottom: 20em;
 }

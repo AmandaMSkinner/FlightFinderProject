@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div id="plane-container">
-      <img id="plane" src="spinner.gif" v-if="loading" />
+    <div v-if="loading" id="plane-container">
+      <img id="plane" src="spinner.gif" />
     </div>
 
     <div id="hotelOfferDetails" v-if="hotelOfferDetails">
@@ -89,20 +89,19 @@ export default {
 
 main {
   background-color: var(--eighth-color);
-    overflow: auto;
+  overflow: auto;
 }
 
 #plane-container {
   background-color: var(--eighth-color);
   height: 100vh;
-}
-
-#plane {
-  padding-top: 20em;
   width: 100vw;
-  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
   justify-content: center;
-  background-color: var(--eighth-color);
+  align-items: center;
+  display: flex;
 }
 
 span {
@@ -110,9 +109,9 @@ span {
 }
 
 #hotel-image {
-    width: 550px;
-    border: 2px solid var(--primary-color);
-    height: auto;
+  width: 550px;
+  border: 2px solid var(--primary-color);
+  height: auto;
 }
 
 #hotelOfferDetails {
@@ -124,8 +123,6 @@ span {
   flex-direction: column;
   color: black;
   width: 100%;
-  margin-top: -50em;
-  
 }
 
 button {
@@ -137,8 +134,8 @@ button {
 }
 
 button:hover {
-    color: var(--eighth-color);
-    border: 3px solid var(--secondary-color);
+  color: var(--eighth-color);
+  border: 3px solid var(--secondary-color);
 }
 
 #hotel-name {

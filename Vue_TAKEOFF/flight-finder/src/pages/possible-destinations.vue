@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="main">
     <div>
       <img id="plane" src="spinner.gif" v-if="loading" />
     </div>
@@ -92,7 +92,7 @@ export default {
   box-sizing: border-box;
 }
 
-main {
+#main {
   background-color: var(--eighth-color);
   background-image: url(hotelroom3_marvin-meyer-KCETNsfr4qo-unsplash.jpg);
   background-size: cover;

@@ -1,7 +1,7 @@
 <template>
   <div id="main">
-    <div>
-      <img id="plane" src="spinner.gif" v-if="loading" />
+    <div  v-if="loading" id="planediv">
+      <img id="plane" src="spinner.gif"/>
     </div>
     <flight-offer-card
       v-for="flightOffer in flightOffers"
@@ -54,16 +54,29 @@ export default {
   background-color: rgba(79, 14, 122, 0.616);
   background-image: url(airplane3_nathan-nelson-HyjnY2oKOxk-unsplash.jpg);
   background-size: cover;
+
+  background-attachment: fixed;
   background-position: center center;
-  height: 100vh;
+  min-height: calc(100vh - 91px);
   width: 100%;
-  overflow: auto;
+
 }
 
 #plane {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20em;
+}
+
+#planediv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh);
+    top:0;
+    left: 0;
+    
 }
 </style>
