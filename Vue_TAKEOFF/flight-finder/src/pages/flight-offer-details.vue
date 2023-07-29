@@ -47,7 +47,7 @@ export default {
 
     fixDuration(string) {
       let hours = string.split("PT")[1].split("H")[0];
-      let minutes = string.substring(string.length-3,string.length-1);
+      let minutes = string.substring(string.length-3,string.length-1).replace("H","");
       return hours+" Hours "+minutes+" Minutes";
     },
   },
