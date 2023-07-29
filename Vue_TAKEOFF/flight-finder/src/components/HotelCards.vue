@@ -5,19 +5,18 @@
         <!-- <router-link  :to="{name: 'HotelOffers', params: {hotelId:hotel.hotelId}}">
                     <div>{{hotel.hotelId}} - {{ hotel.name }}</div>
                 </router-link> -->
-
-        <h2 id="hotelname">{{ hotelAndOffer.hotelOffers[0].hotel.name }}</h2>
+        <img
+          id="hotel-image"
+          src="hotel4_francesca-saraco-_dS27XGgRyQ-unsplash.jpg"
+          alt=""
+        />
+        <h2 id="hotelname">Name: {{ hotelAndOffer.hotelOffers[0].hotel.name }}</h2>
         <h2>Adults: {{ this.$store.state.hotelPreferencesDto.adults }}</h2>
         <h2>
           Price: ${{ hotelAndOffer.hotelOffers[0].offers[0].price.total }}
         </h2>
         <h2>Check-in: {{ this.$store.state.hotelPreferencesDto.checkIn }}</h2>
         <h2>Check-out: {{ this.$store.state.hotelPreferencesDto.checkOut }}</h2>
-        <img
-          id="hotel-image"
-          src="hotel4_francesca-saraco-_dS27XGgRyQ-unsplash.jpg"
-          alt=""
-        />
 
         <router-link
           :to="{
@@ -68,30 +67,27 @@ main {
 
 #hotel-image {
   width: 250px;
-  height: 3auto;
+  height: auto;
   display: flex;
 }
 
 #hotel-name {
-    padding-right: 1em;
+  padding-right: 1em;
 }
-
 
 .hotel-card {
   display: flex;
   justify-content: center;
   font-size: 1.5rem;
-  padding: 5em;
+  padding: 6em;
   font-size: 0.75rem;
   margin-top: 5em;
-  width: 100vw;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  flex-direction: row;
-  gap: 60px;
+  gap: 20px;
   background-color: rgba(0, 0, 0, 0.815);
-  margin-bottom: 5em;
 }
 
 a:hover {

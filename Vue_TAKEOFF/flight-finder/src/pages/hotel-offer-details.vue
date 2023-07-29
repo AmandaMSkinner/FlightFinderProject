@@ -28,9 +28,11 @@
         {{ hotelOfferDetails.room.typeEstimated.category }}
       </h2>
       <h2 v-if="hotelOfferDetails.room.typeEstimated != null">
+        <span>Beds:</span>
         {{ hotelOfferDetails.room.typeEstimated.beds }}
       </h2>
       <h2 v-if="hotelOfferDetails.room.typeEstimated != null">
+        <span>Bed Type: </span>
         {{ hotelOfferDetails.room.typeEstimated.bedType }}
       </h2>
       <!-- <h2>{{ hotelOfferDetails.room.description.text }}</h2> -->
@@ -88,12 +90,15 @@ export default {
 }
 
 main {
-  background-color: var(--eighth-color);
   overflow: auto;
+  background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.548)),
+    url(hotel1_rhema-kallianpur-uocSnWMhnAs-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 #plane-container {
-  background-color: var(--eighth-color);
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -102,15 +107,19 @@ main {
   justify-content: center;
   align-items: center;
   display: flex;
+  background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.548)),
+    url(hotel1_rhema-kallianpur-uocSnWMhnAs-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 span {
-  color: var(--primary-color);
+  color: var(--eighth-color);
 }
 
 #hotel-image {
   width: 550px;
-  border: 2px solid var(--primary-color);
   height: auto;
 }
 
@@ -121,12 +130,21 @@ span {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  color: black;
+  color: white;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.363);
+  font-size: 0.8rem;
+  gap: 20px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#hotel-name {
+  color: white;
 }
 
 button {
-  background-color: var(--primary-color);
+  background-color: rgba(145, 52, 24, 0.76);
   padding: 1em;
   width: 500px;
   color: white;
@@ -135,10 +153,6 @@ button {
 
 button:hover {
   color: var(--eighth-color);
-  border: 3px solid var(--secondary-color);
-}
-
-#hotel-name {
-  color: var(--fourth-color);
+  border: 3px solid var(--third-color);
 }
 </style>
