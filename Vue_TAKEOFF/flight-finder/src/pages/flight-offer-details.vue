@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     loseTheT(string) {
-      return string.substring(2);
+      return string.split("T")[0]+" @ "+string.split("T")[1];
     },
 
     fixDuration(string) {
