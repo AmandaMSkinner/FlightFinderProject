@@ -47,8 +47,10 @@ export default {
   box-sizing: border-box;
 }
 
+
 #destination-card {
-  background-color: var(--primary-color);
+  margin-top: 2em;
+  background-color: rgba(50, 55, 66, 0.575);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,7 +77,7 @@ p {
 }
 
 button {
-  background-color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.849);
   color: white;
   font-weight: 600;
   padding: 1em;

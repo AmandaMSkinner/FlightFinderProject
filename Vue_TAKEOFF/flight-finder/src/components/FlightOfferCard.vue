@@ -78,6 +78,7 @@ export default {
 main {
   display: flex;
   flex-wrap: wrap;
+  overflow: auto;
 }
 
 #flight-offer-card {

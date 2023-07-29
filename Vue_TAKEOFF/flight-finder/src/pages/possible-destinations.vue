@@ -94,6 +94,10 @@ export default {
 
 main {
   background-color: var(--eighth-color);
+  background-image: url(hotelroom3_marvin-meyer-KCETNsfr4qo-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 #heading {
@@ -128,7 +132,7 @@ article {
 h2 {
   padding-left: 1em;
   color: var(--fifth-color);
-  background-color: #162977;
+  background-color: #111318de;
   padding: 1em;
   width: 99%;
 }
@@ -137,7 +141,7 @@ h2 {
   display: flex;
   gap: 20px;
   color: white;
-  background-color: var(--primary-color);
+  background-color: rgba(3, 3, 3, 0.877);
   padding: 2em;
   width: 99%;
 }
@@ -149,7 +153,7 @@ h2 {
   font-weight: 600;
   text-align: center;
   align-items: center;
-  background-color: #161d3877;
+  background-color: #22273bc9;
   width: 400px;
   padding: 0.5em;
 }

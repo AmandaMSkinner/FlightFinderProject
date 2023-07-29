@@ -105,6 +105,7 @@ main {
   padding-left: 30px;
   font-size: .75rem;
   justify-content: space-between;
+  
 
 }
 
