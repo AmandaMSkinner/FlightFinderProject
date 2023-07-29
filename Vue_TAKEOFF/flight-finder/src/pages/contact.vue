@@ -82,8 +82,8 @@ export default {
 
 #main-div {
     background-image: url("/contact-4.jpeg");
-    height: 100vh;
-    background-size: 2000px;
+    min-height: calc(100vh - 40px);
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -96,12 +96,13 @@ export default {
     justify-content: center;
     font-size: 3rem;
     color: var(--eighth-color);
+    background-color: rgba(0, 0, 0, 0.322);
 }
 
 #contact-form {
-    margin-top: 2em;
     background-color: var(--primary-color);
     padding: 1em;
+    padding-bottom: 22em;
     background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.548));
 }
 
@@ -119,6 +120,7 @@ export default {
 #concerns {
     height: 10vh;
     width: 100%;
+    text-align: start;
     
 
 }
