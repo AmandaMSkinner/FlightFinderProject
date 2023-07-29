@@ -52,14 +52,13 @@ export default {
       this.$store.state.flightPreferencesDto.originInput
     ).then((response) => {
       this.possibleOrigins = response.data;
-      //this.loading = false;
     });
     UtilitiesService.getPossibleDestinations(
       this.$store.state.flightPreferencesDto.destinationInput
     ).then((response) => {
       this.possibleDestinations = response.data;
-      this.loading = false;
     });
+    this.loading = false;
   },
   methods: {
     viewResults() {
