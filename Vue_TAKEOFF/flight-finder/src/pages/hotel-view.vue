@@ -88,29 +88,29 @@ export default {
 }
 
 main {
-  background-color: var(--eighth-color);
   overflow: auto;
-  height: 100%;
+  background-image: url(hotel8_visualsofdana-T5pL6ciEn-I-unsplash.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
 }
 
 .text-box {
   width: 100%;
-  background-color: var(--eighth-color);
+  background-color: rgba(0, 0, 0, 0.842);
+  padding: 1em;
 }
 
 .text-box > h4 {
-  color: black;
+  color: white;
   font-size: 1.25rem;
 }
 
 .text-box > h5 {
-  color: black;
-}
-
-#search {
-  background-color: var(--third-color);
-  width: 100%;
-  padding: 0.25em;
+  color: white;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #plane {
@@ -133,8 +133,8 @@ main {
 }
 
 #disclaimer {
-  color: black;
-  background-color: var(--eighth-color);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.623);
   padding: 1em;
   
 }

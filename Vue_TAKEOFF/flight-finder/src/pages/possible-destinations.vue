@@ -1,13 +1,13 @@
 <template>
   <main id="main">
-    <div>
-      <img id="plane" src="spinner.gif" v-if="loading" />
+    <div v-if="loading" id="plane-container">
+      <img id="plane" src="spinner.gif" />
     </div>
     <div id="heading">
       <h1 v-if="!loading">Select Destination</h1>
     </div>
 
-    <div>
+    <div v-if="!loading">
       <destination-card
         v-for="(destination, index) in possibleDestinations"
         :key="index"
@@ -15,7 +15,7 @@
       />
     </div>
 
-    <article>
+    <article v-if="!loading">
       <div>
         <h2>Things to Consider</h2>
         <div id="three-row">
@@ -93,11 +93,11 @@ export default {
 }
 
 #main {
-  background-color: var(--eighth-color);
   background-image: url(hotelroom3_marvin-meyer-KCETNsfr4qo-unsplash.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  min-height: calc(100vh - 40px);
 }
 
 #heading {
@@ -106,7 +106,7 @@ export default {
 
 #heading > h1 {
   color: var(--third-color);
-  background-color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.466);
   width: 100vw;
   padding: 0.5em;
   display: flex;
@@ -114,19 +114,22 @@ export default {
   justify-content: center;
 }
 
-#plane {
+#plane-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding-top: 20em;
-  padding-bottom: 22.5em;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh);
+  top: 0;
+  left: 0;
 }
 
 article {
   padding: 2em;
-  padding-right: 2em;
-  padding-left: 2em;
+  padding-right: 4em;
+  padding-left: 4em;
+  margin-top: 2em;
 }
 
 h2 {

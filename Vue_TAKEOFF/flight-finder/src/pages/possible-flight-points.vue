@@ -1,8 +1,7 @@
 <template>
   <main>
-    <div id="spinner-style">
-      <img id="plane" src="spinner.gif" v-if="loading" />
-      <h1 v-if="!loading" class="header-h1">Select Locations</h1>
+    <div id="spinner-style" v-if="loading">
+      <img id="plane" src="spinner.gif"/>
     </div>
     <h2 v-if="!loading" id="origin-select">Select Origin Location</h2>
     <h3 v-if="!loading" id="current-origin">
@@ -95,12 +94,6 @@ main {
   padding-bottom: 1em;
 }
 
-.header-h1 {
-  display: flex;
-  align-items: center;
-  color: var(--fifth-color);
-}
-
 #spinner-style {
   width: 100vw;
   display: flex;
@@ -111,6 +104,7 @@ main {
   background-color: var(--primary-color);
   padding-left: 0.5em;
   padding: 1em;
+  border-top: 5px solid rgba(90, 160, 240, 0.432);
 }
 
 #current-origin {
@@ -134,7 +128,7 @@ main {
 
 button {
   width: 100%;
-  background-color: rgba(11, 11, 12, 0.822);
+  background-color: rgba(170, 40, 17, 0.884);
   padding: .5em;
   margin-top: 1em;
   /* margin-bottom: 2em; */
@@ -144,6 +138,7 @@ button {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 600;
 }
 
 button:hover {

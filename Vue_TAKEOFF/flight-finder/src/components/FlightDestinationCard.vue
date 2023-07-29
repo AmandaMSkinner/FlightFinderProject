@@ -52,12 +52,12 @@ export default {
     gap: 50px;
     width: 99%;
     height: 100px;
-    background-color: #2465a183;
+    background-color: #2465a1b9;
     border-radius: 10px;
     justify-content: space-between;
     align-items: center;
     flex-wrap: no-wrap;
-    color: black;
+    color: white;
 }
 
 h1 {

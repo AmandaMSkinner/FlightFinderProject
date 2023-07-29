@@ -2,12 +2,11 @@
   <main v-if="hotelAndOffer.hotelOffers[0]">
     <section id="hotel-cards">
       <article class="hotel-card">
-          
         <!-- <router-link  :to="{name: 'HotelOffers', params: {hotelId:hotel.hotelId}}">
                     <div>{{hotel.hotelId}} - {{ hotel.name }}</div>
                 </router-link> -->
 
-        <h2>{{ hotelAndOffer.hotelOffers[0].hotel.name }}</h2>
+        <h2 id="hotelname">{{ hotelAndOffer.hotelOffers[0].hotel.name }}</h2>
         <h2>Adults: {{ this.$store.state.hotelPreferencesDto.adults }}</h2>
         <h2>
           Price: ${{ hotelAndOffer.hotelOffers[0].offers[0].price.total }}
@@ -60,9 +59,8 @@ export default {
 }
 
 main {
-  height: 100vh;
+  min-height: calc(100vh- 40px);
   background-color: var(--eighth-color);
-  /* background-image: url(C:\Users\Student\Desktop\FlightFinderProject\Vue_TAKEOFF\flight-finder\public\hotel9_fernando-alvarez-rodriguez-M7GddPqJowg-unsplash.jpg); */
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -70,30 +68,34 @@ main {
 
 #hotel-image {
   width: 250px;
-  height: auto;
+  height: 3auto;
+  display: flex;
 }
 
-#hotel-cards {
-  background-color: var(--primary-color);
-  border: 10px solid var(--primary-color);
+#hotel-name {
+    padding-right: 1em;
+}
+
+
+.hotel-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  flex-direction: column;
+  justify-content: center;
   font-size: 1.5rem;
-  padding: 3em;
+  padding: 5em;
   font-size: 0.75rem;
-  margin-top: 2em;
+  margin-top: 5em;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 60px;
+  background-color: rgba(0, 0, 0, 0.815);
+  margin-bottom: 5em;
 }
 
 a:hover {
   color: var(--eighth-color);
-}
-
-#hotel-image {
-  width: 250px;
-  display: flex;
-  padding-bottom: 1em;
 }
 
 button {
@@ -102,10 +104,10 @@ button {
   color: black;
   font-weight: 600;
   padding: 1em;
+  font-size: 1rem;
 }
 
 button:hover {
   color: var(--primary-color);
-  border: 2px solid var(--fifth-color);
 }
 </style>

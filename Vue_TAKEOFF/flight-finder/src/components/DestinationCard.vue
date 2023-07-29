@@ -50,7 +50,7 @@ export default {
 
 #destination-card {
   margin-top: 2em;
-  background-color: rgba(50, 55, 66, 0.575);
+  background-color: rgba(29, 29, 31, 0.856);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,12 +84,13 @@ button {
 }
 
 button:hover {
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+  color: var(--eighth-color);
+  background-color: var(--fourth-color);
 }
 
 #iatacode {
   font-size: 1.5rem;
   font-weight: 600;
+  color: var(--eighth-color);
 }
 </style>
