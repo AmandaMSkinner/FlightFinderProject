@@ -64,6 +64,7 @@ export default {
       <hr />
       <Hotels></Hotels>
 
+      <hr/>
       <section id="info-block">
         <div class="info-block-container">
           <h1 class="info-block-h1">Browse Popular Destinations</h1>
@@ -442,17 +443,6 @@ span {
   font-size: 1rem;
 }
 
-/* .info-section-top {
-  height: 5vh;
-  padding: 4em 4em;
-} */
-
-/* .info-paragraph1 {
-  color: white;
-  text-align: center;
-  width: 100%;
-} */
-
 .break-section2 {
   display: flex;
   flex-wrap: wrap;
@@ -621,7 +611,6 @@ span {
     padding-left: 10%;
     text-align: left;
     margin-top: -0.5em;
-    margin-left: -1em;
   }
 
   .main-container h3 {
